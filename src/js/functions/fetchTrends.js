@@ -1,0 +1,3 @@
+function fetchTrends() { }
+
+export { fetchTrends };
