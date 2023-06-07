@@ -1,3 +1,5 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
 /* Utils */
 @import url("./utils/variables.css");
 @import url("./utils/visually-hidden.css");
