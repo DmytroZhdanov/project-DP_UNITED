@@ -1,0 +1,1 @@
+// Modal window for movie details
