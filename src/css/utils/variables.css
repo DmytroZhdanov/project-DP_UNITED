@@ -1,1 +1,14 @@
 /* Variables */
+:root {
+  --primary-font-family: 'Roboto', sans-serif;
+  --primary-brand-color: #F87719;
+  --dark-theme-background-color: #111111;
+  --primary-text-color: #FFFFFF;
+  --secondary-text-color: #F8F8F8;
+  --secondary-black-color: #282828;
+  --dark-theme-grey-color: #B7B7B7;
+  --light-theme-grey-color: #595959;
+  --primary-button-color: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+  --secondary-button-color: linear-gradient(141.22deg, #F84119 9.4%, rgba(248, 159, 25, 0.68) 91.91%);
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
