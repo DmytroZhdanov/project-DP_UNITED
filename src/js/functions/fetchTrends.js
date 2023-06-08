@@ -1,3 +1,0 @@
-function fetchTrends() { }
-
-export { fetchTrends };

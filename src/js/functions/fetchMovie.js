@@ -1,3 +1,0 @@
-function fetchMovie() { }
-
-export {fetchMovie}
