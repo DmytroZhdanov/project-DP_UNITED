@@ -34,3 +34,17 @@
     U+FEFF, U+FFFD;
 }
 /* ============================== /fonts ============================== */
+
+body {
+  background-color: var(--dark-theme-background-color);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font-family);
+}
+
+.light-theme {
+  background-color: var(--light-theme-background-color);
+}
+
+.disabled-scroll {
+  overflow: hidden;
+}
