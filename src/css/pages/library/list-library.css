@@ -1,4 +1,4 @@
-.gallery {
+/* .gallery {
   /*max-width: 1158px;*/
   padding: 0 15px;
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: space-between;
 }
 img {
-  display: block;
+  display: block; 
   width: 360px;
   height: 300px;
 }
@@ -36,3 +36,4 @@ p > b:last-child {
 .photo-card:not(:nth-child(4n)) {
   margin-right: 24px;
 }
+*/
