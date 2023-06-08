@@ -1,15 +1,15 @@
-/* .gallery {
+/* .gallery { */
   /*max-width: 1158px;*/
-  padding: 0 15px;
+/*   padding: 0 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .info-item {
   display: grid;
-  padding: 5px;
+  padding: 5px; */
   /*border: 2px solid rgba(28, 110, 164, 0.28);*/
-}
+/* }
 .info {
   display: flex;
   text-align: center;
@@ -35,5 +35,4 @@ p > b:last-child {
 }
 .photo-card:not(:nth-child(4n)) {
   margin-right: 24px;
-}
-*/
+} */
