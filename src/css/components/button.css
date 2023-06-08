@@ -1,0 +1,11 @@
+.btn {
+  display: block;
+  cursor: pointer;
+  font-family: var(--primary-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  border-radius: 74px;
+  background: none;
+}
