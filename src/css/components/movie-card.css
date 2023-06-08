@@ -1,1 +1,132 @@
 /* Styles for movie cards */
+.cards-item {
+  list-style: none;
+  max-width: 280px;
+  max-height: 406px;
+  background-color: wheat;
+  /* background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  ); */
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .cards-item {
+    max-width: 224px;
+    max-height: 325px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cards-item {
+    max-width: 395px;
+    max-height: 574px;
+  }
+}
+.cards-content {
+  display: flex;
+  position: relative;
+  top: -50px;
+}
+@media screen and (min-width: 768px) {
+  .cards-content {
+    top: -47px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cards-content {
+    top: -72px;
+  }
+}
+.cards-text-content {
+  padding-left: 13px;
+}
+@media screen and (min-width: 768px) {
+  .cards-text-content {
+    padding-left: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cards-text-content {
+    padding-left: 20px;
+  }
+}
+.cards-title {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  .cards-title {
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cards-title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+}
+.cards-text {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--dark-theme-grey-color);
+}
+@media screen and (min-width: 768px) {
+  .cards-text {
+    line-height: 1.5;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cards-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+.div-rating-stars {
+  padding-top: 19px;
+  max-width: 86px;
+  max-height: 14px;
+  margin-left: 58px;
+}
+@media screen and (min-width: 768px) {
+  .div-rating-stars {
+    padding-top: 16px;
+    margin-left: 22px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .div-rating-stars {
+    padding-top: 33px;
+    margin-left: 61px;
+    max-width: 106px;
+    max-height: 18px;
+  }
+}
+.svg-rating-stars {
+  width: 13px;
+  height: 12px;
+  fill: #f84119;
+}
+@media screen and (min-width: 768px) {
+  .svg-rating-stars {
+    width: 9px;
+    height: 9px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .svg-rating-stars {
+    width: 17px;
+    height: 16px;
+  }
+}
