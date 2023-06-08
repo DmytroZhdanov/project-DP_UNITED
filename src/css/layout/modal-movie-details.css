@@ -1,1 +1,17 @@
 /* Styles for modal window for movie details */
+/* .modal-details {
+  width: 280px;
+  margin: auto;
+  padding-top: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: var(--dark-theme-background-color);
+}
+
+.light-theme .modal-details {
+  background-color: var(--light-theme-background-color);
+}
+
+.icon-close {
+  stroke: #FFFFFF;
+} */
