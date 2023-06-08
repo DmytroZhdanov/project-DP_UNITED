@@ -15,10 +15,3 @@ headerCurrent.classList.add('current')
 headerLibCurrent.classList.remove('current')
 headerCatCurrent.classList.remove('current')
 
-if (document.querySelector('.trends')) {
-  mainPage.classList.add('current');
-} else if (document.querySelector('.catalogue')) {
-  cataloguePage.classList.add('current');
-} else if (document.querySelector('.library')) {
-  libraryPage.classList.add('current');
-}
