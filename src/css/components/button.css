@@ -8,4 +8,128 @@
   line-height: 1.17;
   border-radius: 74px;
   background: none;
+  border: none;
+  padding: 12px 24px;
+}
+
+.btn-filled {
+  background: var(--primary-button-color);
+  color: #111111;
+}
+
+.btn-filled:hover,
+.btn-filled:focus {
+  background: #ffffff;
+  color: var(--primary-brand-color);
+  position: absolute;
+  background-clip: padding-box;
+  border: solid -1px transparent;
+}
+
+.btn-filled:hover::before,
+.btn-filled:focus::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background-image: var(--primary-button-color);
+}
+
+.dark-theme .btn-empty {
+  background-color: inherit;
+  color: #ffffff;
+}
+
+.light-theme .btn-empty {
+  background-color: inherit;
+  color: #111111;
+}
+
+.btn-empty {
+  position: absolute;
+  background-clip: padding-box;
+  border: solid -1px transparent;
+}
+
+.btn-empty::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background-image: var(--primary-button-color);
+}
+
+.btn-empty:hover,
+.btn-empty:focus {
+  color: var(--primary-brand-color);
+}
+
+.dark-theme .btn-empty:hover,
+.dark-theme .btn-empty:focus {
+  background-color: #ffffff;
+}
+
+.light-theme .btn-empty:hover,
+.light-theme .btn-empty:focus {
+  background-color: #111111;
+}
+
+.btn-empty:hover::before,
+.btn-empty:focus::before {
+  margin: 1px;
+}
+
+.btn-empty.btn-black {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.btn-empty.btn-black:hover,
+.btn-empty.btn-black:focus {
+  background-color: #ffffff;
+  color: var(--primary-brand-color);
+}
+
+.btn-search {
+  padding: 11px;
+}
+
+.icon-search {
+  width: 18px;
+  height: 18px;
+  fill: transparent;
+}
+
+.dark-theme .icon-search {
+  stroke: #ffffff;
+}
+
+.light-theme .icon-search {
+  stroke: #111111;
+}
+
+.btn-search:hover .icon-search,
+.btn-search:focus .icon-search {
+  stroke: var(--primary-brand-color);
+}
+
+@media screen and (min-width: 768px) {
+  .btn-search {
+    padding: 13px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .btn-search {
+    padding: 14px;
+  }
+
+  .icon-search {
+  width: 20px;
+  height: 20px;
+  }
 }
