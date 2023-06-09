@@ -4,7 +4,6 @@
 .backdrop-hero-main-img-container {
   position: relative;
 }
-
 .backdrop-hero-main-img-container:after,
 .backdrop-hero-main-film-img-container::after {
   content: '';
@@ -21,35 +20,35 @@
     rgba(17, 17, 17, 0) 65.61%
   );
 }
-
 .backdrop-hero-main-img {
   position: relative;
-
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
-
 .hero-main-info {
   padding-top: 40px;
   position: absolute;
   top: 0;
   max-width: 199px;
 }
-
 .hero-main-title {
   font-size: 32px;
   line-height: 1.19;
-
   margin-bottom: 8px;
 }
-
 .hero-main-text {
   font-size: 14px;
   line-height: 1.14;
   width: 166px;
   margin-bottom: 20px;
   color: #f8f8f8;
+}
+@media screen and (max-width: 767px) {
+  .hero-main-text {
+    max-height: 80px;
+    overflow: hidden;
+  }
 }
 
 .get-started-link {
@@ -76,15 +75,12 @@
   .hero-main-title {
     font-size: 44px;
     line-height: 1.18;
-
     margin-bottom: 8px;
   }
-
   .hero-main-text {
     width: 360px;
     margin-bottom: 32px;
   }
-
   .get-started-link {
     font-size: 14px;
     line-height: 1.43;
@@ -108,13 +104,11 @@
     line-height: 1.17;
     margin-bottom: 16px;
   }
-
   .hero-main-text {
     width: 464px;
     font-size: 16px;
     line-height: 1.19;
   }
-
   .get-started-link {
     font-size: 16px;
     line-height: 1.5;
@@ -130,15 +124,11 @@
   object-fit: cover;
   height: 380px;
 }
-
-.hero-main-film-container {
-}
 .hero-main-film-info {
   padding-top: 40px;
   position: absolute;
   top: 0;
 }
-
 .hero-main-film-title {
   max-width: 280px;
   font-weight: 700;
@@ -146,7 +136,6 @@
   line-height: 1.19;
   margin-bottom: 12px;
 }
-
 .hero-main-film-rating {
   margin-bottom: 16px;
   display: flex;
@@ -155,7 +144,9 @@
 }
 .hero-main-film-overview {
   max-width: 180px;
-  max-height: 80px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 14px;
   line-height: 1.14;
@@ -164,10 +155,6 @@
 .hero-main-buttons-container {
   display: flex;
   gap: 8px;
-}
-.watch-trailer-btn {
-}
-.more-details-btn {
 }
 
 @media screen and (min-width: 768px) {
@@ -188,8 +175,6 @@
   }
   .hero-main-film-overview {
     max-width: 300px;
-    max-height: 64px;
-
     margin-bottom: 28px;
   }
 }
@@ -213,7 +198,6 @@
   }
   .hero-main-film-overview {
     max-width: 370px;
-    max-height: 76px;
     font-size: 16px;
     line-height: 1.19;
     margin-bottom: 36px;
