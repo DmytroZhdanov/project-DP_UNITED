@@ -9,15 +9,13 @@ const refs = {
   ),
 };
 
-onHomeLoad();
+onMainHeroLoad();
 
-async function onHomeLoad() {
+async function onMainHeroLoad() {
   try {
     const response = await fetchDayTrends();
-    console.log(response);
     const randomNumber = getRandomNumber(response.results.length);
     const heroFilm = response.results[randomNumber];
-    console.log(heroFilm);
     refs.heroMainSectionEl.innerHTML = createHomeHeroMarkup(heroFilm);
   } catch (error) {
     console.error(error.message);
