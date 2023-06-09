@@ -1,0 +1,92 @@
+.weekly-trends-head {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19/14px;
+    text-transform: uppercase;
+}
+
+.weekly-trends-link {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19/14px;
+    color: #F87719;
+}
+
+.weekly-trends-list {
+    display:flex;
+    flex-direction: row;
+    max-width: 280px;
+}
+
+.weekly-trends-nav {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 24px;
+}
+
+@media screen and (min-width:320px){
+    .weekly-trends-list {
+        width:280px;
+    }
+    .weekly-trends-head {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19/16px;
+        text-transform: uppercase;
+    }
+    
+    .weekly-trends-link {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19/16px;
+        color: #F87719;
+    }
+}
+
+@media screen and (min-width:768px) {
+    
+    .weekly-trends-nav {
+        padding-top: 52px;
+    }
+    .weekly-trends-head {
+        font-size: 24px;
+        line-height: 28/24px;
+    }
+    .weekly-trends-link {
+        font-size: 24px;
+        line-height: 28/24px;
+    }
+    .weekly-trends-list {
+        max-width: 704px;
+        gap:16px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .weekly-trends-head {
+        font-size: 28px;
+        line-height: 33/28px;
+    }
+    .weekly-trends-link {
+        font-size: 28px;
+        line-height: 33/28px;
+    }
+    .weekly-trends-nav {
+        padding-top: 80px;
+        padding-bottom: 28px;
+    }
+    .weekly-trends-list {
+        max-width: 1217px;
+
+    }
+}
