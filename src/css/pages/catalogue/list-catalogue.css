@@ -1,0 +1,149 @@
+@media screen and (min-width: 320px) {
+  .catalog {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .visualy-hidden {
+  }
+  .catalog-search-form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    max-width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .search-film-year {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .catalog-input {
+    padding: 11px 0 11px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background: #111111;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .catalog-search-film {
+    width: 173px;
+  }
+  .catalog-search-year {
+    width: 95px;
+  }
+
+  .catalog-search-name {
+    width: 224px;
+  }
+  .catalog-span {
+    position: relative;
+  }
+  .icon-close {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    stroke: #ffffff;
+    cursor: pointer;
+  }
+
+  .icon-arrow {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 12px;
+
+    transform: translateY(-50%);
+    stroke: #ffffff;
+    cursor: pointer;
+  }
+  .icon-search {
+    stroke: #ffffff;
+  }
+
+  .btn-search {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 16px;
+  }
+  .films-catalog {
+    margin-bottom: 20px;
+  }
+
+  .target-element {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .catalog-search-form {
+    width: 355px;
+    flex-wrap: nowrap;
+    margin-bottom: 36px;
+  }
+  .search-film-year {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .catalog-search-film {
+    width: 188px;
+  }
+
+  .catalog-search-name {
+    width: 204px;
+  }
+
+  .btn-search {
+    width: 44px;
+    height: 44px;
+  }
+
+  .films-catalog {
+    margin-bottom: 44px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .catalog-search-form {
+    width: 502px;
+    margin-bottom: 48px;
+  }
+
+  .search-film-year {
+    gap: 20px;
+  }
+
+  .catalog-search-film {
+    width: 315px;
+  }
+
+  .catalog-search-name {
+    width: 335px;
+  }
+
+  .btn-search {
+    width: 48px;
+    height: 48px;
+  }
+
+  .films-catalog {
+    margin-bottom: 60px;
+  }
+}
