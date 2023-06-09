@@ -1,6 +1,6 @@
 // Weekly trends js
 import { fetchWeekTrends } from "./functions/movieApiService";
-import { generateRatingStarsMarkup } from './functions/generateRatingStarsMarkup';
+// import { generateRatingStarsMarkup } from './functions/generateRatingStarsMarkup';
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 
 const weeklyTrendsList = document.querySelector('[data-weekly-trends-list]');
