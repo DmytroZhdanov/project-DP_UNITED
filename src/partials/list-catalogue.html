@@ -1,14 +1,14 @@
 <section class="catalog">
   <div class="container">
-    <h1 class="visually-hidden">WEEKLY TRENDS</h1>
+    <h2 class="visually-hidden">WEEKLY TRENDS</h2>
     <div class="catalog-search-form">
       <!-- search form-->
-      <form class="catalog-search-form" id="catalog-search-for">
+      <form class="catalog-search-form" id="data-catalog-search-form">
         <div class="search-film-year">
           <span class="catalog-span">
             <input
               type="text"
-              name="searchFilm"
+              name="queryFilmName"
               autocomplete="off"
               placeholder="Film"
               class="catalog-search-film catalog-input"
@@ -20,7 +20,7 @@
           <span class="catalog-span">
             <input
               type="text"
-              name="searchYear"
+              name="queryFilmYear"
               autocomplete="off"
               placeholder="Year"
               class="catalog-search-year catalog-input"
@@ -52,7 +52,7 @@
     </div>
 
     <!-- catalog-->
-    <div class="catalog-movie-cards"></div>
+    <div class="catalog-movies-list"></div>
     <div class="target-element"></div>
     <div id="tui-pagination-container" class="tui-pagination is-hidden"></div>
   </div>

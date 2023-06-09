@@ -5,7 +5,7 @@ import { fetchMovieBySearchQuery } from './functions/movieApiService';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const catalogEl = document.querySelector('.catalog-movie-cards');
+const catalogEl = document.querySelector('.catalog-movies-list');
 console.log(catalogEl);
 const paginEl = document.querySelector('#tui-pagination-container');
 console.log(paginEl);
