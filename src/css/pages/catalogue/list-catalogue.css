@@ -73,8 +73,50 @@
     border-radius: 50%;
     margin-left: 16px;
   }
-  .films-catalog {
+  .catalog-movie-cards {
     margin-bottom: 20px;
+    width: 280px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .catalog-card {
+    position: relative;
+    display: block;
+
+    max-width: 280px;
+    height: 406px;
+  }
+
+  .catalog-movie-img {
+    height: 406px;
+    width: 280px;
+    border-radius: 5px;
+    object-fit: cover;
+    border-color: #111111;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 63.48%,
+      rgba(0, 0, 0, 0.9) 92.16%
+    );
+  }
+  .catalog-card-movie-info {
+    padding: 12px;
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .catalog-desc {
+    font-weight: 400;
+    margin-top: 12px;
+    width: 280px;
+    height: 120px;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
   }
 
   .target-element {
@@ -110,7 +152,7 @@
     height: 44px;
   }
 
-  .films-catalog {
+  .catalog-movie-cards {
     margin-bottom: 44px;
   }
 }
@@ -143,7 +185,7 @@
     height: 48px;
   }
 
-  .films-catalog {
+  .catalog-movie-cards {
     margin-bottom: 60px;
   }
 }
