@@ -93,39 +93,39 @@
     line-height: 1.2;
   }
 }
-.div-rating-stars {
+.rating-stars-wrapper {
   padding-top: 19px;
   max-width: 86px;
   max-height: 14px;
   margin-left: 58px;
 }
 @media screen and (min-width: 768px) {
-  .div-rating-stars {
+  .rating-stars-wrapper {
     padding-top: 16px;
     margin-left: 22px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .div-rating-stars {
+  .rating-stars-wrapper {
     padding-top: 33px;
     margin-left: 61px;
     max-width: 106px;
     max-height: 18px;
   }
 }
-.svg-rating-stars {
+.icon-rating-stars {
   width: 13px;
   height: 12px;
   fill: #f84119;
 }
 @media screen and (min-width: 768px) {
-  .svg-rating-stars {
+  .icon-rating-stars {
     width: 9px;
     height: 9px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .svg-rating-stars {
+  .icon-rating-stars {
     width: 17px;
     height: 16px;
   }
