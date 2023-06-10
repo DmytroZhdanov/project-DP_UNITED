@@ -2,7 +2,7 @@
 footer {
     margin-left: auto;
     margin-right: auto;
-    width: 320px;
+
 }
 
 .developers-info {
@@ -26,6 +26,7 @@ footer {
 .footer-svg {
     margin-left: 10px;
     margin-right: 10px;
+    vertical-align: middle;
 }
 
 /* трохи пізніше перенесу це у modal-team.css */
@@ -55,15 +56,34 @@ footer {
 }
 
 @media (min-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    .footer-container {
+        display: inline-block;
+        padding:  0 32px;
+        width: 768px;
+    }
+
+    .footer-text-svg {
+        display: inline;
+    }
+    .footer-text {
+        display: inline;
+    }
 
     .modal-footer-content {
         width: 609px;
         height: 400px;
-
     }
 }
 
 @media (min-width: 1280px) {
+    .footer-container {
+        
+            width: 1280px;
+        }
 
     .modal-footer-content {
         width: 700px;
