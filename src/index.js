@@ -15,7 +15,7 @@ headerCurrent.classList.add('js-current');
 headerLibCurrent.classList.remove('js-current');
 headerCatCurrent.classList.remove('js-current');
 
-import { getGenresByGenresId } from './js/functions/getGenresByGenresId';
+// import { getGenresByGenresId } from './js/functions/getGenresByGenresId';
 
-const genres = getGenresByGenresId([28, 12, 16]);
-console.log(genres);
+// const genres = getGenresByGenresId([28, 12, 16]);
+// console.log(genres);
