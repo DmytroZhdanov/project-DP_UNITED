@@ -1,1 +1,82 @@
 /* Styles for modal window for trailer */
+.modal-trailer {
+  position: relative;
+  max-width: 280px;
+  padding: 39px 33px 8px 33px;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 16px;
+  /* ДЛЯ АНІМАЦІЇ! */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+}
+.modal-btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
+}
+.modal-close-icon {
+  width: 7px;
+  height: 7px;
+}
+/* ХОВЕР НА ХРЕСТИК НЕ ПРАЦЮЄ */
+.modal-close-icon:hover {
+  fill: var(--primary-brand-color);
+}
+.modal-text {
+  font-family: var(--primary-font-family);
+  font-size: 16px;
+  line-height: 1.19;
+  color: var(--primary-text-colors);
+  margin-bottom: 24px;
+}
+.modal-picture {
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .modal-trailer {
+    max-width: 609px;
+    padding: 124px 10px 16px 44px;
+  }
+  .modal-btn-close {
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+  }
+  .modal-close-icon {
+    width: 10.5px;
+    height: 10.5px;
+  }
+  .modal-text {
+    position: absolute;
+    font-size: 24px;
+    line-height: 1.16;
+    max-width: 321px;
+    margin-bottom: 0;
+    padding-top: 8px;
+  }
+  .modal-picture {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-trailer {
+    max-width: 700px;
+    padding: 77px 0 5px 50px;
+  }
+  .modal-text {
+    padding-top: 73px;
+  }
+}
