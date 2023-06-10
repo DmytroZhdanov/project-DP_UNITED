@@ -18,7 +18,7 @@ function generateHomeHeroMarkup({
   <div class="container hero-main-film-container">
     <div class="hero-main-film-info">
       <h2 class="title hero-main-film-title">${title}</h2>
-      <div class="hero-main-film-rating">
+      <div class="hero-main-film-rating rating-stars-wrapper">
         ${generateRatingStarsMarkup(vote_average)}
       </div>
       <p class="hero-main-film-overview">
@@ -26,12 +26,12 @@ function generateHomeHeroMarkup({
       </p>
       <ul class="hero-buttons-list">
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-filled hero-main-btn">
+          <button type="button" data-movie-id="${id}" class="btn btn-filled">
             Watch trailer
           </button>
         </li>
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-empty btn-black hero-main-btn">More details</button>
+          <button type="button" data-movie-id="${id}" class="btn btn-hero">More details</button>
         </li>
       </ul>
     </div>
