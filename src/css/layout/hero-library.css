@@ -1,0 +1,89 @@
+/* Стилі дефолтного Library Hero */
+
+.hero-library-section {
+  position: relative;
+}
+.backdrop-hero-library-img-container {
+  position: relative;
+}
+.backdrop-hero-library-img-container:after,
+.backdrop-hero-library-film-img-container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  background-image: linear-gradient(
+    79.49deg,
+    #111111 34.1%,
+    rgba(17, 17, 17, 0) 64.67%
+  );
+}
+.backdrop-hero-library-img {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.hero-library-info {
+  padding-top: 40px;
+  position: absolute;
+  top: 0;
+  max-width: 249px;
+}
+.hero-library-title {
+  font-size: 32px;
+  line-height: 1.19;
+  margin-bottom: 8px;
+}
+.hero-library-text {
+  font-size: 14px;
+  line-height: 1.14;
+
+  color: #f8f8f8;
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop-hero-library-img-container:after {
+    background-image: linear-gradient(
+      77.77deg,
+      #111111 33.58%,
+      rgba(17, 17, 17, 0) 71.57%
+    );
+  }
+  .hero-library-info {
+    padding-top: 62px;
+    max-width: 357px;
+  }
+  .hero-library-title {
+    font-size: 44px;
+    line-height: 1.18;
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .backdrop-hero-library-img-container:after {
+    background-image: linear-gradient(
+      80.53deg,
+      #111111 31.92%,
+      rgba(17, 17, 17, 0) 72.35%
+    );
+  }
+  .hero-library-info {
+    padding-top: 169px;
+    max-width: 464px;
+  }
+  .hero-library-title {
+    font-size: 64px;
+    line-height: 1.17;
+    margin-bottom: 16px;
+  }
+  .hero-library-text {
+    font-size: 16px;
+    line-height: 1.19;
+  }
+}
