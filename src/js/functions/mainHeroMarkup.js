@@ -1,5 +1,10 @@
 import { renderStarRating } from './renderStarRating';
 
+/**
+ * Повертає картку для Main Hero
+ * @param {Object}
+ * @returns Main Hero Card
+ */
 function createHomeHeroMarkup({
   id,
   title,
@@ -26,12 +31,12 @@ function createHomeHeroMarkup({
       </p>
       <ul class="hero-buttons-list">
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-filled">
+          <button type="button" data-movie-id="${id}" class="btn btn-filled hero-main-btn">
             Watch trailer
           </button>
         </li>
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-empty btn-black">More details</button>
+          <button type="button" data-movie-id="${id}" class="btn btn-empty btn-black hero-main-btn">More details</button>
         </li>
       </ul>
     </div>
@@ -39,18 +44,3 @@ function createHomeHeroMarkup({
 }
 
 export { createHomeHeroMarkup };
-
-  // Розмітку кнопок змінив для тесту. Твою, оригінальну залишаю нижче
-  
-{/* <div class="hero-main-buttons-container">
-  <button
-    type="button"
-    data-movie-id="${id}"
-    class="btn watch-trailer-btn btn-filled"
-  >
-    Watch trailer
-  </button>
-  <button type="button" data-movie-id="${id}" class="more-details-btn">
-    More details
-  </button>
-</div>; */}

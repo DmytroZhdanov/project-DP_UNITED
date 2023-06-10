@@ -2,6 +2,11 @@ import fullStarPng from '../../images/star.png';
 import halfStarPng from '../../images/star-half.png';
 import emptyStarPng from '../../images/star-outline.png';
 
+/**
+ * Функція повертає зірковий рейтинг
+ * @param {Number} rating
+ * @returns string with star-rating
+ */
 function renderStarRating(rating) {
   rating = Math.round(rating) / 2;
   const arr = [];
