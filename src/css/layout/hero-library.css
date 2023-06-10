@@ -66,6 +66,9 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .hero-library-container {
+    padding-left: 117px;
+  }
   .backdrop-hero-library-img-container:after {
     background-image: linear-gradient(
       80.53deg,
