@@ -143,9 +143,9 @@
 }
 .hero-main-film-rating {
   margin-bottom: 16px;
-  display: flex;
+  /* display: flex;
   height: 16px;
-  gap: 4px;
+  gap: 4px; */
 }
 .hero-main-film-overview {
   max-width: 180px;
@@ -181,13 +181,15 @@
   }
   .hero-main-film-rating {
     margin-bottom: 20px;
-    height: 20px;
+    /* height: 20px; */
   }
   .hero-main-film-overview {
     max-width: 300px;
     margin-bottom: 28px;
   }
+  
   .hero-btn-item {
+    width: 128px;
   }
 }
 
@@ -195,23 +197,31 @@
   .backdrop-hero-main-film-img {
     height: 720px;
   }
+
   .hero-main-film-info {
     padding-top: 118px;
   }
+
   .hero-main-film-title {
     max-width: 400px;
     font-size: 64px;
     line-height: 1.17;
     margin-bottom: 16px;
   }
+
   .hero-main-film-rating {
     margin-bottom: 28px;
-    height: 24px;
+    /* height: 24px; */
   }
+
   .hero-main-film-overview {
     max-width: 370px;
     font-size: 16px;
     line-height: 1.19;
     margin-bottom: 36px;
+  }
+
+  .hero-btn-item {
+    width: 128px;
   }
 }

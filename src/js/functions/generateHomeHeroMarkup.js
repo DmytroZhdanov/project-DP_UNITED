@@ -24,7 +24,7 @@ function generateHomeHeroMarkup({
       <p class="hero-main-film-overview">
         ${overview}
       </p>
-      <ul class="hero-buttons-list">
+      <ul class="hero-buttons-list rating-stars-wrapper">
         <li class="hero-btn-item">
           <button type="button" data-movie-id="${id}" class="btn btn-filled hero-main-btn">
             Watch trailer
