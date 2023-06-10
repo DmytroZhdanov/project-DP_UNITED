@@ -3,9 +3,9 @@ import { fetchDayTrends } from '../js/functions/movieApiService';
 import { generateHomeHeroMarkup } from './functions/generateHomeHeroMarkup';
 
 const refs = {
-  heroMainSectionEl: document.querySelector('.js-hero-main-section'),
+  heroMainSectionEl: document.querySelector('[data-hero-main-section]'),
   defaultHomeHeroSection: document.querySelector(
-    '.js-default-home-hero-section'
+    '[data-default-home-hero-section]'
   ),
 };
 

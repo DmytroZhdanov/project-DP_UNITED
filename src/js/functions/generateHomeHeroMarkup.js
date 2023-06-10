@@ -1,4 +1,4 @@
-import { generateRatingStarsMarkup } from './renderStarRating';
+import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 
 function generateHomeHeroMarkup({
   id,
