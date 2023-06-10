@@ -2,10 +2,10 @@
 // libraryBtnAdd.addEventListener('click', onAddLibraryBtnClick);
 
 /**
- * Sets local storage item with key 'library' and value of Array of movie objects
+ * Sets local storage item with key 'library' and value of Array of movie objects. Adds Item
  * @param {Object} movieObject  Object with movie details
  */
-function addMovieToLibrary(movieObject) {
+function onLibraryBtnAddClick(movieObject) {
   if (!localStorage.getItem(library)) {
     const array = [];
     array.push(movieObject);
@@ -18,4 +18,4 @@ function addMovieToLibrary(movieObject) {
   }
 }
 
-export { addMovieToLibrary };
+export { onLibraryBtnAddClick };
