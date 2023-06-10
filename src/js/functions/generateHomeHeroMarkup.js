@@ -1,6 +1,6 @@
-import { renderStarRating } from './renderStarRating';
+import { generateRatingStarsMarkup } from './renderStarRating';
 
-function createHomeHeroMarkup({
+function generateHomeHeroMarkup({
   id,
   title,
   vote_average,
@@ -19,7 +19,7 @@ function createHomeHeroMarkup({
     <div class="hero-main-film-info">
       <h2 class="title hero-main-film-title">${title}</h2>
       <div class="hero-main-film-rating">
-        ${renderStarRating(vote_average)}
+        ${generateRatingStarsMarkup(vote_average)}
       </div>
       <p class="hero-main-film-overview">
         ${overview}
@@ -38,7 +38,7 @@ function createHomeHeroMarkup({
   </div>`;
 }
 
-export { createHomeHeroMarkup };
+export { generateHomeHeroMarkup };
 
   // Розмітку кнопок змінив для тесту. Твою, оригінальну залишаю нижче
   
