@@ -27,6 +27,7 @@
 @import url("./layout/modal-trailer.css");
 @import url("./layout/modal-movie-details.css");
 @import url("./layout/modal-team.css");
+@import url("./layout/trends.css");
 
 /* Pages */
 @import url("./pages/catalogue/list-catalogue.css");

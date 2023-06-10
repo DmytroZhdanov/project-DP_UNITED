@@ -1,4 +1,10 @@
 /* Styles for movie cards */
+.movie-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+}
+
 .cards-item {
   position: relative;
   display: block;
@@ -51,12 +57,6 @@
   padding-top: 19px;
 }
 
-.icon-rating-stars {
-  width: 14px;
-  height: 14px;
-  fill: #f84119;
-}
-
 @media screen and (max-width: 319px) {
   .cards-item {
     max-width: 280px;
@@ -70,55 +70,162 @@
 }
 
 @media screen and (min-width: 768px) {
+  .movie-cards-list {
+    column-gap: 16px;
+    row-gap: 28px;
+  }
+
   .cards-item {
     width: 224px;
     height: 325px;
   }
-  
+
   .cards-title {
     line-height: 1.29;
   }
-  
+
   .cards-text {
     line-height: 1.5;
   }
-  
+
   .rating-stars-wrapper {
     padding-top: 16px;
-  }
-  
-  .icon-rating-stars {
-    width: 10px;
-    height: 10px;
   }
 }
 
 @media screen and (min-width: 1280px) {
+  .movie-cards-list {
+    row-gap: 32px;
+  }
+
   .cards-item {
     width: 395px;
     height: 574px;
   }
-  
-   .cards-content {
+
+  .cards-content {
     padding: 20px;
   }
-  
+
   .cards-title {
     font-size: 20px;
     line-height: 1.17;
   }
-  
+
   .cards-text {
     font-size: 20px;
     line-height: 1.17;
   }
-  
+
   .rating-stars-wrapper {
     padding-top: 33px;
   }
-  
-  .icon-rating-stars {
-    width: 18px;
-    height: 18px;
+}
+
+/* ============================ Raiting ============================ */
+.rating-container {
+  position: relative;
+  width: 86px;
+}
+
+.hero-rating-stars-wrapper .rating-container {
+  width: 96px;
+}
+
+.rating-container::before {
+  width: 100%;
+  background-image: url(../../images/star-empty.svg),
+    url(../../images/star-empty.svg), url(../../images/star-empty.svg),
+    url(../../images/star-empty.svg), url(../../images/star-empty.svg);
+}
+
+.rating-active {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.rating-active::before {
+  width: 86px;
+  background-image: url(../../images/star-filled.svg),
+    url(../../images/star-filled.svg), url(../../images/star-filled.svg),
+    url(../../images/star-filled.svg), url(../../images/star-filled.svg);
+}
+
+.hero-rating-stars-wrapper .rating-active::before {
+  width: 96px;
+}
+
+.rating-container::before,
+.rating-active::before {
+  content: '★★★★★';
+  color: transparent;
+  display: block;
+  background-position: 0 0, 25% 0, 50% 0, 75% 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 13.12px 12.25px;
+}
+
+.hero-rating-stars-wrapper .rating-container::before,
+.hero-rating-stars-wrapper .rating-active::before {
+  background-size: 15px 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-container {
+    width: 66px;
+  }
+
+  .hero-rating-stars-wrapper .rating-container {
+    width: 116px;
+  }
+
+  .rating-active::before {
+    width: 66px;
+  }
+
+  .hero-rating-stars-wrapper .rating-active::before {
+    width: 116px;
+  }
+
+  .rating-container::before,
+  .rating-active::before {
+    background-size: 9.37px 8.75px;
+  }
+
+  .hero-rating-stars-wrapper .rating-container::before,
+  .hero-rating-stars-wrapper .rating-active::before {
+    background-size: 18.75px 17.5px;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .rating-container {
+    width: 106px;
+  }
+
+  .hero-rating-stars-wrapper .rating-container {
+    width: 136px;
+  }
+
+  .rating-active::before {
+    width: 106px;
+  }
+
+  .hero-rating-stars-wrapper .rating-active::before {
+    width: 136px;
+  }
+
+  .rating-container::before,
+  .rating-active::before {
+    background-size: 16.87px 15.75px;
+  }
+
+  .hero-rating-stars-wrapper .rating-container::before,
+  .hero-rating-stars-wrapper .rating-active::before {
+    background-size: 22.5px 21px;
+  }
+}
+/* ============================ /Raiting ============================ */
