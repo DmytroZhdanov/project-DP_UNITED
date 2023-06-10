@@ -159,12 +159,17 @@
 }
 .hero-buttons-list {
   display: flex;
-  gap: 8px;
 }
 
 .hero-btn-item {
   display: block;
   width: 117px;
+}
+
+@media screen and (max-width: 767px){
+  .hero-buttons-list {
+  gap: 8px;
+}
 }
 
 @media screen and (min-width: 768px) {
@@ -187,7 +192,7 @@
     max-width: 300px;
     margin-bottom: 28px;
   }
-  
+
   .hero-btn-item {
     width: 128px;
   }
