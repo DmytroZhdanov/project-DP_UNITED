@@ -4,15 +4,14 @@
 // libraryBtnRemove.addEventListener('click', removeFromLibrary);
 
 /**
- * Отримує
- * @param {String} movieId
- * @returns {String} local Storage with key 'library'
+ * Sets local storage item with key 'library' and value of Array of movie objects. Removes item
+ * @param {*} movieObject 
  */
-function removeFromLibrary(movieId) {
+function onLibraryBtnRemoveClick(movieObject) {
   const filmsInLibrary = localStorage.getItem(library);
   const moviesArr = JSON.parse(filmsInLibrary);
-  const newMoviesArray = moviesArr.filter(value => value.id !== movieId);
+  const newMoviesArray = moviesArr.filter(value => value.id !== movieObject.id);
   localStorage.setItem('library', JSON.stringify(newMoviesArray));
 }
 
-export { removeFromLibrary };
+export { onLibraryBtnRemoveClick };
