@@ -1,15 +1,15 @@
 /**
  * Отримує 
- * @param {Object} object information about film
+ * @param {String} movieId
  * @returns {String} local Storage with key 'library'
  */
-const libraryBtn = document.querySelector(/*додати селектор*/);
-libraryBtn.addEventListener('click', removeFromLibrary);
+const libraryBtnRemove = document.querySelector('[data-remove-from-library-btn]');
+libraryBtnRemove.addEventListener('click', removeFromLibrary);
 
-function removeFromLibrary(object) {
+function removeFromLibrary(movieId) {
     const filmsInLibrary = localStorage.getItem(library);
     const parsFilms = JSON.parse(filmsInLibrary);
-    const newArray = parsFilms.filter(value => value !== object);
+    const newArray = parsFilms.filter(value => value !== movieId);
     localStorage.setItem('library', JSON.stringify(newArray));
 }
 
