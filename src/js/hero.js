@@ -19,7 +19,7 @@ async function onMainHeroLoad() {
     refs.heroMainSectionEl.innerHTML = generateHomeHeroMarkup(heroFilm);
   } catch (error) {
     console.error(error.message);
-    refs.defaultHomeHeroSection.classList.remove('visually-hidden');
+    refs.defaultHomeHeroSection.classList.remove('is-hidden');
   }
 }
 
