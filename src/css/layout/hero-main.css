@@ -128,6 +128,9 @@
   padding-top: 40px;
   position: absolute;
   top: 0;
+  /* Test */
+  z-index: 0;
+  /* Test */
 }
 .hero-main-film-title {
   max-width: 280px;
@@ -206,3 +209,17 @@
     gap: 14px;
   }
 }
+
+/* ====================== Тестові стилі для кнопок ====================== */
+.hero-buttons-list {
+  display: flex;
+  gap: 14px;
+}
+
+.hero-btn-item {
+  display: block;
+  width: 119px;
+}
+/* Ширину кнопок змінюєш відповідно до точок перелому */
+
+/* ====================== /Тестові стилі для кнопок ====================== */
