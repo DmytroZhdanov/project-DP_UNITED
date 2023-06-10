@@ -1,26 +1,23 @@
 /**
- * Отримує 
- * @param {Object} classes information about film
- * @param {String} movieId information about film
- * @returns {String} markup
+ *
+ * @param {Object} classes Classes to add to button
+ * @param {String} movieId Movie ID
+ * @returns {String} Button markup
  */
 
 function generateLibraryBtnMarkup(classes, movieId) {
-
-    const libraryBtn = document.createElement('button');
-
-    const filmsInLibrary = localStorage.getItem(library);
-    const parsFilms = JSON.parse(filmsInLibrary);
-    if (parsFilms.includes(movieId)) {
-        /* видалення */
-        const markup = `<button type="button" data-remove-from-library-btn class="${classes}">Remove from library</button>`;
-    } else {
-        /* додавання */
-        const markup = `<button type="button" data-add-to-library-btn class="${classes}">Add to library</button>`;
-    }
-
-    return markup;
+  const filmsInLibrary = localStorage.getItem(library);
+  const parsedFilmsInLibrary = JSON.parse(filmsInLibrary);
+  const isInLibrary = parsedFilmsInLibrary.find(
+    object => object.id === movieId
+  );
+  if (isInLibrary) {
+    /* Remove button */
+    return `<button type="button" data-remove-from-library-btn class="${classes}">Remove from library</button>`;
+  } else {
+    /* Add button */
+    return `<button type="button" data-add-to-library-btn class="${classes}">Add to library</button>`;
+  }
 }
 
 export { generateLibraryBtnMarkup };
-
