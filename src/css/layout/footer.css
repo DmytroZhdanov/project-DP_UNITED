@@ -1,14 +1,72 @@
 /* Footer styles */
-/* .inline-svg  {
-   
-    background-color: blue;
-    fill: #f87719;
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
 }
 
-.inline-svg .heart {
-    stroke: #f87719; */
-    /* Додайте інші стилі за потреби */
-    /* width: 24px;
-    height: 24px;
+.developers-info {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer-text {
+    margin-bottom: 8px;
+}
+
+.footer-container {
+    text-align: center;
+    color: rgba(183, 183, 183, 1);
+
+    padding: 0 20px 0 20px;
+
+    margin-bottom: 28px;
+}
+
+.footer-svg {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* трохи пізніше перенесу це у modal-team.css */
+.modal-window-footer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+
+
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+}
+
+.modal-footer-content {
     position: absolute;
-} */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(17, 17, 17, 1);
+    padding: 20px;
+    border-radius: 16px;
+    width: 280px;
+    height: 289px;
+}
+
+@media (min-width: 768px) {
+
+    .modal-footer-content {
+        width: 609px;
+        height: 400px;
+
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .modal-footer-content {
+        width: 700px;
+        height: 400px;
+    }
+}
