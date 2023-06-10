@@ -143,9 +143,6 @@
 }
 .hero-main-film-rating {
   margin-bottom: 16px;
-  /* display: flex;
-  height: 16px;
-  gap: 4px; */
 }
 .hero-main-film-overview {
   max-width: 180px;
@@ -166,10 +163,10 @@
   width: 117px;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
   .hero-buttons-list {
-  gap: 8px;
-}
+    gap: 8px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -186,7 +183,6 @@
   }
   .hero-main-film-rating {
     margin-bottom: 20px;
-    /* height: 20px; */
   }
   .hero-main-film-overview {
     max-width: 300px;
@@ -199,6 +195,9 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .hero-main-film-container {
+    padding-left: 134px;
+  }
   .backdrop-hero-main-film-img {
     height: 720px;
   }
@@ -216,7 +215,6 @@
 
   .hero-main-film-rating {
     margin-bottom: 28px;
-    /* height: 24px; */
   }
 
   .hero-main-film-overview {
