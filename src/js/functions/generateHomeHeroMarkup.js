@@ -31,7 +31,7 @@ function generateHomeHeroMarkup({
           </button>
         </li>
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-empty btn-black">More details</button>
+          <button type="button" data-movie-id="${id}" class="btn btn-hero">More details</button>
         </li>
       </ul>
     </div>
