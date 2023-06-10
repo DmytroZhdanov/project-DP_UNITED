@@ -126,10 +126,13 @@
 .rating-container {
   position: relative;
   width: 86px;
+  height: 14px;
+  line-height: normal;
 }
 
 .hero-rating-stars-wrapper .rating-container {
   width: 96px;
+  height: 16px;
 }
 
 .rating-container::before {
@@ -149,6 +152,7 @@
 
 .rating-active::before {
   width: 86px;
+  height: 14px;
   background-image: url(../../images/star-filled.svg),
     url(../../images/star-filled.svg), url(../../images/star-filled.svg),
     url(../../images/star-filled.svg), url(../../images/star-filled.svg);
@@ -156,6 +160,7 @@
 
 .hero-rating-stars-wrapper .rating-active::before {
   width: 96px;
+  height: 16px;
 }
 
 .rating-container::before,
@@ -176,18 +181,22 @@
 @media screen and (min-width: 768px) {
   .rating-container {
     width: 66px;
+    height: 10px;
   }
 
   .hero-rating-stars-wrapper .rating-container {
     width: 116px;
+    height: 20px;
   }
 
   .rating-active::before {
     width: 66px;
+    height: 10px;
   }
 
   .hero-rating-stars-wrapper .rating-active::before {
     width: 116px;
+    height: 20px;
   }
 
   .rating-container::before,
@@ -204,18 +213,22 @@
 @media screen and (min-width: 1280px) {
   .rating-container {
     width: 106px;
+    height: 18px;
   }
 
   .hero-rating-stars-wrapper .rating-container {
     width: 136px;
+    height: 24px;
   }
 
   .rating-active::before {
     width: 106px;
+    height: 18px;
   }
 
   .hero-rating-stars-wrapper .rating-active::before {
     width: 136px;
+    height: 24px;
   }
 
   .rating-container::before,

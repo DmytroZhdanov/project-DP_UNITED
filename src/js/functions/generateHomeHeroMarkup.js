@@ -18,8 +18,10 @@ function generateHomeHeroMarkup({
   <div class="container hero-main-film-container">
     <div class="hero-main-film-info">
       <h2 class="title hero-main-film-title">${title}</h2>
-      <div class="hero-main-film-rating rating-stars-wrapper">
-        ${generateRatingStarsMarkup(vote_average)}
+      <div class="hero-main-film-rating">
+        <div class="hero-rating-stars-wrapper">
+          ${generateRatingStarsMarkup(vote_average)}
+        </div>
       </div>
       <p class="hero-main-film-overview">
         ${overview}
