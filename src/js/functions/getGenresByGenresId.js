@@ -1,6 +1,6 @@
 import { fetchGenresList } from './movieApiService';
 /**
- * 
+ *
  * @param {Array} genresIdsArr Array of genres_ids
  * @returns {Promise} Promise with array of genres (strings) as a result
  */
