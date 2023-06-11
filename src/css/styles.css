@@ -20,8 +20,10 @@
 /* Layout */
 @import url('./layout/header.css');
 @import url('./layout/mobile-menu.css');
+@import url('./layout/hero-common.css');
 @import url('./layout/hero-main.css');
 @import url('./layout/hero-library.css');
+@import url('./layout/hero-markup.css');
 @import url('./layout/footer.css');
 @import url('./layout/modal-trailer.css');
 @import url('./layout/modal-movie-details.css');
@@ -29,6 +31,7 @@
 @import url('./layout/trends.css');
 @import url('./layout/upcoming-section.css');
 
+
 /* Pages */
-@import url('./pages/catalogue/list-catalogue.css');
+/* @import url('./pages/catalogue/list-catalogue.css'); */
 @import url('./pages/library/list-library.css');

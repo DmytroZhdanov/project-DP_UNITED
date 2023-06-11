@@ -6,17 +6,18 @@
  */
 
 function generateLibraryBtnMarkup(classes, movieId) {
-  const filmsInLibrary = localStorage.getItem(library);
-  const parsedFilmsInLibrary = JSON.parse(filmsInLibrary);
-  const isInLibrary = parsedFilmsInLibrary.find(
-    object => object.id === movieId
-  );
-  if (isInLibrary) {
-    /* Remove button */
-    return `<button type="button" data-remove-from-library-btn class="${classes}">Remove from library</button>`;
-  } else {
-    /* Add button */
+  const filmsInLibrary = localStorage.getItem('library');
+
+  if (!filmsInLibrary) {
     return `<button type="button" data-add-to-library-btn class="${classes}">Add to library</button>`;
+  } else {
+    const parsedFilmsInLibrary = JSON.parse(filmsInLibrary);
+    const isInLibrary = parsedFilmsInLibrary.find(
+      object => object.id === movieId
+    );
+    return isInLibrary
+      ? `<button type="button" data-remove-from-library-btn class="${classes}">Remove from library</button>`
+      : `<button type="button" data-add-to-library-btn class="${classes}">Add to library</button>`;
   }
 }
 
