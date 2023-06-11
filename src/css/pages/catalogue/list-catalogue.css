@@ -29,6 +29,7 @@
     background: #111111;
     font-weight: 500;
     font-size: 14px;
+    color: #b7b7b7;
   }
   .catalog-search-film {
     width: 173px;
@@ -42,26 +43,28 @@
   }
   .catalog-span {
     position: relative;
+    color: #f8f8f8;
   }
   .icon-close {
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
     stroke: #ffffff;
+    cursor: pointer;
+  }
+
+  .btn-icon-catalog {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    right: 12px;
+    border: none;
+    background: transparent;
+    transform: translateY(-50%);
+    width: 18px;
     cursor: pointer;
   }
 
   .icon-arrow {
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 12px;
-
-    transform: translateY(-50%);
+    transform: rotate(-90deg);
     stroke: #ffffff;
-    cursor: pointer;
   }
   .icon-search {
     stroke: #ffffff;
@@ -73,40 +76,13 @@
     border-radius: 50%;
     margin-left: 16px;
   }
-  .catalog-movie-cards {
+  .catalog-movies-list {
     margin-bottom: 20px;
-    width: 280px;
+    width: 100%;
 
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-  }
-  .catalog-card {
-    position: relative;
-    display: block;
-
-    max-width: 280px;
-    height: 406px;
-  }
-
-  .catalog-movie-img {
-    height: 406px;
-    width: 280px;
-    border-radius: 5px;
-    object-fit: cover;
-    border-color: #111111;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 63.48%,
-      rgba(0, 0, 0, 0.9) 92.16%
-    );
-  }
-  .catalog-card-movie-info {
-    padding: 12px;
-    position: absolute;
-    background-color: transparent;
-    width: 100%;
-    bottom: 0;
   }
 
   .catalog-desc {
@@ -119,7 +95,110 @@
     text-align: center;
   }
 
-  .target-element {
+  /*- BTN- TUI-PAGINATION-*/
+  .tui-pagination#tui-pagination-container {
+    height: 24px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+  }
+  .tui-pagination#tui-pagination-container > .tui-page-btn {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    padding: 7px 2px;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1;
+    color: #b7b7b7;
+    border: 1px solid #b7b7b7;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-first {
+    display: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-last {
+    display: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev-is-ellip.tui-first-child {
+    margin-right: 0;
+    border: none;
+  }
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev-is-ellip.tui-first-child
+    > .tui-ico-ellip {
+    width: 8px;
+    font-size: 10px;
+    margin-top: 1px;
+    background: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-next-is-ellip.tui-last-child {
+    margin-right: 0;
+    border: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-next-is-ellip.tui-last-child
+    > .tui-ico-ellip {
+    margin-top: 7px;
+    width: 8px;
+    font-size: 10px;
+    margin-top: 1px;
+    background: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-prev {
+    margin-right: 4px;
+    color: #f8f8f8;
+    border: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-next {
+    margin-left: 4px;
+    margin-right: 0;
+    border: none;
+  }
+
+  /* .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev
+    > .tui-ico-prev {
+    
+  } */
+
+  .tui-pagination.dark-theme#tui-pagination-container
+    .tui-page-btn.tui-is-selected
+    .dark-theme {
+    /* border: 1px solid var(--dark-theme-grey-color);
+    color: var(--dark-theme-grey-color); */
+  }
+
+  /* .tui-pagination#tui-pagination-container .light-theme .tui-page-btn {
+    border: 1px solid var(--light-theme-grey-color);
+    color: #111111;
+  } */
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-is-selected {
+    border: none;
+    background-image: var(--primary-button-color);
+    color: #ffffff;
+  }
+
+  .tui-page-btn.tui-is-selected.dark-theme.btn-current {
+    color: #ffffff;
+  }
+
+  .light-theme.tui-page-btn.btn-current {
+    color: #111111;
+  }
+  */ .target-element {
   }
 }
 
@@ -152,10 +231,31 @@
     height: 44px;
   }
 
-  .catalog-movie-cards {
+  .catalog-movies-list {
     margin-bottom: 44px;
   }
 }
+/*- BTN- TUI-PAGINATION-*/
+/* .tui-pagination#tui-pagination-container {
+  height: 40px;
+  font-size: 14px;
+}
+
+.tui-pagination#tui-pagination-container > .tui-page-btn {
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 13px 2px;
+  font-size: 14px;
+}
+
+.tui-pagination#tui-pagination-container
+  > .tui-page-btn.tui-prev-is-ellip.tui-first-child
+  > .tui-ico-ellip {
+  width: 12px;
+  font-size: 14px;
+  margin-top: 1px;
+} */
 
 @media screen and (min-width: 1280px) {
   .catalog {
@@ -185,7 +285,7 @@
     height: 48px;
   }
 
-  .catalog-movie-cards {
+  .catalog-movies-list {
     margin-bottom: 60px;
   }
 }

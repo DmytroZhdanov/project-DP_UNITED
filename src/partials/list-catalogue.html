@@ -5,7 +5,7 @@
       <!-- search form-->
       <form class="catalog-search-form" id="data-catalog-search-form">
         <div class="search-film-year">
-          <span class="catalog-span">
+          <span class="catalog-span" input-catalog-film hidden>
             <input
               type="text"
               name="queryFilmName"
@@ -13,11 +13,18 @@
               placeholder="Film"
               class="catalog-search-film catalog-input"
             />
-            <svg class="icon-close" width="9" height="9">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
+            <button
+              type="button"
+              class="btn-icon-catalog"
+              btn-input-catalog-film
+              hidden
+            >
+              <svg class="icon-close" width="9" height="9">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
           </span>
-          <span class="catalog-span">
+          <span class="catalog-span" input-catalog-year hidden>
             <input
               type="text"
               name="queryFilmYear"
@@ -25,10 +32,11 @@
               placeholder="Year"
               class="catalog-search-year catalog-input"
             />
-
-            <svg class="icon-arrow" width="4.5" height="9">
-              <use href="./images/icons.svg#icon-arrow"></use>
-            </svg>
+            <button type="button" class="btn-icon-catalog">
+              <svg class="icon-arrow" width="4.5" height="9">
+                <use href="./images/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
           </span>
         </div>
         <span class="catalog-span">
@@ -39,9 +47,9 @@
             placeholder="Search"
             class="catalog-search-name catalog-input"
           />
-          <svg class="icon-close" width="9" height="9">
+          <!-- <svg class="icon-close" is-hidden width="9" height="9">
             <use href="./images/icons.svg#icon-close"></use>
-          </svg>
+          </svg> -->
         </span>
         <button type="submit" class="btn btn-filled btn-search">
           <svg class="icon-search" width="18" height="18">
@@ -52,7 +60,7 @@
     </div>
 
     <!-- catalog-->
-    <div class="catalog-movies-list"></div>
+    <div class="catalog-movies-list" data-header-catalogue></div>
     <div class="target-element"></div>
     <div id="tui-pagination-container" class="tui-pagination is-hidden"></div>
   </div>
