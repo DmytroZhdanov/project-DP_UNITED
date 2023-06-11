@@ -1,12 +1,7 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 
-function generateHeroMarkup({
-  id,
-  title,
-  vote_average,
-  overview,
-  backdrop_path,
-}) {
+function generateHeroMarkup(movieObject) {
+  const { id, title, vote_average, overview, backdrop_path } = movieObject;
   return `
   <div class="backdrop-hero-img-container backdrop-hero-film-img-container">
     <img
@@ -34,7 +29,7 @@ function generateHeroMarkup({
           </button>
         </li>
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-hero">More details</button>
+          <button type="button" data-modal-movie-details-btn class="btn btn-hero">More details</button>
         </li>
       </ul>
     </div>
