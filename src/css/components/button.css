@@ -136,8 +136,8 @@
   }
 
   .icon-search {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
   }
 }
 /* ----------------------- /Search button styles ----------------------- */
@@ -177,7 +177,7 @@
   color: #111111;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .btn-number {
     width: 32px;
     height: 32px;
@@ -187,7 +187,7 @@
   }
 }
 
-@media screen and (min-width:768px) and (max-width:1279px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
   .is-plenty .btn-number {
     width: 40px;
     height: 40px;
@@ -195,7 +195,7 @@
   }
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
   .btn-number {
     width: 40px;
     height: 40px;
@@ -203,4 +203,3 @@
   }
 }
 /* ----------------------- /Number button styles ----------------------- */
-
