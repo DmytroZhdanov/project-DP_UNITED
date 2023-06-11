@@ -1,21 +1,21 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
+import { getGenresByGenresId } from './getGenresByGenresId';
 /**
- * 
- * @param {Array} arr 
+ *
+ * @param {Array} arr
  * @returns {String} markup for movie cards. You should insert resul inside <ul> by innerHTML
  */
 function generateMovieCardsMarkup(arr) {
-  return arr.map(
-    ({ genre_ids, id, poster_path, release_date, title, vote_average }) => {
-      const year = release_date.slice(0, 4);
-      const posterPath = poster_path
-        ? `https://image.tmdb.org/t/p/w500${poster_path}`
-        : './images/image-not-found.jpg';
-      const ratingStarsMurkup = generateRatingStarsMarkup(vote_average); 
-      // Temporarily
-      const genres = genre_ids.join(' ');
-      // Temporarily
-      return `<li class="cards-item" data-movie-card-id="${id}">
+  const markup = arr
+    .map(
+      ({ genre_ids, id, poster_path, release_date, title, vote_average }) => {
+        const year = release_date.slice(0, 4);
+        const posterPath = poster_path
+          ? `https://image.tmdb.org/t/p/w500${poster_path}`
+          : './images/image-not-found.jpg';
+        const ratingStarsMurkup = generateRatingStarsMarkup(vote_average);
+        const genres = getGenresByGenresId(genre_ids).join(', ');
+        return `<li class="cards-item" data-movie-card-id="${id}">
       <img
         src="${posterPath}"
         alt="Poster of the movie"
@@ -30,8 +30,11 @@ function generateMovieCardsMarkup(arr) {
         </div>
       </div>
     </li>`;
-    }
-  ).join('');
+      }
+    )
+    .join('');
+
+  return markup;
 }
 
 export { generateMovieCardsMarkup };

@@ -6,6 +6,9 @@ import './js/list-catalogue';
 import './js/footer';
 import './js/modal-trailer';
 import './js/modal-movie-details';
+import { setGenresToSS } from './js/functions/setGenresToSS';
+
+setGenresToSS();
 
 const headerCurrent = document.querySelector('[data-header-home]');
 const headerCatCurrent = document.querySelector('[data-header-catalogue]');
