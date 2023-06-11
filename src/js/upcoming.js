@@ -4,8 +4,6 @@ import {
   fetchGenresList,
 } from './functions/movieApiService';
 
-console.log(fetchGenresList());
-
 const upcomingConatainer = document.querySelector('.upcoming-flex');
 
 gettingMovie();
@@ -14,7 +12,7 @@ async function gettingMovie() {
   const uncomingArray = data.results;
   const randomMovie =
     uncomingArray[Math.floor(Math.random() * uncomingArray.length)];
-  console.log(randomMovie);
+
   upcomingConatainer.innerHTML = await renderingUpcomingMovie(randomMovie);
 }
 
