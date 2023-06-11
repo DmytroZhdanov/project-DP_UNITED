@@ -86,15 +86,17 @@
   margin: 1px;
 }
 
-.btn-empty.btn-black {
-  background-color: #111111;
+.btn-hero {
+  background-color: transparent;
   color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
-.btn-empty.btn-black:hover,
-.btn-empty.btn-black:focus {
+.btn-hero:hover,
+.btn-hero:focus {
   background-color: #ffffff;
   color: var(--primary-brand-color);
+  border: none;
 }
 /* ----------------------- /Ordinary button styles ----------------------- */
 

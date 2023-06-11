@@ -1,3 +1,0 @@
-function renderLibraryBtn() {}
-
-export { renderLibraryBtn };
