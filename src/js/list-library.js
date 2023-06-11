@@ -1,4 +1,5 @@
 // Library Page - Library list section
+import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 import { fetchWeekTrends } from './functions/movieApiService';
 
 //=========================Достаем данные с Локал сторедж и рисуем блок с фильмами========================
@@ -6,10 +7,17 @@ import { fetchWeekTrends } from './functions/movieApiService';
 //function outFromLocalStorage() {
 //  const checkData = JSON.parse(localStorage.getItem(STRORAGE_LIST_LIBRARY));
 //  if (checkData) {
-//    libraryListCreatePage(checkData);
-//  } else {
+//  refs.libraryMovieCard.innerHTML = fetchWeekTrends(checkData);
+//  }
+//else {
 //=============если фильмов нет рисуем то что по умолчанию ==================
-//    LibraryEmptyList();
+//refs.libraryOppsText.innerHTML = `
+//<p>OOPS...</p>
+//<p>We are very sorry!</p>
+//<p>You don’t have any movies at your library.</p>
+
+//`;
+
 //  }
 //}
 
@@ -29,7 +37,7 @@ function getRandomInt(max) {
 const a = getRandomInt(10);
 
 if (a > 5) {
-  refs.libraryMovieCard.innerHTML = fetchWeekTrends(data.results);
+  refs.libraryMovieCard.innerHTML = fetchWeekTrends();
 } else {
   refs.libraryOppsText.innerHTML = `
       <p>OOPS...</p>
