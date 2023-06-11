@@ -1,18 +1,17 @@
 // Footer js
+const developersInfo = document.querySelector('[data-modal-open]');
+const modalWindow = document.querySelector('[data-window-modal]');
+const modalContent = document.querySelector('[data-modal-content]');
+const modalCloseButton = document.querySelector('[data-modal-close]');
+const svgCloseButton = document.querySelector('[data-modal-cross]');
 
-document.querySelector('.developers-info').addEventListener('click', function() {
-    document.getElementById('modal-window-footer').style.display = 'block';
+developersInfo.addEventListener('click', () => {
+  modalWindow.style.display = 'block';
 });
 
-document.getElementById('modal-window-footer').addEventListener('click', function(e) {
-    if (e.target === this) {
-        this.style.display = 'none';
-    }
+modalWindow.addEventListener('click', (event) => {
+  if (event.target === modalWindow || event.target === modalCloseButton || event.target === svgCloseButton) {
+    modalWindow.style.display = 'none';
+  }
 });
 
-document.addEventListener('click', function(e) {
-    const modal = document.getElementById('modal-window-footer');
-    if (!modal.contains(e.target) && e.target !== document.querySelector('.developers-info')) {
-        modal.style.display = 'none';
-    }
-});
