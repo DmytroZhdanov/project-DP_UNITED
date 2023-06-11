@@ -1,6 +1,6 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 
-function generateHomeHeroMarkup({
+function generateHeroMarkup({
   id,
   title,
   vote_average,
@@ -8,20 +8,23 @@ function generateHomeHeroMarkup({
   backdrop_path,
 }) {
   return `
-  <div class="backdrop-hero-main-film-img-container">
+  <div class="backdrop-hero-img-container backdrop-hero-film-img-container">
     <img
       src="https://image.tmdb.org/t/p/original/${backdrop_path}"
       alt="${title}"
-      class="backdrop-hero-main-film-img"
+      class="backdrop-hero-img backdrop-hero-film-img"
     />
   </div>
-  <div class="container hero-main-film-container">
-    <div class="hero-main-film-info">
-      <h2 class="title hero-main-film-title">${title}</h2>
-      <div class="hero-main-film-rating rating-stars-wrapper">
-        ${generateRatingStarsMarkup(vote_average)}
+  <div class="container hero-film-container">
+    <h1 class="visually-hidden">Cinemania: Discover the world of movies</h1>
+    <div class="hero-info hero-film-info">
+      <h2 class="title hero-title hero-film-title">${title}</h2>
+      <div class="hero-film-rating">
+        <div class="hero-rating-stars-wrapper">
+          ${generateRatingStarsMarkup(vote_average)}
+        </div>
       </div>
-      <p class="hero-main-film-overview">
+      <p class="hero-text hero-film-overview">
         ${overview}
       </p>
       <ul class="hero-buttons-list">
@@ -38,4 +41,4 @@ function generateHomeHeroMarkup({
   </div>`;
 }
 
-export { generateHomeHeroMarkup };
+export { generateHeroMarkup };
