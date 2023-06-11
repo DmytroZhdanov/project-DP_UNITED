@@ -6,7 +6,6 @@ import { getGenresByGenresId } from './getGenresByGenresId';
  * @returns {String} markup for movie cards. You should insert resul inside <ul> by innerHTML
  */
 function generateMovieCardsMarkup(arr) {
-
   const markup = arr
     .map(
       ({ genre_ids, id, poster_path, release_date, title, vote_average }) => {
@@ -15,9 +14,7 @@ function generateMovieCardsMarkup(arr) {
           ? `https://image.tmdb.org/t/p/w500${poster_path}`
           : './images/image-not-found.jpg';
         const ratingStarsMurkup = generateRatingStarsMarkup(vote_average);
-
         const genres = getGenresByGenresId(genre_ids).join(', ');
-
         return `<li class="cards-item" data-movie-card-id="${id}">
       <img
         src="${posterPath}"
@@ -38,7 +35,6 @@ function generateMovieCardsMarkup(arr) {
     .join('');
 
   return markup;
-
 }
 
 export { generateMovieCardsMarkup };
