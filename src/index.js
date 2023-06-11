@@ -7,16 +7,12 @@ import './js/upcoming';
 import './js/footer';
 import './js/modal-trailer';
 import './js/modal-movie-details';
-import { setGenresToSS } from './js/functions/setGenresToSS'
+import { setGenresToSS } from './js/functions/setGenresToSS';
 
-setGenresToSS()
+setGenresToSS();
 
-const headerCurrent = document.querySelector('[data-header-home]');
-const headerCatCurrent = document.querySelector('[data-header-catalogue]');
-const headerLibCurrent = document.querySelector('[data-header-library]');
-headerCurrent.classList.add('js-current');
-headerLibCurrent.classList.remove('js-current');
-headerCatCurrent.classList.remove('js-current');
+const headerCurrent = document.querySelectorAll('[data-header-home]');
+headerCurrent.forEach(i => i.classList.add('js-current'));
 
 // import { getGenresByGenresId } from './js/functions/getGenresByGenresId';
 

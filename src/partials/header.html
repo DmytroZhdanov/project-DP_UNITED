@@ -1,8 +1,67 @@
 <!-- Header -->
-<nav>
-  <ul>
-    <li><a  href="./index.html" data-header-home>Home</a></li>
-    <li><a  href="./catalogue.html" data-header-catalogue>Catalogue</a></li>
-    <li><a  href="./library.html" data-header-library>Library</a></li>
-  </ul>
-</nav>
+
+<div class="container header-container">
+  <!-- Site navigation -->
+  <nav class="header-nav">
+    <!-- Logo -->
+    <a class="header-logo logo link" href="./index.html">
+      <svg class="header-logo-icon" width="48" height="48">
+        <use href="./images/icons.svg#icon-logo"></use>
+      </svg>
+      <span class="header-logo-name">Cinemania</span>
+    </a>
+
+    <!-- Navigation Menu -->
+    <ul class="menu list">
+      <li class="menu-item">
+        <a class="menu-link link" href="./index.html" data-header-home>home</a>
+      </li>
+      <li class="menu-item">
+        <a class="menu-link link" href="./catalogue.html" data-header-catalogue
+          >catalog</a
+        >
+      </li>
+      <li class="menu-item">
+        <a class="menu-link link" href="./library.html" data-header-library
+          >my library</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <!-- Mobile Menu Open Button -->
+  <button class="btn btn-menu js-open-menu" type="button">MENU</button>
+
+  <!-- Dark-Light -->
+  <div class="toolbar">
+    <!-- Розмітка переключателя теми -->
+    <div class="theme-switch">
+      <div class="theme-switch__control">
+        <label
+          aria-hidden="true"
+          class="theme-switch__track"
+          for="theme-switch-toggle"
+        >
+          <input
+            class="theme-switch__toggle visually-hidden"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Dark-Light theme switcher"
+          />
+          <div class="theme-switch-bg">
+            <svg class="theme-switch-icon-moon" width="14" height="14">
+              <use href="./images/icons.svg#icon-moon"></use>
+            </svg>
+            <svg class="theme-switch-icon-sun" width="14" height="14">
+              <use href="./images/icons.svg#icon-sun"></use>
+            </svg>
+            <svg class="theme-switch-icon" width="14" height="14">
+              <use href="./images/icons.svg#icon-switch"></use>
+            </svg>
+          </div>
+        </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div>
+      </div>
+    </div>
+  </div>
+</div>

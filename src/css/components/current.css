@@ -1,3 +1,8 @@
-.js-current {
+.js-current,
+.menu-link.js-current,
+.mobile-menu-link.js-current,
+body.light-theme .js-current,
+body.light-theme .menu-link.js-current,
+body.light-theme .mobile-menu-link.js-current {
   color: var(--primary-brand-color);
 }
