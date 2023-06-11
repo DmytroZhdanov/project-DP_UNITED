@@ -1,5 +1,4 @@
 // Library Page - Library list section
-import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 import { fetchWeekTrends } from './functions/movieApiService';
 
 //=========================Достаем данные с Локал сторедж и рисуем блок с фильмами========================
