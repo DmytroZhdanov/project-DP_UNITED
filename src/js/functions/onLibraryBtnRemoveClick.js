@@ -1,17 +1,21 @@
 import { generateLibraryBtnMarkup } from './generateLibraryBtnMarkup';
 import { onLibraryBtnAddClick } from './onLibraryBtnAddClick';
+import { removeMovieFromLibrary } from './removeMovieFromLibrary';
 
 /**
  * Sets local storage item with key 'library' and value of Array of movie objects. Removes item
  * @param {*} movieObject
  */
 function onLibraryBtnRemoveClick(classes, id, movieObject) {
-  const filmsInLibrary = localStorage.getItem('library');
-  const moviesArr = JSON.parse(filmsInLibrary);
-  const newMoviesArray = moviesArr.filter(value => value.id !== movieObject.id);
-  localStorage.setItem('library', JSON.stringify(newMoviesArray));
-
+  removeMovieFromLibrary(movieObject);
   const libraryBtnContainer = document.querySelector('[data-library-btn]');
+
+  const libraryBtnRemove = document.querySelector(
+    '[data-remove-from-library-btn]'
+  );
+  libraryBtnRemove.removeEventListener('click', () => {
+    onLibraryBtnRemoveClick(btnClasses, id, movieObject);
+  });
 
   const changedlibraryBtn = generateLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
