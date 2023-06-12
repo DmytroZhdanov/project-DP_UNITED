@@ -1,1 +1,126 @@
 /* Header styles */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 92px;
+  gap: 8px;
+}
+.header-logo-icon {
+  width: 32px;
+  height: 32px;
+}
+.header-logo-name {
+  display: none;
+}
+body.light-theme .header-logo-name {
+  color: #282828;
+}
+.menu {
+  display: none;
+}
+.btn-menu {
+  color: #b7b7b7;
+  padding: 0;
+  margin-right: auto;
+}
+body.light-theme .btn-menu {
+  color: #595959;
+}
+.theme-switch-bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  width: 44px;
+  height: 18px;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border-radius: 194px;
+  cursor: pointer;
+}
+.theme-switch-icon {
+  position: absolute;
+  left: 3px;
+  transform: rotate(0deg);
+  transition: transform var(--transition-dur-and-func);
+}
+.theme-switch__toggle:checked + .theme-switch-bg .theme-switch-icon {
+  transform: translateX(24px) rotate(180deg);
+}
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .header-logo-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .header-logo {
+    margin-right: 59px;
+  }
+  .header-logo-name {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1.17;
+  }
+  .header-nav {
+    display: flex;
+    margin-right: auto;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .menu-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #b7b7b7;
+  }
+  body.light-theme .menu-link {
+    color: #595959;
+  }
+  .btn-menu {
+    display: none;
+  }
+  .theme-switch-bg {
+    width: 60px;
+    height: 24px;
+  }
+  .theme-switch-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .theme-switch__toggle:checked + .theme-switch-bg .theme-switch-icon {
+    transform: translateX(36px) rotate(180deg);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header-container {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  .header-logo {
+    margin-right: 307px;
+  }
+  .menu {
+    gap: 40px;
+  }
+  .menu-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #b7b7b7;
+  }
+}

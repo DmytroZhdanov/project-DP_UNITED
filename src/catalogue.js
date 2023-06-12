@@ -10,9 +10,6 @@ import { setGenresToSS } from './js/functions/setGenresToSS';
 
 setGenresToSS();
 
-const headerCurrent = document.querySelector('[data-header-home]');
-const headerCatCurrent = document.querySelector('[data-header-catalogue]');
-const headerLibCurrent = document.querySelector('[data-header-library]');
-headerCatCurrent.classList.add('js-current');
-headerLibCurrent.classList.remove('js-current');
-headerCurrent.classList.remove('js-current');
+const headerCatCurrent = document.querySelectorAll('[data-header-catalogue]');
+
+headerCatCurrent.forEach(i => i.classList.add('js-current'));

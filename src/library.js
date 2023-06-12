@@ -8,9 +8,5 @@ import { setGenresToSS } from './js/functions/setGenresToSS';
 
 setGenresToSS();
 
-const headerCurrent = document.querySelector('[data-header-home]');
-const headerCatCurrent = document.querySelector('[data-header-catalogue]');
-const headerLibCurrent = document.querySelector('[data-header-library]');
-headerLibCurrent.classList.add('js-current')
-headerCatCurrent.classList.remove('js-current')
-headerCurrent.classList.remove('js-current')
+const headerLibCurrent = document.querySelectorAll('[data-header-library]');
+headerLibCurrent.forEach(i => i.classList.add('js-current'));
