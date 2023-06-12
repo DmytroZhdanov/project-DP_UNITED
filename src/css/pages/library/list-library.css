@@ -1,0 +1,72 @@
+.btn-list-search {
+  display: inline-block;
+}
+
+@media screen and (min-width: 320px) {
+  .library-section {
+    text-align: center;
+  }
+  .movie-cards-list-css {
+    margin-top: 96px;
+    justify-content: center;
+  }
+
+  .btn-list-search {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  .library-ops-text-css {
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.16;
+    color: #ffffff;
+    margin-top: 44px;
+    margin-bottom: 42px;
+  }
+  .library-ops-text-css p {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .movie-cards-list-css {
+    margin-top: 140px;
+  }
+
+  .btn-list-search {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+  .library-ops-text-css {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+  .library-ops-text-css p {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .movie-cards-list-css {
+    margin-top: 176px;
+  }
+
+  .btn-list-search {
+    margin-top: 40px;
+    margin-bottom: 96px;
+  }
+
+  .library-ops-text-css {
+    font-size: 32px;
+    line-height: 1.125;
+    margin-top: 160px;
+    margin-bottom: 108px;
+  }
+  .library-ops-text-css p {
+    margin-bottom: 28px;
+  }
+}
