@@ -15,21 +15,23 @@ function generateMovieCardsMarkup(arr) {
           : './images/image-not-found.jpg';
         const ratingStarsMurkup = generateRatingStarsMarkup(vote_average);
         const genres = getGenresByGenresId(genre_ids).join(', ');
-        return `<li class="cards-item" data-movie-card-id="${id}">
-      <img
-        src="${posterPath}"
-        alt="Poster of the movie"
-        class="movie-card-poster"
-      />
-      <div class="cards-content">
-        <div class="cards-text-content">
-          <h3 class="cards-title">${title}</h3>
-          <p class="cards-text">${genres} | ${year}</p>
-        </div>
-        <div class="rating-stars-wrapper">${ratingStarsMurkup}
-        </div>
-      </div>
-    </li>`;
+        return `<li class="cards-item">
+                  <button type="button" class="btn cards-item-btn" data-movie-card-id="${id}">
+                    <img
+                      src="${posterPath}"
+                      alt="Poster of the movie"
+                      class="movie-card-poster"
+                    />
+                    <div class="cards-content">
+                      <div class="cards-text-content">
+                        <h3 class="cards-title">${title}</h3>
+                        <p class="cards-text">${genres} | ${year}</p>
+                      </div>
+                      <div class="rating-stars-wrapper">${ratingStarsMurkup}
+                      </div>
+                    </div>
+                  </button>
+                </li>`;
       }
     )
     .join('');

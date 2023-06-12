@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.cards-item-btn {
+  padding: 0;
+}
+
 .movie-card-poster {
   width: 100%;
   height: 100%;
@@ -34,6 +38,10 @@
     rgba(0, 0, 0, 0) 63.48%,
     rgba(0, 0, 0, 0.9) 92.16%
   );
+}
+
+.cards-text-content {
+  text-align: left;
 }
 
 .cards-title {
