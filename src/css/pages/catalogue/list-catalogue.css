@@ -4,8 +4,6 @@
     padding-bottom: 40px;
   }
 
-  .visualy-hidden {
-  }
   .catalog-search-form {
     margin-left: auto;
     margin-right: auto;
@@ -50,6 +48,12 @@
     cursor: pointer;
   }
 
+  .btn-search-wrapper {
+    display: block;
+    position: relative;
+    margin-left: 16px;
+  }
+
   .btn-icon-catalog {
     position: absolute;
     text-align: center;
@@ -66,16 +70,8 @@
     transform: rotate(-90deg);
     stroke: #ffffff;
   }
-  .icon-search {
-    stroke: #ffffff;
-  }
 
-  .btn-search {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 16px;
-  }
+
   .catalog-movies-list {
     margin-bottom: 20px;
     width: 100%;
@@ -230,11 +226,6 @@
     width: 204px;
   }
 
-  .btn-search {
-    width: 44px;
-    height: 44px;
-  }
-
   .catalog-movies-list {
     margin-bottom: 44px;
   }
@@ -282,11 +273,6 @@
 
   .catalog-search-name {
     width: 335px;
-  }
-
-  .btn-search {
-    width: 48px;
-    height: 48px;
   }
 
   .catalog-movies-list {
