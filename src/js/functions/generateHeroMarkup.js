@@ -27,14 +27,12 @@ function generateHeroMarkup(movieObject) {
           class="backdrop-hero-img backdrop-hero-film-img"
           src="https://image.tmdb.org/t/p/original/${backdrop_path}"
           alt="${title}"
-          loading="lazy"
         />
       </picture>`
       : `<img
           class="backdrop-hero-img backdrop-hero-film-img"
           src="${defaultImage}"
           alt="Home hero image"
-          loading="lazy"
         />`
   }  
   </div>
