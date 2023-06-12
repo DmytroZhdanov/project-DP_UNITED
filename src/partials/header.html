@@ -36,31 +36,29 @@
     <!-- Розмітка переключателя теми -->
     <div class="theme-switch">
       <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle visually-hidden"
+          type="checkbox"
+          name="theme"
+          id="theme-switch-toggle"
+          aria-label="Dark-Light theme switcher"
+        />
         <label
           aria-hidden="true"
           class="theme-switch__track"
           for="theme-switch-toggle"
-        >
-          <input
-            class="theme-switch__toggle visually-hidden"
-            type="checkbox"
-            name="theme"
-            id="theme-switch-toggle"
-            aria-label="Dark-Light theme switcher"
-          />
-          <div class="theme-switch-bg">
-            <svg class="theme-switch-icon-moon" width="14" height="14">
-              <use href="./images/icons.svg#icon-moon"></use>
-            </svg>
-            <svg class="theme-switch-icon-sun" width="14" height="14">
-              <use href="./images/icons.svg#icon-sun"></use>
-            </svg>
-            <svg class="theme-switch-icon" width="14" height="14">
-              <use href="./images/icons.svg#icon-switch"></use>
-            </svg>
-          </div>
-        </label>
-        <div aria-hidden="true" class="theme-switch__marker"></div>
+        ></label>
+        <div aria-hidden="true" class="theme-switch__marker">
+          <svg class="theme-switch-icon-moon" width="14" height="14">
+            <use href="./images/icons.svg#icon-moon"></use>
+          </svg>
+          <svg class="theme-switch-icon-sun" width="14" height="14">
+            <use href="./images/icons.svg#icon-sun"></use>
+          </svg>
+          <svg class="theme-switch-icon" width="14" height="14">
+            <use href="./images/icons.svg#icon-switch"></use>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
