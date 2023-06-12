@@ -1,28 +1,34 @@
 // Hero main js
 import { fetchDayTrends } from '../js/functions/movieApiService';
-import { generateHomeHeroMarkup } from './functions/generateHomeHeroMarkup';
+import { generateHeroMarkup } from './functions/generateHeroMarkup';
+import { openModalMovieDetails } from './functions/openModalMovieDetails';
 
 const refs = {
-  heroMainSectionEl: document.querySelector('[data-hero-main-section]'),
-  defaultHomeHeroSection: document.querySelector(
-    '[data-default-home-hero-section]'
-  ),
+  heroSectionEl: document.querySelector('[data-hero-section]'),
+  defaultHeroSectionEl: document.querySelector('[data-default-hero-section]'),
 };
 
-onMainHeroLoad();
+onHeroLoad();
 
-async function onMainHeroLoad() {
+async function onHeroLoad() {
   try {
     const response = await fetchDayTrends();
-    const randomNumber = getRandomNumber(response.results.length);
-    const heroFilm = response.results[randomNumber];
-    refs.heroMainSectionEl.innerHTML = generateHomeHeroMarkup(heroFilm);
+    const randomDayMovie = getRandomDayMovie(response.results.length);
+    const heroFilm = response.results[randomDayMovie];
+    refs.heroSectionEl.innerHTML = generateHeroMarkup(heroFilm);
+
+    const modalMovieDetailsBtn = document.querySelector(
+      '[data-modal-movie-details-btn]'
+    );
+    modalMovieDetailsBtn.addEventListener('click', () => {
+      openModalMovieDetails(heroFilm);
+    });
   } catch (error) {
     console.error(error.message);
-    refs.defaultHomeHeroSection.classList.remove('is-hidden');
+    refs.defaultHeroSectionEl.classList.remove('is-hidden');
   }
 }
 
-function getRandomNumber(arrLength) {
+function getRandomDayMovie(arrLength) {
   return Math.round(Math.random() * (arrLength - 1));
 }

@@ -36,12 +36,16 @@
 /* ============================== /fonts ============================== */
 
 body {
-  background-color: var(--dark-theme-background-color);
   color: var(--primary-text-color);
   font-family: var(--primary-font-family);
+  transition: background-color var(--transition-dur-and-func);
 }
 
-.light-theme {
+body.dark-theme {
+  background-color: var(--dark-theme-background-color);
+}
+
+body.light-theme {
   background-color: var(--light-theme-background-color);
 }
 

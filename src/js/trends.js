@@ -1,6 +1,7 @@
 // Weekly trends js
 import { fetchWeekTrends } from './functions/movieApiService';
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
+import { onMovieCardClick } from './functions/onMovieCardClick';
 
 const weeklyTrendsList = document.querySelector('[data-weekly-trends-list]');
 
@@ -13,4 +14,6 @@ async function renderWeeklyTrendsItems() {
   const moviesToRender = response.results.slice(0, moviesNumber);
   const weeklyTrendsMarkup = generateMovieCardsMarkup(moviesToRender);
   weeklyTrendsList.innerHTML = weeklyTrendsMarkup;
+
+  weeklyTrendsList.addEventListener('click', (e) => { onMovieCardClick(e) });
 }

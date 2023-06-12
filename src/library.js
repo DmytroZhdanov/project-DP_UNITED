@@ -4,10 +4,9 @@ import './js/mobile-menu';
 import './js/hero';
 import './js/list-library';
 import './js/footer';
+import { setGenresToSS } from './js/functions/setGenresToSS';
 
-const headerCurrent = document.querySelector('[data-header-home]');
-const headerCatCurrent = document.querySelector('[data-header-catalogue]');
-const headerLibCurrent = document.querySelector('[data-header-library]');
-headerLibCurrent.classList.add('js-current')
-headerCatCurrent.classList.remove('js-current')
-headerCurrent.classList.remove('js-current')
+setGenresToSS();
+
+const headerLibCurrent = document.querySelectorAll('[data-header-library]');
+headerLibCurrent.forEach(i => i.classList.add('js-current'));
