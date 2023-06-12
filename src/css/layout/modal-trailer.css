@@ -1,5 +1,4 @@
-/* Styles for modal window for trailer */
-.backdrop-modal {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,29 +6,21 @@
   width: 100vw;
   height: 100vh;
   opacity: 1;
-  transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop-modal.is-hidden {
-  opacity: 0;
-  pointer-events: none;
+  transition: opacity var(--transition-dur-and-func);
 }
 .backdrop-modal.is-hidden .modal-trailer {
   transform: translate(-50%, -50%) scale(1.1);
 }
 .modal-trailer {
   position: relative;
-  max-width: 280px;
-  padding: 39px 33px 8px 33px;
-  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
-  border-radius: 16px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-dur-and-func);
+  width: 280px;
+  padding: 39px 33px 8px 33px;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 16px;
 }
 .dark-theme .modal-trailer {
   background-color: var(--dark-theme-background-color);
@@ -42,6 +33,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  cursor: pointer;
   top: 20px;
   right: 20px;
   padding: 0;
@@ -59,9 +51,7 @@
 .modal-close-icon {
   width: 7px;
   height: 7px;
-  transition-property: stroke;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke var(--transition-dur-and-func);
 }
 .modal-close-icon:hover {
   stroke: var(--primary-brand-color);
@@ -69,7 +59,7 @@
 .modal-text {
   font-family: var(--primary-font-family);
   font-size: 16px;
-  line-height: 1.19;
+  line-height: 1.17; /* line-height: 1.4; тоді типу виглядає як по макету, але шрифт не той*/
   margin-bottom: 24px;
 }
 .dark-theme .modal-text {
@@ -78,14 +68,13 @@
 .light-theme .modal-text {
   color: var(--dark-theme-background-color);
 }
-
 .modal-picture {
   margin: auto;
 }
 @media screen and (min-width: 768px) {
   .modal-trailer {
-    max-width: 609px;
-    padding: 124px 10px 16px 44px;
+    width: 609px;
+    padding: 150px 0px 150px 50px;
   }
   .modal-btn-close {
     width: 24px;
@@ -98,23 +87,20 @@
     height: 10.5px;
   }
   .modal-text {
-    position: absolute;
     font-size: 24px;
-    line-height: 1.16;
-    max-width: 321px;
+    line-height: 1.17; /*цього можна не писати якщо ставити 1.4 */
+    width: 321px;
     margin-bottom: 0;
-    padding-top: 8px;
   }
   .modal-picture {
-    margin-right: 0;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }
 @media screen and (min-width: 1280px) {
   .modal-trailer {
-    max-width: 700px;
-    padding: 77px 0 5px 50px;
-  }
-  .modal-text {
-    padding-top: 73px;
+    width: 700px;
+    padding: 150px 0 150px 50px;
   }
 }
