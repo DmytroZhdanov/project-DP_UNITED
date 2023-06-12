@@ -11,8 +11,11 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
     popularity,
     genre_ids,
     id,
+    genres,
   } = movieObject;
-  const genres = getGenresByGenresId(genre_ids);
+  const genresString = genre_ids
+    ? getGenresByGenresId(genre_ids)
+    : genres.map(genre => genre.name);
   const libraryBtn = generateLibraryBtnMarkup(classes, id);
   const posterPath = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
@@ -31,7 +34,7 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
           <h3>Popularity</h3>
           <p>${popularity}</p>
           <h3>Genre</h3>
-          <p class='modal-genre'>${genres}</p>
+          <p class='modal-genre'>${genresString}</p>
           <h3>About</h3>
           <p>${overview}</p>
           <div data-library-btn>
