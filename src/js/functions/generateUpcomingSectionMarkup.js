@@ -11,8 +11,7 @@ function generateUpcomingSectionMarkup({
   vote_average,
   vote_count,
 }) {
-  const genresNameArr = getGenresByGenresId(genre_ids);
-  const genres = genresNameArr.join(', ');
+  const genres = getGenresByGenresId(genre_ids).join(', ');
 
   return ` <picture>
       <source
