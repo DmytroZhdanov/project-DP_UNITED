@@ -50,18 +50,18 @@
   border: none;
   background-color: transparent;
 }
+.dark-theme .modal-close-icon {
+  stroke: var(--primary-text-color);
+}
+.light-theme .modal-close-icon {
+  stroke: var(--secondary-black-color);
+}
 .modal-close-icon {
   width: 7px;
   height: 7px;
   transition-property: stroke;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.dark-theme .modal-close-icon {
-  stroke: var(--primary-text-color);
-}
-.light-theme .modal-close-icon {
-  stroke: var(--secondary-black-color);
 }
 .modal-close-icon:hover {
   stroke: var(--primary-brand-color);
