@@ -1,6 +1,5 @@
 // Upcoming this month js
 import { fetchUpcomingThisMonth } from './functions/movieApiService';
-
 import { generateUpcomingSectionMarkup } from './functions/generateUpcomingSectionMarkup';
 
 gettingMovie();
