@@ -1,6 +1,6 @@
 // Catalogue js
-// import './js/header';
-// import './js/mobile-menu';
+import './js/header';
+import './js/mobile-menu';
 import './js/hero';
 // import './js/list-catalogue';
 import './js/footer';

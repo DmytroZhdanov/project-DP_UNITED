@@ -38,6 +38,7 @@
 body {
   color: var(--primary-text-color);
   font-family: var(--primary-font-family);
+  transition: background-color var(--transition-dur-and-func);
 }
 
 body.dark-theme {
