@@ -1,14 +1,42 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
+import defaultImage from '../../images/hero-main-desc-1x-1280.jpg';
 
 function generateHeroMarkup(movieObject) {
   const { id, title, vote_average, overview, backdrop_path } = movieObject;
   return `
   <div class="backdrop-hero-img-container backdrop-hero-film-img-container">
-    <img
-      src="https://image.tmdb.org/t/p/original/${backdrop_path}"
-      alt="${title}"
-      class="backdrop-hero-img backdrop-hero-film-img"
-    />
+  ${
+    backdrop_path
+      ? `<picture>
+        <source
+          srcset="
+            https://image.tmdb.org/t/p/w1280/${backdrop_path} 1280w,
+            https://image.tmdb.org/t/p/original/${backdrop_path} 2560w,
+            https://image.tmdb.org/t/p/original/${backdrop_path} 3840w,
+            https://image.tmdb.org/t/p/w780/${backdrop_path}    768w,
+            https://image.tmdb.org/t/p/original/${backdrop_path}  1536w,
+            https://image.tmdb.org/t/p/original/${backdrop_path}  2304w,
+            https://image.tmdb.org/t/p/w500/${backdrop_path}    320w,
+            https://image.tmdb.org/t/p/w780/${backdrop_path}    640w,
+            https://image.tmdb.org/t/p/w1280/${backdrop_path}    960w
+          "
+          sizes="(min-width: 1280px) 1280px, (min-width: 768px) 768px, (min-width: 320px) 320px, 100vw"
+          type="image/jpeg"
+        />
+        <img
+          class="backdrop-hero-img backdrop-hero-film-img"
+          src="https://image.tmdb.org/t/p/original/${backdrop_path}"
+          alt="${title}"
+          loading="lazy"
+        />
+      </picture>`
+      : `<img
+          class="backdrop-hero-img backdrop-hero-film-img"
+          src="${defaultImage}"
+          alt="Home hero image"
+          loading="lazy"
+        />`
+  }  
   </div>
   <div class="container hero-film-container">
     <h1 class="visually-hidden">Cinemania: Discover the world of movies</h1>
