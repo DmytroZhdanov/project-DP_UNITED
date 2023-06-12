@@ -1,0 +1,114 @@
+/* Стилі для рендерного Hero */
+
+.backdrop-hero-film-img-container {
+  position: relative;
+}
+.backdrop-hero-film-img-container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  background-image: linear-gradient(
+    86.47deg,
+    #111111 33.63%,
+    rgba(17, 17, 17, 0) 76.86%
+  );
+}
+.backdrop-hero-film-img {
+  object-fit: cover;
+  height: 380px;
+}
+.hero-film-title {
+  max-width: 280px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero-film-rating {
+  margin-bottom: 16px;
+}
+.hero-film-overview {
+  max-width: 180px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.hero-buttons-list {
+  display: flex;
+}
+.hero-btn-item {
+  display: block;
+  width: 117px;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-buttons-list {
+    gap: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop-hero-film-img-container::after {
+    background-image: linear-gradient(
+      81.57deg,
+      #111111 12.76%,
+      rgba(17, 17, 17, 0) 72.65%
+    );
+  }
+  .backdrop-hero-film-img {
+    height: 432px;
+  }
+  .hero-film-info {
+    padding-top: 36px;
+  }
+  .hero-film-title {
+    max-width: 300px;
+  }
+  .hero-film-rating {
+    margin-bottom: 20px;
+  }
+  .hero-film-overview {
+    max-width: 300px;
+    margin-bottom: 28px;
+  }
+  .hero-btn-item {
+    width: 128px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .backdrop-hero-film-img-container::after {
+    background-image: linear-gradient(
+      83.06deg,
+      #111111 11.91%,
+      rgba(17, 17, 17, 0) 73.11%
+    );
+  }
+  .hero-film-container {
+    padding-left: 117px;
+  }
+  .backdrop-hero-film-img {
+    height: 720px;
+  }
+  .hero-film-info {
+    padding-top: 118px;
+  }
+  .hero-film-title {
+    max-width: 400px;
+  }
+  .hero-film-rating {
+    margin-bottom: 28px;
+  }
+  .hero-film-overview {
+    max-width: 370px;
+    margin-bottom: 36px;
+  }
+  .hero-btn-item {
+    width: 128px;
+  }
+}

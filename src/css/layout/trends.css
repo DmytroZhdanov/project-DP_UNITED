@@ -9,13 +9,15 @@
 .weekly-trends-section {
   padding-top: 40px;
 }
-
+.light-theme .weekly-trends-head {
+  color: var(--dark-theme-background-color);
+}
 .weekly-trends-link {
   font-family: var(--primary-font-family);
   font-weight: 500;
   font-size: 14px;
   line-height: calc(19 / 14);
-  color: #f87719;
+  color: var(--primary-brand-color);
 }
 
 .weekly-trends-nav {

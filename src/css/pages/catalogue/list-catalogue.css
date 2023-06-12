@@ -1,0 +1,291 @@
+@media screen and (min-width: 320px) {
+  .catalog {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .visualy-hidden {
+  }
+  .catalog-search-form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    max-width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .search-film-year {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .catalog-input {
+    padding: 11px 0 11px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background: #111111;
+    font-weight: 500;
+    font-size: 14px;
+    color: #b7b7b7;
+  }
+  .catalog-search-film {
+    width: 173px;
+  }
+  .catalog-search-year {
+    width: 95px;
+  }
+
+  .catalog-search-name {
+    width: 224px;
+  }
+  .catalog-span {
+    position: relative;
+    color: #f8f8f8;
+  }
+  .icon-close {
+    stroke: #ffffff;
+    cursor: pointer;
+  }
+
+  .btn-icon-catalog {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    right: 12px;
+    border: none;
+    background: transparent;
+    transform: translateY(-50%);
+    width: 18px;
+    cursor: pointer;
+  }
+
+  .icon-arrow {
+    transform: rotate(-90deg);
+    stroke: #ffffff;
+  }
+  .icon-search {
+    stroke: #ffffff;
+  }
+
+  .btn-search {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 16px;
+  }
+  .catalog-movies-list {
+    margin-bottom: 20px;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .catalog-desc {
+    font-weight: 400;
+    margin-top: 12px;
+    width: 280px;
+    height: 120px;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /*- BTN- TUI-PAGINATION-*/
+  .tui-pagination#tui-pagination-container {
+    height: 24px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+  }
+  .tui-pagination#tui-pagination-container > .tui-page-btn {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    padding: 7px 2px;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1;
+    color: #b7b7b7;
+    border: 1px solid #b7b7b7;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-first {
+    display: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-last {
+    display: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev-is-ellip.tui-first-child {
+    margin-right: 0;
+    border: none;
+  }
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev-is-ellip.tui-first-child
+    > .tui-ico-ellip {
+    width: 8px;
+    font-size: 10px;
+    margin-top: 1px;
+    background: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-next-is-ellip.tui-last-child {
+    margin-right: 0;
+    border: none;
+  }
+
+  .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-next-is-ellip.tui-last-child
+    > .tui-ico-ellip {
+    margin-top: 7px;
+    width: 8px;
+    font-size: 10px;
+    margin-top: 1px;
+    background: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-prev {
+    margin-right: 4px;
+    color: #f8f8f8;
+    border: none;
+  }
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-next {
+    margin-left: 4px;
+    margin-right: 0;
+    border: none;
+  }
+
+  /* .tui-pagination#tui-pagination-container
+    > .tui-page-btn.tui-prev
+    > .tui-ico-prev {
+    
+  } */
+
+  .tui-pagination.dark-theme#tui-pagination-container
+    .tui-page-btn.tui-is-selected
+    .dark-theme {
+    /* border: 1px solid var(--dark-theme-grey-color);
+    color: var(--dark-theme-grey-color); */
+  }
+
+  /* .tui-pagination#tui-pagination-container .light-theme .tui-page-btn {
+    border: 1px solid var(--light-theme-grey-color);
+    color: #111111;
+  } */
+
+  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-is-selected {
+    border: none;
+    background-image: var(--primary-button-color);
+    color: #ffffff;
+  }
+
+  .tui-page-btn.tui-is-selected.dark-theme.btn-current {
+    color: #ffffff;
+  }
+
+  .light-theme.tui-page-btn.btn-current {
+    color: #111111;
+  }
+  */ .target-element {
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .catalog {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .catalog-search-form {
+    width: 355px;
+    flex-wrap: nowrap;
+    margin-bottom: 36px;
+  }
+  .search-film-year {
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  .catalog-search-film {
+    width: 188px;
+  }
+
+  .catalog-search-name {
+    width: 204px;
+  }
+
+  .btn-search {
+    width: 44px;
+    height: 44px;
+  }
+
+  .catalog-movies-list {
+    margin-bottom: 44px;
+  }
+}
+/*- BTN- TUI-PAGINATION-*/
+/* .tui-pagination#tui-pagination-container {
+  height: 40px;
+  font-size: 14px;
+}
+
+.tui-pagination#tui-pagination-container > .tui-page-btn {
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 13px 2px;
+  font-size: 14px;
+}
+
+.tui-pagination#tui-pagination-container
+  > .tui-page-btn.tui-prev-is-ellip.tui-first-child
+  > .tui-ico-ellip {
+  width: 12px;
+  font-size: 14px;
+  margin-top: 1px;
+} */
+
+@media screen and (min-width: 1280px) {
+  .catalog {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .catalog-search-form {
+    width: 502px;
+    margin-bottom: 48px;
+  }
+
+  .search-film-year {
+    gap: 20px;
+  }
+
+  .catalog-search-film {
+    width: 315px;
+  }
+
+  .catalog-search-name {
+    width: 335px;
+  }
+
+  .btn-search {
+    width: 48px;
+    height: 48px;
+  }
+
+  .catalog-movies-list {
+    margin-bottom: 60px;
+  }
+}
