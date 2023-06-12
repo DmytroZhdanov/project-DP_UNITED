@@ -87,6 +87,7 @@
   background: var(--primary-text-color);
   border-radius: 5px;
 }
+
 .upcoming-inner-color {
   color: var(--primary-text-color);
   margin: 0 4px;
@@ -107,6 +108,27 @@
 
 .upcoming-description {
   overflow-y: auto;
+}
+
+.light-theme .upcoming-title,
+.light-theme .upcoming-headline,
+.light-theme .upcoming-subject,
+.light-theme .upcoming-caption {
+  color: var(--dark-theme-background-color);
+}
+
+.light-theme .upcoming-inner-box,
+.light-theme .upcoming-inner-box-votes,
+.light-theme .upcoming-title,
+.light-theme .upcoming-famous,
+.light-theme .upcoming-janres,
+.light-theme .upcoming-description {
+  color: var(--secondary-black-color);
+}
+
+.light-theme .upcoming-inner-box,
+.light-theme .upcoming-inner-box-votes {
+  background: var(--secondary-text-color);
 }
 
 @media screen and (min-width: 320px) {
