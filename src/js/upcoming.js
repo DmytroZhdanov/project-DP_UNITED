@@ -8,6 +8,6 @@ async function gettingMovie() {
   const uncomingArray = data.results;
   const randomMovie =
     uncomingArray[Math.floor(Math.random() * uncomingArray.length)];
-  const upcomingConatainer = document.querySelector('.upcoming-flex');
+  const upcomingConatainer = document.querySelector('[data-upcoming]');
   upcomingConatainer.innerHTML = generateUpcomingSectionMarkup(randomMovie);
 }
