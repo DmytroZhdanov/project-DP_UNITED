@@ -5,7 +5,7 @@ import { modalClose } from './modalClose';
 
 async function openModalTrailer(movieId) {
   const response = await fetchMovieVideosById(movieId);
-  const trailerKey = response.results[0].ke;
+  const trailerKey = response.results[0].key;
   const modaltrailerContainer = document.querySelector('[data-modal-trailer]');
 
   if (trailerKey) {
