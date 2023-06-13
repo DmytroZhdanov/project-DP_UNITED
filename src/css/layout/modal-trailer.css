@@ -28,6 +28,12 @@
 .light-theme .modal-trailer {
   background-color: var(--light-theme-background-color);
 }
+.trailer-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .modal-btn-close {
   display: flex;
   justify-content: center;
