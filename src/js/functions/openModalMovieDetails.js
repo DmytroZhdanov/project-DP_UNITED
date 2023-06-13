@@ -3,6 +3,7 @@ import { generateModalMovieDetailsMarkup } from './generateModalMovieDetailsMark
 import { addAppropriateListenerModal } from './addAppropriateListenerModal';
 import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
 import { modalMovieDetailsClose } from './modalMovieDetailsClose';
+import { onKeydownMovieDetails } from './onKeydownMovieDetails';
 
 /**
  * Opens modal window with movie details
@@ -22,12 +23,13 @@ function openModalMovieDetails(movieObject) {
 
   modalMovieDetails.classList.remove('is-hidden');
   modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
-  document.body.classList.add('disabled-scroll')
+  document.body.classList.add('disabled-scroll');
 
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'
   );
   modalDetailsCloseBtn.addEventListener('click', modalMovieDetailsClose);
+  document.addEventListener('keydown', onKeydownMovieDetails, { once: true });
 }
 
 // export { isAddBtn, btnClasses, id, movieObject };
