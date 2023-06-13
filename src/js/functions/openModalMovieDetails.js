@@ -1,6 +1,8 @@
 // Modal window for movie details
 import { generateModalMovieDetailsMarkup } from './generateModalMovieDetailsMarkup';
 import { addAppropriateListener } from './addAppropriateListener';
+import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
+import { modalMovieDetailsClose } from './modalMovieDetailsClose';
 
 /**
  * Opens modal window with movie details
@@ -19,13 +21,15 @@ function openModalMovieDetails(movieObject) {
   addAppropriateListener(isAddBtn, btnClasses, id, movieObject);
 
   modalMovieDetails.classList.remove('is-hidden');
+  modalMovieDetails.addEventListener('click', e => {
+    onMovieDetailsBackdropClick(e, isAddBtn, btnClasses, id, movieObject);
+  });
 
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'
   );
   modalDetailsCloseBtn.addEventListener('click', () => {
-    modalMovieDetails.classList.add('is-hidden');
-    removeAppropriateListener(isAddBtn, btnClasses, id, movieObject);
+    modalMovieDetailsClose(isAddBtn, btnClasses, id, movieObject);
   });
 }
 

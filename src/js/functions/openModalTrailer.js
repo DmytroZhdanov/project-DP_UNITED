@@ -1,21 +1,21 @@
 import { fetchMovieVideosById } from './movieApiService';
 import { generateModalTrailerMarkup } from './generateModalTrailerMarkup';
-import { onBackdropClick } from './onBackdropClick';
-import { modalClose } from './modalClose';
+import { onTrailerBackdropClick } from './onTrailerBackdropClick';
+import { modalTrailerClose } from './modalTrailerClose';
 
 async function openModalTrailer(movieId) {
   const response = await fetchMovieVideosById(movieId);
   const trailerKey = response.results[0].key;
-  const modaltrailerContainer = document.querySelector('[data-modal-trailer]');
+  const modalTrailerBackdrop = document.querySelector('[data-modal-trailer]');
 
   if (trailerKey) {
-    modaltrailerContainer.innerHTML = generateModalTrailerMarkup(trailerKey);
+    modalTrailerBackdrop.innerHTML = generateModalTrailerMarkup(trailerKey);
   } else {
-    const modalCloseBtn = document.querySelector('[data-modal-close]');
-    modalCloseBtn.addEventListener('click', modalClose);
+    const modalTrailerCloseBtn = document.querySelector('[data-modal-trailer-close]');
+    modalTrailerCloseBtn.addEventListener('click', modalTrailerClose);
   }
-  modaltrailerContainer.classList.remove('is-hidden');
-  modaltrailerContainer.addEventListener('click', onBackdropClick);
+  modalTrailerBackdrop.classList.remove('is-hidden');
+  modalTrailerBackdrop.addEventListener('click', onTrailerBackdropClick);
 }
 
 export { openModalTrailer };
