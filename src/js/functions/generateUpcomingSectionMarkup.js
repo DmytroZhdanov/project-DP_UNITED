@@ -46,7 +46,10 @@ function generateUpcomingSectionMarkup({
                 <p class="upcoming-subject">Release date</p>
               </li>
               <li class="upcoming-item-data-num">
-                <p class="upcoming-date">${release_date}</p>
+                <p class="upcoming-date">${release_date
+                  .split('-')
+                  .reverse()
+                  .join('.')}</p>
               </li>
             </ul>
     
