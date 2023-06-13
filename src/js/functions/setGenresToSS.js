@@ -1,10 +1,14 @@
 import { fetchGenresList } from './movieApiService';
 
 async function setGenresToSS() {
-  const response = await fetchGenresList();
-  const genresToStore = JSON.stringify(response);
+  try {
+    const response = await fetchGenresList();
+    const genresToStore = JSON.stringify(response);
 
-  sessionStorage.setItem('genres', genresToStore);
+    sessionStorage.setItem('genres', genresToStore);
+  } catch (error) {
+    console.error(error.message);
+  }
 }
 
 export { setGenresToSS };
