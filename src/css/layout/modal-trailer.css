@@ -33,6 +33,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 20px;
+}
+iframe {
+  display: block;
+  border-radius: 20px;
 }
 .modal-btn-close {
   display: flex;
