@@ -21,27 +21,35 @@ async function onHeroLoad() {
     // const heroFilm = response.results[randomDayMovie];
     refs.heroSectionEl.innerHTML = generateHeroMarkup(response.results);
     $('.hero-section').slick({
+      prevArrow:
+        '<button type="button" class="hero-slick-prev">&xlarr;</button>',
+      nextArrow:
+        '<button type="button" class="hero-slick-next">&xrarr;</button>',
+      lazyLoad: 'progressive',
       infinite: true,
       autoplay: true,
       autoplaySpeed: 8000,
-      arrows: false,
+      arrows: true,
       mobileFirst: true,
       touchThreshold: 20,
+      // appendArrows: $('.slide'),
     });
 
+    const modalTrailerBtn = document.querySelectorAll('[data-modal-movie-btn]');
     const modalMovieDetailsBtn = document.querySelectorAll(
       '[data-modal-movie-details-btn]'
     );
-    const modalTrailerBtn = document.querySelectorAll('[data-modal-movie-btn]');
 
-    modalMovieDetailsBtn.forEach(el =>
-      el.addEventListener('click', () => {
-        openModalMovieDetails(el.getAttribute('data-id'));
-      })
-    );
     modalTrailerBtn.forEach(el =>
       el.addEventListener('click', () => {
         openModalTrailer(el.getAttribute('data-id'));
+        $('.hero-section').slick('slickPause');
+      })
+    );
+    modalMovieDetailsBtn.forEach(el =>
+      el.addEventListener('click', () => {
+        openModalMovieDetails(el.getAttribute('data-id'));
+        $('.hero-section').slick('slickPause');
       })
     );
   } catch (error) {
