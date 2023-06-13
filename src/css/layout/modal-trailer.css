@@ -65,7 +65,7 @@
 .modal-text {
   font-family: var(--primary-font-family);
   font-size: 16px;
-  line-height: 1.17; /* line-height: 1.4; тоді типу виглядає як по макету, але шрифт не той*/
+  line-height: 1.4;
   margin-bottom: 24px;
 }
 .dark-theme .modal-text {
@@ -94,7 +94,6 @@
   }
   .modal-text {
     font-size: 24px;
-    line-height: 1.17; /*цього можна не писати якщо ставити 1.4 */
     width: 321px;
     margin-bottom: 0;
   }
