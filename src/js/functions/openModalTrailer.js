@@ -2,6 +2,7 @@ import { fetchMovieVideosById } from './movieApiService';
 import { generateModalTrailerMarkup } from './generateModalTrailerMarkup';
 import { onTrailerBackdropClick } from './onTrailerBackdropClick';
 import { modalTrailerClose } from './modalTrailerClose';
+import { onKeydownTrailer } from './onKeydownTrailer';
 
 async function openModalTrailer(movieId) {
   const response = await fetchMovieVideosById(movieId);
@@ -18,7 +19,8 @@ async function openModalTrailer(movieId) {
   }
   modalTrailerBackdrop.classList.remove('is-hidden');
   modalTrailerBackdrop.addEventListener('click', onTrailerBackdropClick);
-  document.body.classList.add('disabled-scroll');
+  document.body.classList.add('disabled-scroll')
+  document.addEventListener('keydown', onKeydownTrailer, { once: true });
 }
 
 export { openModalTrailer };
