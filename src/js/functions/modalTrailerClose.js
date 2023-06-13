@@ -5,6 +5,7 @@ function modalTrailerClose() {
   modalTrailerBackdrop.classList.add('is-hidden');
   modalTrailerBackdrop.removeEventListener('click', onTrailerBackdropClick);
   document.body.classList.remove('disabled-scroll');
+  $('.hero-section').slick('slickPlay');
 
   const modalTrailerCloseBtn = document.querySelector(
     '[data-modal-trailer-close]'

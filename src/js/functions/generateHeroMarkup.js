@@ -1,10 +1,11 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 import defaultImage from '../../images/hero-main-desc-1x-1280.jpg';
 
-function generateHeroMarkup(movieObject) {
-  const { title, vote_average, overview, backdrop_path } = movieObject;
-  return `
-  <div class="backdrop-hero-img-container backdrop-hero-film-img-container">
+function generateHeroMarkup(movieArr) {
+  return movieArr
+    .map(({ id, title, vote_average, overview, backdrop_path }) => {
+      return `
+  <div class="slide"><div class="backdrop-hero-img-container backdrop-hero-film-img-container">
   ${
     backdrop_path
       ? `<picture>
@@ -50,16 +51,20 @@ function generateHeroMarkup(movieObject) {
       </p>
       <ul class="hero-buttons-list">
         <li class="hero-btn-item">
-          <button type="button" data-modal-movie-btn class="btn btn-filled">
+          <button type="button" data-modal-movie-btn data-id="${id}" class="btn btn-filled">
             Watch trailer
           </button>
         </li>
         <li class="hero-btn-item">
-          <button type="button" data-modal-movie-details-btn class="btn btn-hero">More details</button>
+          <button type="button" data-modal-movie-details-btn data-id="${id}" class="btn btn-hero">More details</button>
         </li>
       </ul>
     </div>
-  </div>`;
+  </div>
+</div>
+`;
+    })
+    .join('');
 }
 
 export { generateHeroMarkup };

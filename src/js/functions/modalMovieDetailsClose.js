@@ -1,11 +1,10 @@
 // import { removeAppropriateListener } from './removeAppropriateListener';
 import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
 
-
 function modalMovieDetailsClose() {
   const modalMovieDetails = document.querySelector('[data-modal-details]');
   modalMovieDetails.classList.add('is-hidden');
-  document.body.classList.remove('disabled-scroll')
+  document.body.classList.remove('disabled-scroll');
   // removeAppropriateListener(isAddBtn, btnClasses, id, movieObject);
 
   modalMovieDetails.removeEventListener('click', onMovieDetailsBackdropClick);
@@ -13,6 +12,7 @@ function modalMovieDetailsClose() {
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'
   );
+  $('.hero-section').slick('slickPlay');
   modalDetailsCloseBtn.removeEventListener('click', modalMovieDetailsClose);
 }
 

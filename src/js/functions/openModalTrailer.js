@@ -6,13 +6,15 @@ import { onKeydownTrailer } from './onKeydownTrailer';
 
 async function openModalTrailer(movieId) {
   const response = await fetchMovieVideosById(movieId);
-  const trailerKey = response.results[0].key;
+  const trailerKey = response.results.find(obj => obj.type === 'Trailer').key;
   const modalTrailerBackdrop = document.querySelector('[data-modal-trailer]');
 
   if (trailerKey) {
     modalTrailerBackdrop.innerHTML = generateModalTrailerMarkup(trailerKey);
   } else {
-    const modalTrailerCloseBtn = document.querySelector('[data-modal-trailer-close]');
+    const modalTrailerCloseBtn = document.querySelector(
+      '[data-modal-trailer-close]'
+    );
     modalTrailerCloseBtn.addEventListener('click', modalTrailerClose);
   }
   modalTrailerBackdrop.classList.remove('is-hidden');
