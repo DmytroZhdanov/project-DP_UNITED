@@ -3,7 +3,7 @@
  * @param {Array} genresArr Array of genres
  * @returns {Array} Array of ids (numbers) as a result
  */
-async function getGenresIdByGenres(genresArr) {
+function getGenresIdByGenres(genresArr) {
   const allGenres = JSON.parse(sessionStorage.getItem('genres'));
 
   const ids = genresArr.map(genre => {

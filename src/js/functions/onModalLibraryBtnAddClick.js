@@ -2,11 +2,6 @@ import { generateModalLibraryBtnMarkup } from './generateModalLibraryBtnMarkup';
 import { onModalLibraryBtnRemoveClick } from './onModalLibraryBtnRemoveClick';
 import { addMovieToLibrary } from './addMovieToLibrary';
 
-// /**
-//  * Sets local storage item with key 'library' and value of Array of movie objects. Adds Item
-//  * @param {Object} movieObject  Object with movie details
-//  */
-
 /**
  * Sets local storage item with key 'library' and value of Array of movie objects. Adds Item.
  * @param {*} classes
@@ -19,11 +14,6 @@ function onModalLibraryBtnAddClick(classes, id, movieObject) {
   const libraryBtnContainer = document.querySelector(
     '[data-library-btn-modal]'
   );
-
-  // const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
-  // libraryBtnAdd.removeEventListener('click', () => {
-  //   onLibraryBtnAddClick(btnClasses, id, movieObject);
-  // });
 
   const changedlibraryBtn = generateModalLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;

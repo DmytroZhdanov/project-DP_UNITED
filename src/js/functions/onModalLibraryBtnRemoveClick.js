@@ -10,13 +10,6 @@ function onModalLibraryBtnRemoveClick(classes, id, movieObject) {
   removeMovieFromLibrary(movieObject);
   const libraryBtnContainer = document.querySelector('[data-library-btn-modal]');
 
-  // const libraryBtnRemove = document.querySelector(
-  //   '[data-remove-from-library-btn]'
-  // );
-  // libraryBtnRemove.removeEventListener('click', () => {
-  //   onLibraryBtnRemoveClick(btnClasses, id, movieObject);
-  // });
-
   const changedlibraryBtn = generateModalLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
 

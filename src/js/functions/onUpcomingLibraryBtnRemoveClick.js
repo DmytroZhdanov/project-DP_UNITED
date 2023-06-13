@@ -10,13 +10,6 @@ function onUpcomingLibraryBtnRemoveClick(classes, id, movieObject) {
   removeMovieFromLibrary(movieObject);
   const libraryBtnContainer = document.querySelector('[data-library-btn-upcoming]');
 
-  // const libraryBtnRemove = document.querySelector(
-  //   '[data-remove-from-library-btn]'
-  // );
-  // libraryBtnRemove.removeEventListener('click', () => {
-  //   onLibraryBtnRemoveClick(btnClasses, id, movieObject);
-  // });
-
   const changedlibraryBtn = generateUpcomingLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
 

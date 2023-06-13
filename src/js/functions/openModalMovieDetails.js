@@ -11,27 +11,31 @@ import { onKeydownMovieDetails } from './onKeydownMovieDetails';
  * @param {String} id Movie id
  */
 async function openModalMovieDetails(id) {
-  const movieObject = await fetchMovieById(id);
-
-  const modalMovieDetails = document.querySelector('[data-modal-details]');
-  const btnClasses = 'btn btn-empty';
-  modalMovieDetails.innerHTML = generateModalMovieDetailsMarkup(
-    btnClasses,
-    movieObject
-  );
-  const isAddBtn = modalMovieDetails.innerHTML.includes('Add to library');
-
-  addAppropriateListenerModal(isAddBtn, btnClasses, id, movieObject);
-
-  modalMovieDetails.classList.remove('is-hidden');
-  modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
-  document.body.classList.add('disabled-scroll');
-
-  const modalDetailsCloseBtn = document.querySelector(
-    '[data-modal-details-close]'
-  );
-  modalDetailsCloseBtn.addEventListener('click', modalMovieDetailsClose);
-  document.addEventListener('keydown', onKeydownMovieDetails, { once: true });
+  try {
+    const movieObject = await fetchMovieById(id);
+  
+    const modalMovieDetails = document.querySelector('[data-modal-details]');
+    const btnClasses = 'btn btn-empty';
+    modalMovieDetails.innerHTML = generateModalMovieDetailsMarkup(
+      btnClasses,
+      movieObject
+    );
+    const isAddBtn = modalMovieDetails.innerHTML.includes('Add to library');
+  
+    addAppropriateListenerModal(isAddBtn, btnClasses, id, movieObject);
+  
+    modalMovieDetails.classList.remove('is-hidden');
+    modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
+    document.body.classList.add('disabled-scroll');
+  
+    const modalDetailsCloseBtn = document.querySelector(
+      '[data-modal-details-close]'
+    );
+    modalDetailsCloseBtn.addEventListener('click', modalMovieDetailsClose);
+    document.addEventListener('keydown', onKeydownMovieDetails, { once: true });
+  } catch (error) {
+    console.error(error.message)
+  }
 }
 
 // export { isAddBtn, btnClasses, id, movieObject };
