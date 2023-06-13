@@ -37,6 +37,8 @@
   border-radius: 20px;
 }
 iframe {
+  width: 280px;
+  height: 157px;
   display: block;
   border-radius: 20px;
 }
@@ -88,6 +90,10 @@ iframe {
     width: 609px;
     padding: 150px 0px 150px 50px;
   }
+  iframe {
+    width: 609px;
+    height: 342px;
+  }
   .modal-btn-close {
     width: 24px;
     height: 24px;
@@ -113,5 +119,9 @@ iframe {
   .modal-trailer {
     width: 700px;
     padding: 150px 0 150px 50px;
+  }
+  iframe {
+    width: 700px;
+    height: 393px;
   }
 }
