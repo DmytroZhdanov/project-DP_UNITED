@@ -22,6 +22,7 @@ function openModalMovieDetails(movieObject) {
 
   modalMovieDetails.classList.remove('is-hidden');
   modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
+  document.body.classList.add('disabled-scroll')
 
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'

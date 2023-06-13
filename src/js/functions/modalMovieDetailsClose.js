@@ -5,6 +5,7 @@ import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
 function modalMovieDetailsClose() {
   const modalMovieDetails = document.querySelector('[data-modal-details]');
   modalMovieDetails.classList.add('is-hidden');
+  document.body.classList.remove('disabled-scroll')
   // removeAppropriateListener(isAddBtn, btnClasses, id, movieObject);
 
   modalMovieDetails.removeEventListener('click', onMovieDetailsBackdropClick);
