@@ -1,5 +1,5 @@
-import { generateLibraryBtnMarkup } from './generateLibraryBtnMarkup';
-import { onLibraryBtnRemoveClick } from './onLibraryBtnRemoveClick';
+import { generateUpcomingLibraryBtnMarkup } from './generateUpcomingLibraryBtnMarkup';
+import { onUpcomingLibraryBtnRemoveClick } from './onUpcomingLibraryBtnRemoveClick';
 import { addMovieToLibrary } from './addMovieToLibrary';
 
 // /**
@@ -13,28 +13,30 @@ import { addMovieToLibrary } from './addMovieToLibrary';
  * @param {*} id
  * @param {*} movieObject
  */
-function onLibraryBtnAddClick(classes, id, movieObject) {
+function onUpcomingLibraryBtnAddClick(classes, id, movieObject) {
   addMovieToLibrary(movieObject);
 
-  const libraryBtnContainer = document.querySelector('[data-library-btn]');
+  const libraryBtnContainer = document.querySelector(
+    '[data-library-btn-upcoming]'
+  );
 
   // const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
   // libraryBtnAdd.removeEventListener('click', () => {
   //   onLibraryBtnAddClick(btnClasses, id, movieObject);
   // });
 
-  const changedlibraryBtn = generateLibraryBtnMarkup(classes, id);
+  const changedlibraryBtn = generateUpcomingLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
   const libraryBtnRemove = document.querySelector(
-    '[data-remove-from-library-btn]'
+    '[data-remove-from-library-btn-upcoming]'
   );
   libraryBtnRemove.addEventListener(
     'click',
     () => {
-      onLibraryBtnRemoveClick(classes, id, movieObject);
+      onUpcomingLibraryBtnRemoveClick(classes, id, movieObject);
     },
     { once: true }
   );
 }
 
-export { onLibraryBtnAddClick };
+export { onUpcomingLibraryBtnAddClick };

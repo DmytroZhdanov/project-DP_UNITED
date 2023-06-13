@@ -1,6 +1,6 @@
 // Modal window for movie details
 import { generateModalMovieDetailsMarkup } from './generateModalMovieDetailsMarkup';
-import { addAppropriateListener } from './addAppropriateListener';
+import { addAppropriateListenerModal } from './addAppropriateListenerModal';
 import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
 import { modalMovieDetailsClose } from './modalMovieDetailsClose';
 
@@ -17,8 +17,8 @@ function openModalMovieDetails(movieObject) {
     movieObject
   );
   const isAddBtn = modalMovieDetails.innerHTML.includes('Add to library');
-  
-  addAppropriateListener(isAddBtn, btnClasses, id, movieObject);
+
+  addAppropriateListenerModal(isAddBtn, btnClasses, id, movieObject);
 
   modalMovieDetails.classList.remove('is-hidden');
   modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);

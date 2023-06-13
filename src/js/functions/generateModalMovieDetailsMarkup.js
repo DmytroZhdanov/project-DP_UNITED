@@ -1,5 +1,5 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
-import { generateLibraryBtnMarkup } from './generateLibraryBtnMarkup';
+import { generateModalLibraryBtnMarkup } from './generateModalLibraryBtnMarkup';
 
 function generateModalMovieDetailsMarkup(classes, movieObject) {
   const {
@@ -16,7 +16,7 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
   const genresString = genre_ids
     ? getGenresByGenresId(genre_ids)
     : genres.map(genre => genre.name);
-  const libraryBtn = generateLibraryBtnMarkup(classes, id);
+  const libraryBtn = generateModalLibraryBtnMarkup(classes, id);
   const posterPath = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : './images/image-not-found.jpg';
@@ -37,7 +37,7 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
           <p class='modal-genre'>${genresString}</p>
           <h3>About</h3>
           <p>${overview}</p>
-          <div data-library-btn>
+          <div data-library-btn-modal>
             ${libraryBtn}
           </div>
         </div>`;
