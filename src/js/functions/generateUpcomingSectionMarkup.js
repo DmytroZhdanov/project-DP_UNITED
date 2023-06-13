@@ -1,5 +1,6 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
 import { generateUpcomingLibraryBtnMarkup } from './generateUpcomingLibraryBtnMarkup';
+import { changingTypeOfCalendar } from './changingTypeOfCalendar';
 
 function generateUpcomingSectionMarkup({
   backdrop_path,
@@ -15,6 +16,7 @@ function generateUpcomingSectionMarkup({
 }) {
   const genres = getGenresByGenresId(genre_ids).join(', ');
   const classes = 'btn btn-filled';
+  const typicalEuropeanData = changingTypeOfCalendar(release_date);
 
   return ` <picture>
       <source
@@ -46,7 +48,7 @@ function generateUpcomingSectionMarkup({
                 <p class="upcoming-subject">Release date</p>
               </li>
               <li class="upcoming-item-data-num">
-                <p class="upcoming-date">${release_date}</p>
+                <p class="upcoming-date">${typicalEuropeanData}</p>
               </li>
             </ul>
     
