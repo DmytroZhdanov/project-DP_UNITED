@@ -16,6 +16,7 @@ async function openModalTrailer(movieId) {
   }
   modalTrailerBackdrop.classList.remove('is-hidden');
   modalTrailerBackdrop.addEventListener('click', onTrailerBackdropClick);
+  document.body.classList.add('disabled-scroll')
 }
 
 export { openModalTrailer };

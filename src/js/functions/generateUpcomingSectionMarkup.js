@@ -1,4 +1,5 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
+import { generateUpcomingLibraryBtnMarkup } from './generateUpcomingLibraryBtnMarkup';
 
 function generateUpcomingSectionMarkup({
   backdrop_path,
@@ -10,8 +11,10 @@ function generateUpcomingSectionMarkup({
   release_date,
   vote_average,
   vote_count,
+  id,
 }) {
   const genres = getGenresByGenresId(genre_ids).join(', ');
+  const classes = 'btn btn-filled';
 
   return ` <picture>
       <source
@@ -85,9 +88,9 @@ function generateUpcomingSectionMarkup({
         <p class="upcoming-description">
           ${overview}
         </p>
-        <button class="btn btn-filled" type="button">
-          Add to my library
-        </button>
+        <div data-library-btn-upcoming>
+          ${generateUpcomingLibraryBtnMarkup(classes, id)}
+        </div>
       </div>
     </div>`;
 }

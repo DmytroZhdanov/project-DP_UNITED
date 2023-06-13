@@ -1,6 +1,6 @@
 // Modal window for movie details
 import { generateModalMovieDetailsMarkup } from './generateModalMovieDetailsMarkup';
-import { addAppropriateListener } from './addAppropriateListener';
+import { addAppropriateListenerModal } from './addAppropriateListenerModal';
 import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
 import { modalMovieDetailsClose } from './modalMovieDetailsClose';
 import { fetchMovieById } from './movieApiService';
@@ -18,10 +18,13 @@ async function openModalMovieDetails(id) {
   );
   const isAddBtn = modalMovieDetails.innerHTML.includes('Add to library');
 
-  addAppropriateListener(isAddBtn, btnClasses, id, movieObject);
+
+  addAppropriateListenerModal(isAddBtn, btnClasses, id, movieObject);
+
 
   modalMovieDetails.classList.remove('is-hidden');
   modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
+  document.body.classList.add('disabled-scroll')
 
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'

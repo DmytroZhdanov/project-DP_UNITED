@@ -1,14 +1,14 @@
-import { generateLibraryBtnMarkup } from './generateLibraryBtnMarkup';
-import { onLibraryBtnAddClick } from './onLibraryBtnAddClick';
+import { generateModalLibraryBtnMarkup } from './generateModalLibraryBtnMarkup';
+import { onModalLibraryBtnAddClick } from './onModalLibraryBtnAddClick';
 import { removeMovieFromLibrary } from './removeMovieFromLibrary';
 
 /**
  * Sets local storage item with key 'library' and value of Array of movie objects. Removes item
  * @param {*} movieObject
  */
-function onLibraryBtnRemoveClick(classes, id, movieObject) {
+function onModalLibraryBtnRemoveClick(classes, id, movieObject) {
   removeMovieFromLibrary(movieObject);
-  const libraryBtnContainer = document.querySelector('[data-library-btn]');
+  const libraryBtnContainer = document.querySelector('[data-library-btn-modal]');
 
   // const libraryBtnRemove = document.querySelector(
   //   '[data-remove-from-library-btn]'
@@ -17,17 +17,17 @@ function onLibraryBtnRemoveClick(classes, id, movieObject) {
   //   onLibraryBtnRemoveClick(btnClasses, id, movieObject);
   // });
 
-  const changedlibraryBtn = generateLibraryBtnMarkup(classes, id);
+  const changedlibraryBtn = generateModalLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
 
-  const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
+  const libraryBtnAdd = document.querySelector('[data-add-to-library-btn-modal]');
   libraryBtnAdd.addEventListener(
     'click',
     () => {
-      onLibraryBtnAddClick(classes, id, movieObject);
+      onModalLibraryBtnAddClick(classes, id, movieObject);
     },
     { once: true }
   );
 }
 
-export { onLibraryBtnRemoveClick };
+export { onModalLibraryBtnRemoveClick };

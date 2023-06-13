@@ -1,8 +1,6 @@
 function generateModalTrailerMarkup(key) {
   return `<div class="trailer-iframe">
             <iframe
-              width="560"
-              height="315"
               src="https://www.youtube-nocookie.com/embed/${key}"
               title="YouTube video player"
               frameborder="0"
