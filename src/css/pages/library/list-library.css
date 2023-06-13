@@ -11,6 +11,10 @@
     margin-bottom: 24px;
     justify-content: center;
   }
+  .movie-cards-list-css-no-btn {
+    margin-top: 96px;
+    margin-bottom: 42px;
+  }
 
   .btn-list-search {
     /*margin-top: 24px;*/
@@ -38,6 +42,11 @@
     margin-bottom: 40px;
   }
 
+  .movie-cards-list-css-no-btn {
+    margin-top: 140px;
+    margin-bottom: 60px;
+  }
+
   .btn-list-search {
     /*margin-top: 40px;*/
     margin-bottom: 60px;
@@ -56,6 +65,10 @@
   .movie-cards-list-css {
     margin-top: 176px;
     margin-bottom: 40px;
+  }
+  .movie-cards-list-css-no-btn {
+    margin-top: 176px;
+    margin-bottom: 96px;
   }
 
   .btn-list-search {
