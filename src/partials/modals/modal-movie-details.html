@@ -1,28 +1,64 @@
 <!-- Modal window for movie details -->
+
 <div class="backdrop is-hidden" data-modal-details>
-  <!-- <div class="modal-details">
-    <button type="button" class="btn modal-close" data-modal-details-close>
-      <svg class="icon-close" width="10.5" height="10.5">
-        <use href="./images/icons.svg#icon-close"></use>
-      </svg>
-    </button>
-    <img src="./images/image-not-found.jpg" alt="Image not found" />
-    <h2>John Wick: Chapter 4</h2>
-    <h3>Vote / Votes</h3>
-    <p><span>7.3</span> / <span>1260</span></p>
-    <h3>Popularity</h3>
-    <p>100.2</p>
-    <h3>Genre</h3>
-    <p>Action Thriller Crime</p>
-    <h3>About</h3>
-    <p>
-      John Wick (Keanu Reeves) takes on his most lethal adversaries yet in the
-      upcoming fourth instalment of the series. With the price on his head ever
-      increasing, John Wick uncovers a path to defeating The High Table. But
-      before he can earn his freedom, Wick must face off against a new enemy
-      with powerful alliances across the globe and forces that turn old friends
-      into foes.
-    </p>
-    <button type="button" class="btn">Add to my library</button>
-  </div> -->
+  <div class="container">
+    <div class="modal-details-flex">
+      <button type="button" class="btn modal-close" data-modal-details-close>
+        <svg class="icon-close" width="10.5" height="10.5">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+  
+      <img class="modal-details-img" src="./images/image-not-found.jpg" alt="Image not found" />
+      
+      <div class="modal-details-column">
+        <h2 class="modal-details-headline">John Wick: Chapter 4</h2>
+        <div class="modal-details-wrap">
+  
+          <div class="modal-details-inner-wrap">
+            <div class="modal-details-wrapper modal-details-wrapper-gap">
+              <ul class="modal-details-list">
+                <li class="modal-details-item-vote">
+                  <p class="modal-details-subject">Vote / Votes</p>
+                </li>
+                <li class="modal-details-item-vote-num">
+                  <p class="modal-details-vote">
+                    <span class="modal-details-inner-box"><!-- динамічне значення --></span>
+                    <span class="modal-details-inner-color">/</span>
+                    <span class="modal-details-inner-box-votes"><!-- динамічне значення --></span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="modal-details-wrapper">
+            <ul class="modal-details-list">
+              <li class="modal-details-item-pop">
+                <p class="modal-details-subject">Popularity</p>
+              </li>
+              <li class="modal-details-item-pop-num">
+                <p class="modal-details-famous"><!-- динамічне значення --></p>
+              </li>
+            </ul>
+  
+            <ul class="modal-details-list">
+              <li class="modal-details-item-genre">
+                <p class="modal-details-subject">Genre</p>
+              </li>
+              <li class="modal-details-item-genre-num">
+                <p class="modal-details-janres"><!-- динамічне значення --></p>
+              </li>
+            </ul>
+          </div>
+  
+          <h3 class="modal-details-caption">About</h3>
+            <p class="modal-details-description"><!-- динамічне значення --></p>
+            <button class="btn btn-filled" type="button"><!-- динамічне значення --></button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
