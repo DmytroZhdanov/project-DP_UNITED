@@ -1,13 +1,13 @@
 import { modalMovieDetailsClose } from './modalMovieDetailsClose';
 
-function onMovieDetailsBackdropClick(e, isAddBtn, btnClasses, id, movieObject) {
+function onMovieDetailsBackdropClick(e) {
   const modalMovieDetails = document.querySelector('[data-modal-details]');
 
   if (e.target !== modalMovieDetails) {
     return;
   }
 
-  modalMovieDetailsClose(isAddBtn, btnClasses, id, movieObject);
+  modalMovieDetailsClose();
 }
 
 export { onMovieDetailsBackdropClick };

@@ -17,20 +17,17 @@ function openModalMovieDetails(movieObject) {
     movieObject
   );
   const isAddBtn = modalMovieDetails.innerHTML.includes('Add to library');
-
+  
   addAppropriateListener(isAddBtn, btnClasses, id, movieObject);
 
   modalMovieDetails.classList.remove('is-hidden');
-  modalMovieDetails.addEventListener('click', e => {
-    onMovieDetailsBackdropClick(e, isAddBtn, btnClasses, id, movieObject);
-  });
+  modalMovieDetails.addEventListener('click', onMovieDetailsBackdropClick);
 
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'
   );
-  modalDetailsCloseBtn.addEventListener('click', () => {
-    modalMovieDetailsClose(isAddBtn, btnClasses, id, movieObject);
-  });
+  modalDetailsCloseBtn.addEventListener('click', modalMovieDetailsClose);
 }
 
+// export { isAddBtn, btnClasses, id, movieObject };
 export { openModalMovieDetails };

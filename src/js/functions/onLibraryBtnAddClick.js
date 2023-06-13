@@ -18,19 +18,23 @@ function onLibraryBtnAddClick(classes, id, movieObject) {
 
   const libraryBtnContainer = document.querySelector('[data-library-btn]');
 
-  const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
-  libraryBtnAdd.removeEventListener('click', () => {
-    onLibraryBtnAddClick(btnClasses, id, movieObject);
-  });
-  
+  // const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
+  // libraryBtnAdd.removeEventListener('click', () => {
+  //   onLibraryBtnAddClick(btnClasses, id, movieObject);
+  // });
+
   const changedlibraryBtn = generateLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
   const libraryBtnRemove = document.querySelector(
     '[data-remove-from-library-btn]'
   );
-  libraryBtnRemove.addEventListener('click', () => {
-    onLibraryBtnRemoveClick(classes, id, movieObject);
-  });
+  libraryBtnRemove.addEventListener(
+    'click',
+    () => {
+      onLibraryBtnRemoveClick(classes, id, movieObject);
+    },
+    { once: true }
+  );
 }
 
 export { onLibraryBtnAddClick };

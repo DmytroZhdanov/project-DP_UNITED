@@ -4,16 +4,24 @@ import { onLibraryBtnRemoveClick } from './onLibraryBtnRemoveClick';
 function addAppropriateListener(isAddBtn, btnClasses, id, movieObject) {
   if (isAddBtn) {
     const libraryBtnAdd = document.querySelector('[data-add-to-library-btn]');
-    libraryBtnAdd.addEventListener('click', () => {
-      onLibraryBtnAddClick(btnClasses, id, movieObject);
-    });
+    libraryBtnAdd.addEventListener(
+      'click',
+      () => {
+        onLibraryBtnAddClick(btnClasses, id, movieObject);
+      },
+      { once: true }
+    );
   } else {
     const libraryBtnRemove = document.querySelector(
       '[data-remove-from-library-btn]'
     );
-    libraryBtnRemove.addEventListener('click', () => {
-      onLibraryBtnRemoveClick(btnClasses, id, movieObject);
-    });
+    libraryBtnRemove.addEventListener(
+      'click',
+      () => {
+        onLibraryBtnRemoveClick(btnClasses, id, movieObject);
+      },
+      { once: true }
+    );
   }
 }
 
