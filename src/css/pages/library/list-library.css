@@ -5,9 +5,11 @@
 @media screen and (min-width: 320px) {
   .library-section {
     text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .movie-cards-list-css {
-    margin-top: 96px;
+    margin-top: 16px;
     margin-bottom: 24px;
     justify-content: center;
   }
@@ -33,8 +35,12 @@
   }
 }
 @media screen and (min-width: 768px) {
+  .library-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   .movie-cards-list-css {
-    margin-top: 140px;
+    margin-top: 36px;
     margin-bottom: 40px;
   }
 
@@ -53,8 +59,12 @@
   }
 }
 @media screen and (min-width: 1280px) {
+  .library-section {
+    padding-top: 80px;
+    padding-bottom: 96px;
+  }
   .movie-cards-list-css {
-    margin-top: 176px;
+    margin-top: 48px;
     margin-bottom: 40px;
   }
 
