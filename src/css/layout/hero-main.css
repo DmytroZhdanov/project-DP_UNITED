@@ -44,6 +44,9 @@
       rgba(17, 17, 17, 0) 72.95%
     );
   }
+  .hero-main-info {
+    max-width: 360px;
+  }
   .hero-main-text {
     width: 360px;
     margin-bottom: 32px;
