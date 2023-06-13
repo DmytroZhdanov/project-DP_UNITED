@@ -1,1 +1,53 @@
 <!-- Modal window for trailer -->
+<div class="backdrop is-hidden" data-modal-trailer>
+  <div class="modal-trailer">
+    <button class="modal-btn-close" data-modal-close>
+      <svg class="modal-close-icon">
+        <use href="./images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <p class="modal-text">
+      OOPS...<br />
+      We are very sorry!<br />
+      But we couldn’t find the trailer.
+    </p>
+    <picture>
+      <source
+        srcset="
+          ./images/movie-attr-desc-1x-363.webp   363w,
+          ./images/movie-attr-desc-2x-726.webp   726w,
+          ./images/movie-attr-desc-3x-1089.webp 1089w,
+          ./images/movie-attr-tab-1x-296.webp    296w,
+          ./images/movie-attr-tab-2x-592.webp    592w,
+          ./images/movie-attr-tab-3x-888.webp    888w,
+          ./images/movie-attr-mob-1x-159.webp    159w,
+          ./images/movie-attr-mob-2x-318.webp    318w,
+          ./images/movie-attr-mob-3x-477.webp    477w
+        "
+        sizes="(min-width: 1280px) 363px, (min-width: 768px) 296px, (min-width: 320px) 159px, 100vw"
+        type="image/webp"
+      />
+      <source
+        srcset="
+          ./images/movie-attr-desc-1x-363.png   363w,
+          ./images/movie-attr-desc-2x-726.png   726w,
+          ./images/movie-attr-desc-3x-1089.png 1089w,
+          ./images/movie-attr-tab-1x-296.png    296w,
+          ./images/movie-attr-tab-2x-592.png    592w,
+          ./images/movie-attr-tab-3x-888.png    888w,
+          ./images/movie-attr-mob-1x-159.png    159w,
+          ./images/movie-attr-mob-2x-318.png    318w,
+          ./images/movie-attr-mob-3x-477.png    477w
+        "
+        sizes="(min-width: 1280px) 363px, (min-width: 768px) 296px, (min-width: 320px) 159px, 100vw"
+        type="image/png"
+      />
+      <img
+        class="modal-picture"
+        src="./images/movie-attr-desc-1x-363.png"
+        alt="trailer"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+</div>

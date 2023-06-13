@@ -2,7 +2,7 @@ import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 import defaultImage from '../../images/hero-main-desc-1x-1280.jpg';
 
 function generateHeroMarkup(movieObject) {
-  const { id, title, vote_average, overview, backdrop_path } = movieObject;
+  const { title, vote_average, overview, backdrop_path } = movieObject;
   return `
   <div class="backdrop-hero-img-container backdrop-hero-film-img-container">
   ${
@@ -50,7 +50,7 @@ function generateHeroMarkup(movieObject) {
       </p>
       <ul class="hero-buttons-list">
         <li class="hero-btn-item">
-          <button type="button" data-movie-id="${id}" class="btn btn-filled">
+          <button type="button" data-modal-movie-btn class="btn btn-filled">
             Watch trailer
           </button>
         </li>

@@ -1,1 +1,112 @@
-/* Styles for modal window for trailer */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(46, 47, 66, 0.4);
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  transition: opacity var(--transition-dur-and-func);
+}
+.backdrop-modal.is-hidden .modal-trailer {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.modal-trailer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-dur-and-func);
+  width: 280px;
+  padding: 39px 33px 8px 33px;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
+  border-radius: 16px;
+}
+.dark-theme .modal-trailer {
+  background-color: var(--dark-theme-background-color);
+}
+.light-theme .modal-trailer {
+  background-color: var(--light-theme-background-color);
+}
+.trailer-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
+}
+.dark-theme .modal-close-icon {
+  stroke: var(--primary-text-color);
+}
+.light-theme .modal-close-icon {
+  stroke: var(--secondary-black-color);
+}
+.modal-close-icon {
+  width: 7px;
+  height: 7px;
+  transition: stroke var(--transition-dur-and-func);
+}
+.modal-close-icon:hover {
+  stroke: var(--primary-brand-color);
+}
+.modal-text {
+  font-family: var(--primary-font-family);
+  font-size: 16px;
+  line-height: 1.17; /* line-height: 1.4; тоді типу виглядає як по макету, але шрифт не той*/
+  margin-bottom: 24px;
+}
+.dark-theme .modal-text {
+  color: var(--primary-text-colors);
+}
+.light-theme .modal-text {
+  color: var(--dark-theme-background-color);
+}
+.modal-picture {
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .modal-trailer {
+    width: 609px;
+    padding: 150px 0px 150px 50px;
+  }
+  .modal-btn-close {
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+  }
+  .modal-close-icon {
+    width: 10.5px;
+    height: 10.5px;
+  }
+  .modal-text {
+    font-size: 24px;
+    line-height: 1.17; /*цього можна не писати якщо ставити 1.4 */
+    width: 321px;
+    margin-bottom: 0;
+  }
+  .modal-picture {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal-trailer {
+    width: 700px;
+    padding: 150px 0 150px 50px;
+  }
+}

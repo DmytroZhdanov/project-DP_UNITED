@@ -2,6 +2,7 @@
 import { fetchDayTrends } from '../js/functions/movieApiService';
 import { generateHeroMarkup } from './functions/generateHeroMarkup';
 import { openModalMovieDetails } from './functions/openModalMovieDetails';
+import { openModalTrailer } from './functions/openModalTrailer';
 
 const refs = {
   heroSectionEl: document.querySelector('[data-hero-section]'),
@@ -20,9 +21,13 @@ async function onHeroLoad() {
     const modalMovieDetailsBtn = document.querySelector(
       '[data-modal-movie-details-btn]'
     );
+    const modalTrailerBtn = document.querySelector('[data-modal-movie-btn]');
     modalMovieDetailsBtn.addEventListener('click', () => {
       openModalMovieDetails(heroFilm);
     });
+    modalTrailerBtn.addEventListener('click', () =>
+      openModalTrailer(heroFilm.id)
+    );
   } catch (error) {
     console.error(error.message);
     refs.defaultHeroSectionEl.classList.remove('is-hidden');
