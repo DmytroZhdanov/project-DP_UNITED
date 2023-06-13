@@ -26,6 +26,10 @@
   max-width: 280px;
   font-weight: 700;
   margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .hero-film-rating {
   margin-bottom: 16px;
