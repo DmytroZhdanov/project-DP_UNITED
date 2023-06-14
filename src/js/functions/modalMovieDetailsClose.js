@@ -1,5 +1,6 @@
 // import { removeAppropriateListener } from './removeAppropriateListener';
 import { onMovieDetailsBackdropClick } from './onMovieDetailsBackdropClick';
+import { heroSlider } from './heroSlider';
 
 function modalMovieDetailsClose() {
   const modalMovieDetails = document.querySelector('[data-modal-details]');
@@ -12,7 +13,7 @@ function modalMovieDetailsClose() {
   const modalDetailsCloseBtn = document.querySelector(
     '[data-modal-details-close]'
   );
-  $('.hero-section').slick('slickPlay');
+  heroSlider.resume();
   modalDetailsCloseBtn.removeEventListener('click', modalMovieDetailsClose);
 }
 

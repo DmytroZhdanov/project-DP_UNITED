@@ -118,6 +118,7 @@
   }
 }
 
+/* Hero Slider styles */
 .hero-slick-prev,
 .hero-slick-next {
   position: absolute;
@@ -129,7 +130,7 @@
   border: none;
   background-color: transparent;
   transition: opacity var(--transition-dur-and-func);
-  z-index: 100;
+  z-index: 1;
 }
 
 .hero-slick-prev {
