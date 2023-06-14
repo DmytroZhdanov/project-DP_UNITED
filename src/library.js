@@ -2,6 +2,7 @@
 import './js/header';
 import './js/mobile-menu';
 import './js/hero';
+import './js/functions/filterLibraryByGanres';
 import './js/list-library';
 import './js/footer';
 import { setGenresToSS } from './js/functions/setGenresToSS';
