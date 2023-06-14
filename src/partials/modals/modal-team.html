@@ -1,125 +1,214 @@
 <!-- Modal window with info about team members -->
-<div id="modal-window-footer" class="modal show" data-window-modal>
-    <div class="modal-footer-content" id="modal-content" data-modal-content>
+<div class="backdrop is-hidden" data-modal-team-backdrop>
+    <div id="modal-window-footer" class="modal" data-window-modal>
+      <div class="modal-footer-content" id="modal-content" data-modal-content>
         <button class="modal-btn-close" data-modal-btn-close>
-            <svg class="modal-close-icon" data-modal-cross>
-                <use href="./images/icons.svg#icon-close"></use>
-            </svg>
+          <svg class="modal-close-icon" data-modal-cross>
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
         </button>
         <div class="teamDevs-container">
-            <h2 class="team-header">Team Developers</h2>
-            <ul class="team-list list">
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/JdanovDmitro.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/JdanovDmitro.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/JdanovDmitro.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Jdanov Dmitro</h3>
-                        <p class="team-text">Team Lead, Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/MuzikaMihailo.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/MuzikaMihailo.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/MuzikaMihailo.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Muzika Mihailo</h3>
-                        <p class="team-text">Scrum Master, Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/CherednichenkoDenis.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/CherednichenkoDenis.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/CherednichenkoDenis.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Cherednichenko Denis</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/DmitrievVitaliy.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/DmitrievVitaliy.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/DmitrievVitaliy.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Dmitriev Vitaliy</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/SlyusarOleksandr.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/SlyusarOleksandr.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/SlyusarOleksandr.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Slyusar Oleksandr</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/VolontyrPavlo.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/VolontyrPavlo.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/VolontyrPavlo.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Volontyr Pavlo</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/Deren'koTetiana.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/Deren'koTetiana.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/Deren'koTetiana.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Deren'ko Tetiana</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/GurikOstap.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/GurikOstap.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/GurikOstap.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Gurik Ostap</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/AlimpiievaKsenia.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/AlimpiievaKsenia.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/AlimpiievaKsenia.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Alimpiieva Ksenia</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-                <li class="team-item">
-                    <picture class="img">
-                        <source srcset="/src/images/devsImages/BorisenkoOleksandr.webp" type="image/webp">
-                        <source srcset="/src/images/devsImages/BorisenkoOleksandr.jpg" type="image/jpg">
-                        <img src="/src/images/devsImages/BorisenkoOleksandr.jpg" alt="Developer">
-                    </picture>
-                    <div class="team-container">
-                        <h3 class="team-name">Borisenko Oleksandr</h3>
-                        <p class="team-text">Developer</p>
-                    </div>
-                </li>
-            </ul>
+          <h2 class="team-header">Team Developers</h2>
+          <ul class="team-list list">
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/ZhdanovDmytro.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/ZhdanovDmytro.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/ZhdanovDmytro.jpg"
+                  alt="Team Lead, Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Zhdanov Dmytro</h3>
+                <p class="team-text">Team Lead, Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/MuzikaMihailo.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/MuzikaMihailo.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/MuzikaMihailo.jpg"
+                  alt="Scrum Master, Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Muzika Mihailo</h3>
+                <p class="team-text">Scrum Master, Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/CherednichenkoDenis.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/CherednichenkoDenis.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/CherednichenkoDenis.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Cherednichenko Denis</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/DmitrievVitaliy.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/DmitrievVitaliy.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/DmitrievVitaliy.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Dmitriev Vitaliy</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/SlyusarOleksandr.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/SlyusarOleksandr.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/SlyusarOleksandr.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Slyusar Oleksandr</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/VolontyrPavlo.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/VolontyrPavlo.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/VolontyrPavlo.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Volontyr Pavlo</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/Deren'koTetiana.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/Deren'koTetiana.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/Deren'koTetiana.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Deren'ko Tetiana</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/GurikOstap.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/GurikOstap.jpg"
+                  type="image/jpg"
+                />
+                <img src="/src/images/devsImages/GurikOstap.jpg" alt="Developer" />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Gurik Ostap</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/AlimpiievaKsenia.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/AlimpiievaKsenia.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/AlimpiievaKsenia.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Alimpiieva Ksenia</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+            <li class="team-item">
+              <picture class="img">
+                <source
+                  srcset="/src/images/devsImages/BorisenkoOleksandr.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcset="/src/images/devsImages/BorisenkoOleksandr.jpg"
+                  type="image/jpg"
+                />
+                <img
+                  src="/src/images/devsImages/BorisenkoOleksandr.jpg"
+                  alt="Developer"
+                />
+              </picture>
+              <div class="team-container">
+                <h3 class="team-name">Borisenko Oleksandr</h3>
+                <p class="team-text">Developer</p>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
 </div>

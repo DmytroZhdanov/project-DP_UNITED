@@ -1,255 +1,245 @@
 /* Styles for Modal window with info about team members*/
 
 .modal-btn-close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    cursor: pointer;
-    top: 20px;
-    right: 20px;
-    padding: 0;
-    width: 16px;
-    height: 16px;
-    border: none;
-    background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
 }
 
 .dark-theme .modal-close-icon {
-    stroke: var(--primary-text-color);
+  stroke: var(--primary-text-color);
 }
 
 .light-theme .modal-close-icon {
-    stroke: var(--secondary-black-color);
+  stroke: var(--secondary-black-color);
 }
 
 .modal-close-icon {
-    width: 7px;
-    height: 7px;
-    transition: stroke var(--transition-dur-and-func);
+  width: 7px;
+  height: 7px;
+  transition: stroke var(--transition-dur-and-func);
 }
 
 .modal-close-icon:hover {
-    stroke: var(--primary-brand-color);
+  stroke: var(--primary-brand-color);
 }
 
 .modal-close-btn:hover .close-cross {
-    stroke: rgba(248, 119, 25, 1);
+  stroke: rgba(248, 119, 25, 1);
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-
+  /* display: none; */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .dark-theme .team-item {
-        box-shadow: 0px 1px 6px rgba(248, 119, 25, 1), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px rgba(248, 119, 25, 1),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
-
 
 .dark-theme .team-item,
 .dark-theme .modal-footer-content {
-    background-color: var(--dark-theme-background-color);
+  background-color: var(--dark-theme-background-color);
 }
 
 .light-theme .team-item,
 .light-theme .modal-footer-content {
-    background-color: var(--light-theme-background-color);
+  background-color: var(--light-theme-background-color);
 }
 
 .modal-footer-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(17, 17, 17, 1);
-    padding: 18px;
-    border-radius: 16px;
-    width: 280px;
-    height: 289px;
-    box-shadow: 0 2px 4px rgba(255, 107, 8, 0.42);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(17, 17, 17, 1);
+  padding: 18px;
+  border-radius: 16px;
+  width: 280px;
+  height: 289px;
+  box-shadow: 0 2px 4px rgba(255, 107, 8, 0.42);
 }
 
 .team-container {
-    padding: 3px 3px;
-    text-align: center;
+  padding: 3px 3px;
+  text-align: center;
 }
 
 .team-header {
-    text-align: center;
-    font-family: var(--primary-font-family);
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 14px;
-    letter-spacing: 0em;
-    color: rgba(248, 119, 25, 1);
-    margin-bottom: 38px;
+  text-align: center;
+  font-family: var(--primary-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+  color: rgba(248, 119, 25, 1);
+  margin-bottom: 38px;
 }
 
-
-
 .team-name {
+  color: var(--light-theme-grey-color);
+  font-family: var(--primary-font-family);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.team-list {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-item {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  margin-bottom: 15px;
+}
+
+.team-item:not(:nth-child(2n)) {
+  margin-right: 10px;
+}
+
+/* .team-item .img {
+  display: none;
+}
+
+.team-container .team-text {
+  display: none;
+} */
+
+@media (min-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  .footer-container {
+    display: inline-block;
+    padding: 0 32px;
+    width: 768px;
+
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+  }
+
+  .footer-text-svg {
+    display: inline;
+  }
+
+  .footer-text {
+    display: inline;
+  }
+
+  .modal-footer-content {
+    width: 609px;
+    height: 400px;
+  }
+
+  .modal-close-btn {
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    right: 24px;
+  }
+
+  .team-item:not(:nth-child(2n)) {
+    margin-right: 0px;
+  }
+
+  .team-item:not(:nth-child(5)):not(:nth-child(6)):not(:nth-child(7)):not(
+      :nth-child(8)
+    ):not(:nth-child(9)):not(:nth-child(10)) {
+    margin-bottom: 10px;
+  }
+
+  .team-item:not(:nth-child(5n)) {
+    margin-right: 10px;
+  }
+
+  .team-header {
+    margin-bottom: 16px;
+  }
+
+  .team-list {
+    justify-content: space-around;
+  }
+
+  .team-item {
+    width: 100px;
+    height: 160px;
+    margin-bottom: 0px;
+  }
+
+  .team-item .img {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .modal-close-icon {
+    width: 10.5px;
+    height: 10.5px;
+    top: 6.75px;
+    right: 6.75px;
+  }
+
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .team-container .team-text {
     color: rgba(183, 183, 183, 1);
     font-family: var(--primary-font-family);
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
-}
-
-.team-list {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.team-item {
-    text-align: center;
-    background-color: #FFFFFF;
-    border-radius: 0px 0px 4px 4px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    margin-bottom: 15px;
-}
-
-.team-item:not(:nth-child(2n)) {
-    margin-right: 10px;
-
-}
-
-
-.team-item .img {
-    display: none;
-}
-
-.team-container .team-text {
-    display: none;
-}
-
-
-@media (min-width: 768px) {
-    footer {
-        text-align: center;
-    }
-
-    .footer-container {
-        display: inline-block;
-        padding: 0 32px;
-        width: 768px;
-
-        font-size: 16px;
-        line-height: 19px;
-        letter-spacing: 0em;
-    }
-
-    .footer-text-svg {
-        display: inline;
-    }
-
-    .footer-text {
-        display: inline;
-    }
-
-    .modal-footer-content {
-        width: 609px;
-        height: 400px;
-    }
-
-    .modal-close-btn {
-        width: 24px;
-        height: 24px;
-        top: 24px;
-        right: 24px;
-    }
-
-    .team-item:not(:nth-child(2n)) {
-        margin-right: 0px;
-    
-    }
-
-    .team-item:not(:nth-child(5)):not(:nth-child(6)):not(:nth-child(7)):not(:nth-child(8)):not(:nth-child(9)):not(:nth-child(10)) {
-        margin-bottom: 10px;
-    }
-
-    .team-item:not(:nth-child(5n)) {
-        margin-right: 10px;
-    }
-
-    .team-header {
-        margin-bottom: 16px;
-    }
-
-    .team-list {
-        justify-content: space-around;
-    }
-
-    .team-item {
-        width: 100px;
-        height: 160px;
-        margin-bottom: 0px;
-    }
-
-    .team-item .img {
-        display: inline-block;
-        border-radius: 5px 5px 0 0;
-    }
-
-    .modal-close-icon {
-        width: 10.5px;
-        height: 10.5px;
-        top: 6.75px;
-        right: 6.75px;
-    }
-
-    .team-container {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .team-container .team-text {
-        color: rgba(183, 183, 183, 1);
-        font-family: var(--primary-font-family);
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-        display: inline-block;
-    }
+    display: inline-block;
+  }
 }
 
 @media (min-width: 1280px) {
-    .footer-container {
+  .footer-container {
+    width: 1280px;
+  }
 
-        width: 1280px;
-    }
+  .modal-footer-content {
+    width: 700px;
+    height: 400px;
+  }
 
-    .modal-footer-content {
-        width: 700px;
-        height: 400px;
-    }
+  .modal-close-btn {
+    top: 28px;
+    right: 28px;
+  }
 
-    .modal-close-btn {
-        top: 28px;
-        right: 28px;
-    }
+  .team-item img {
+    width: 120px;
+  }
 
-    .team-item img {
-        width: 120px;
-    }
-
-   
-    .team-item {
-
-        height: 160px;
-        width: 105px;
-    }
-
-
+  .team-item {
+    height: 160px;
+    width: 105px;
+  }
 }
