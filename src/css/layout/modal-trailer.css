@@ -22,113 +22,143 @@
   }
 }
 
-/* .backdrop-modal.is-hidden .modal-trailer {
-  transform: translate(-50%, -50%) scale(1.1);
-} */
-/* .modal-trailer {
-  position: relative;
+.modal-trailer-backdrop {
+  overflow-y: auto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
+}
+
+.light-theme .modal-trailer-backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.default-modal-trailer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform var(--transition-dur-and-func);
+  transform: translate(-50%, -50%);
   width: 280px;
-  padding: 39px 33px 8px 33px;
+  height: 289px;
+  padding-top: 39px;
+  padding-right: 33px;
+  padding-bottom: 8px;
+  padding-left: 33px;
+  background-color: #111111;
   box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
   border-radius: 16px;
-} */
-/* .dark-theme .modal-trailer {
-  background-color: var(--dark-theme-background-color);
 }
-.light-theme .modal-trailer {
-  background-color: var(--light-theme-background-color);
-} */
 
-/* iframe {
-  width: 280px;
-  height: 157px;
-  display: block;
-  border-radius: 20px;
-} */
-/* .modal-btn-close {
+.light-theme .default-modal-trailer {
+  background-color: #f8f8f8;
+}
+
+.modal-btn-close {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  cursor: pointer;
+  width: 16px;
+  height: 16px;
   top: 20px;
   right: 20px;
   padding: 0;
-  width: 16px;
-  height: 16px;
-  border: none;
-  background-color: transparent;
+  color: #f8f8f8;
+  transition: color var(--transition-dur-and-func);
 }
-.dark-theme .modal-close-icon {
-  stroke: var(--primary-text-color);
+
+.light-theme .modal-btn-close {
+  color: #111111;
 }
-.light-theme .modal-close-icon {
-  stroke: var(--secondary-black-color);
-}
+
 .modal-close-icon {
-  width: 7px;
-  height: 7px;
-  transition: stroke var(--transition-dur-and-func);
+  stroke: currentColor;
 }
-.modal-close-icon:hover {
-  stroke: var(--primary-brand-color);
+
+.modal-btn-close:hover,
+.modal-btn-close:focus {
+  color: #f87719;
 }
-.modal-text {
-  font-family: var(--primary-font-family);
+
+.modal-trailer-text {
   font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 24px;
+  line-height: 1.19;
+  color: #ffffff;
 }
-.dark-theme .modal-text {
-  color: var(--primary-text-colors);
+
+.light-theme .modal-trailer-text,
+.light-theme .modal-btn-close {
+  color: #111111;
 }
-.light-theme .modal-text {
-  color: var(--dark-theme-background-color);
+
+.modal-trailer-picture {
+  width: 159px;
+  height: 153px;
 }
-.modal-picture {
-  margin: auto;
-} */
-/* @media screen and (min-width: 768px) {
-  .modal-trailer {
+
+@media screen and (min-width: 768px) {
+  .default-modal-trailer {
+    flex-direction: row;
+    gap: 0;
     width: 609px;
-    padding: 150px 0px 150px 50px;
+    height: 400px;
+    padding-top: 132px;
+    padding-right: 244px;
+    padding-bottom: 176px;
+    padding-left: 44px;
   }
-  iframe {
-    width: 609px;
-    height: 342px;
-  }
+
   .modal-btn-close {
     width: 24px;
     height: 24px;
     top: 24px;
     right: 24px;
   }
-  .modal-close-icon {
-    width: 10.5px;
-    height: 10.5px;
-  }
-  .modal-text {
+
+  .modal-trailer-text {
     font-size: 24px;
-    width: 321px;
-    margin-bottom: 0;
+    line-height: 1.17;
   }
-  .modal-picture {
+
+  .modal-trailer-picture {
     position: absolute;
-    bottom: 10px;
     right: 10px;
+    bottom: 16px;
+    width: 296px;
+    height: 260px;
+    z-index: -1;
   }
 }
+
 @media screen and (min-width: 1280px) {
-  .modal-trailer {
+  .default-modal-trailer {
     width: 700px;
-    padding: 150px 0 150px 50px;
+    padding-top: 150px;
+    padding-right: 329px;
+    padding-bottom: 150px;
+    padding-left: 50px;
   }
-  iframe {
-    width: 700px;
-    height: 393px;
+
+  .modal-btn-close {
+    top: 28px;
+    right: 28px;
   }
-} */
+
+  .modal-trailer-picture {
+    right: 0px;
+    bottom: 5px;
+    width: 363px;
+    height: 318px;
+  }
+}

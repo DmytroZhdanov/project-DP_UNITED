@@ -7,7 +7,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const TRENDING_DAY_ENDPOINT = '/trending/movie/day';
 const TRENDING_WEEK_ENDPOINT = '/trending/movie/week';
 const UPCOMING_ENDPOINT = '/movie/upcoming';
-const BY_ID_ENDPOINT = '/movi1e';
+const BY_ID_ENDPOINT = '/movie';
 const SEARCH_QUERY_ENDPOINT = '/search/movie';
 const GENRE_ENDPOINT = '/genre/movie/list';
 
