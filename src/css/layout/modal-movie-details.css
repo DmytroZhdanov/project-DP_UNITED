@@ -23,13 +23,13 @@
   border-radius: 16px;
 }
 
+.light-theme .modal-details-wrapper {
+  background-color: var(--light-theme-background-color);
+}
+
 .modal-details {
   padding: 52px 16px;
   border-radius: 16px;
-}
-
-.light-theme .modal-details {
-  background-color: var(--light-theme-background-color);
 }
 
 .movie-details-items {
