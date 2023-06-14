@@ -16,6 +16,7 @@
 @import url('./components/current.css');
 @import url('./components/button.css');
 @import url('./components/movie-card.css');
+@import url('./components/loader.css');
 
 /* Layout */
 @import url('./layout/header.css');
