@@ -20,11 +20,18 @@ const inputSearchByName = document.querySelector(
 );
 const iconClearFilm = document.querySelector('#btn-input-catalogue-film');
 const iconClearSearch = document.querySelector('#btn-input-catalogue-search');
+
+inputFilm.style.display = 'none';
+inputYear.style.display = 'none';
 catalogFormSearch.addEventListener('submit', onCatalogSearchMovies);
 iconClearSearch.addEventListener('click', onClearInputSearch);
 iconClearFilm.addEventListener('click', onClearInputFilm);
 chooseYear.addEventListener('change', searchMoviesByYear);
+
 const moviesNumber = window.innerWidth < 768 ? 10 : 20;
+
+console.log(window.innerWidth);
+
 let searchQuery;
 let yearsArr = [];
 const options = {
@@ -40,7 +47,8 @@ const page = pagination.getCurrentPage();
 
 pagination.on('afterMove', createPopularMoviesForWeek);
 const tuiPaginatContainer = document.querySelector('.tui-pagination');
-tuiPaginatContainer.classList.add('dark-theme', 'light-theme', 'btn-container');
+tuiPaginatContainer.classList.add('btn-container');
+const btnContainer = document.querySelector('.btn-container');
 
 // TRENDING MOVIES FOR WEEK //
 
@@ -107,11 +115,15 @@ async function onCatalogSearchMovies(e) {
     const moviesToRender = resp.results.slice(0, moviesNumber);
 
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
-
+    if (window.innerWidth >= 768) {
+      inputSearchByName.style.display = 'none';
+      catalogFormSearch.style.flexWrap = 'nowrap';
+    }
+    inputFilm.style.display = 'flex';
+    inputYear.style.display = 'flex';
     iconClearSearch.hidden = false;
-    inputFilm.hidden = false;
     iconClearFilm.hidden = false;
-    inputYear.hidden = false;
+
     pagination.reset(resp.total_pages);
 
     paginationStylesOfBtn();
