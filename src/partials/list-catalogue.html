@@ -5,14 +5,14 @@
       <!-- search form-->
       <form class="catalog-search-form" data-catalogue-search-form>
         <div class="search-film-year">
-          <span class="catalog-span" id="input-catalogue-film" hidden>
-            <input
-              type="text"
+          <div class="catalog-span" id="input-catalogue-film" hidden>
+            <select
               name="queryFilmName"
-              autocomplete="off"
-              placeholder="Film"
               class="catalog-search-film catalog-input"
-            />
+              data-catalogue-choose-movie
+            >
+              <option value="Film">Film</option>
+            </select>
             <button
               type="button"
               class="btn-icon-catalog"
@@ -23,15 +23,15 @@
                 <use href="./images/icons.svg#icon-close"></use>
               </svg>
             </button>
-          </span>
+          </div>
           <span class="catalog-span" id="input-catalogue-year" hidden>
-            <input
-              type="text"
+            <select
               name="queryFilmYear"
-              autocomplete="off"
-              placeholder="Year"
+              data-catalogue-choose-year
               class="catalog-search-year catalog-input"
-            />
+            >
+              <option value="Year">Year</option>
+            </select>
             <button type="button" class="btn-icon-catalog">
               <svg class="icon-arrow" width="4.5" height="9">
                 <use href="./images/icons.svg#icon-arrow"></use>
@@ -47,6 +47,16 @@
             placeholder="Search"
             class="catalog-search-name catalog-input"
           />
+          <button
+            type="button"
+            class="btn-icon-catalog"
+            id="btn-input-catalogue-search"
+            hidden
+          >
+            <svg class="icon-close" width="9" height="9">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
         </span>
         <span class="btn-search-wrapper">
           <button
@@ -63,11 +73,11 @@
     </div>
 
     <!-- catalog-->
-    <div
+    <ul
       class="catalog-movies-list"
       data-catalogue-movies
       data-header-catalogue
-    ></div>
+    ></ul>
     <div class="target-element"></div>
     <div id="tui-pagination-container" class="tui-pagination is-hidden"></div>
   </div>

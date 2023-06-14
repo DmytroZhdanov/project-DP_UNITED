@@ -21,7 +21,7 @@
     margin-bottom: 12px;
   }
   .catalog-input {
-    padding: 11px 0 11px 20px;
+    padding: 11px 40px 11px 20px;
     border: 1px solid #ffffff;
     border-radius: 8px;
     background: #111111;
@@ -29,6 +29,7 @@
     font-size: 14px;
     color: #b7b7b7;
   }
+
   .catalog-search-film {
     width: 173px;
   }
@@ -70,7 +71,6 @@
     transform: rotate(-90deg);
     stroke: #ffffff;
   }
-
 
   .catalog-movies-list {
     margin-bottom: 20px;
@@ -122,26 +122,25 @@
     display: none;
   }
 
-  .btn-number.tui-is-selected {
+  /* .btn-number.tui-is-selected {
     border: none;
     background-image: var(--primary-button-color);
-  }
+  } */
 
-  .dark-theme .btn-number.tui-is-selected {
+  .btn-container.dark-theme .btn-number.btn-current {
     color: #ffffff;
   }
 
-  .light-theme .btn-number.tui-is-selected {
+  .btn-container.light-theme .btn-number.btn-current {
     color: #111111;
   }
-  /*
-  .tui-pagination#tui-pagination-container
-    > .tui-page-btn.tui-prev-is-ellip.tui-first-child {
+
+  .btn-container > .btn-number.tui-prev-is-ellip.tui-first-child {
     margin-right: 0;
     border: none;
   }
-  .tui-pagination#tui-pagination-container
-    > .tui-page-btn.tui-prev-is-ellip.tui-first-child
+  .btn-container
+    > .btn-number.tui-prev-is-ellip.tui-first-child
     > .tui-ico-ellip {
     width: 8px;
     font-size: 10px;
@@ -149,14 +148,13 @@
     background: none;
   }
 
-  .tui-pagination#tui-pagination-container
-    > .tui-page-btn.tui-next-is-ellip.tui-last-child {
+  .btn-container > .btn-number.tui-next-is-ellip.tui-last-child {
     margin-right: 0;
     border: none;
   }
 
-  .tui-pagination#tui-pagination-container
-    > .tui-page-btn.tui-next-is-ellip.tui-last-child
+  .btn-container
+    > .btn-number.tui-next-is-ellip.tui-last-child
     > .tui-ico-ellip {
     margin-top: 7px;
     width: 8px;
@@ -165,40 +163,37 @@
     background: none;
   }
 
-  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-prev {
+  .btn-container > .btn-number.tui-prev {
     margin-right: 4px;
     color: #f8f8f8;
     border: none;
   }
 
-  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-next {
+  .btn-container > .btn-number.tui-next {
     margin-left: 4px;
     margin-right: 0;
     border: none;
-  } */
-
-  /* .tui-pagination.dark-theme#tui-pagination-container
-    .tui-page-btn.tui-is-selected
-    .dark-theme {
-    
   }
 
-  
+  .tui-pagination.dark-theme#tui-pagination-container
+    .tui-page-btn.tui-is-selected
+    .dark-theme {
+  }
 
-  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-is-selected {
+  .btn-container > .btn-number.btn-current {
     border: none;
     background-image: var(--primary-button-color);
     color: #ffffff;
   }
 
-  .tui-page-btn.tui-is-selected.dark-theme.btn-current {
+  .btn-container.dark-theme > .btn-number.btn-current {
     color: #ffffff;
   }
 
-  .light-theme.tui-page-btn.btn-current {
+  .btn-container.light-theme > .btn-number.btn-current {
     color: #111111;
-  } */
-  */ .target-element {
+  }
+  .target-element {
   }
 }
 
