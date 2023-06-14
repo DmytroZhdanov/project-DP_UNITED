@@ -39,8 +39,9 @@ const pagination = new Pagination(paginEl, options);
 const page = pagination.getCurrentPage();
 
 pagination.on('afterMove', createPopularMoviesForWeek);
-const tuiPaginatBtn = document.querySelectorAll('.tui-page-btn');
-console.log(tuiPaginatBtn);
+const tuiPaginatContainer = document.querySelector('.tui-pagination');
+tuiPaginatContainer.classList.add('dark-theme', 'light-theme', 'btn-container');
+
 // TRENDING MOVIES FOR WEEK //
 
 async function onRenderCatalogPage(page) {
@@ -48,23 +49,10 @@ async function onRenderCatalogPage(page) {
     const resp = await fetchWeekTrends(page);
     const moviesToRender = resp.results.slice(0, moviesNumber);
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
-
+    paginationStylesOfBtn();
     pagination.reset(resp.total_pages);
-    const tuiPaginatBtn = document.querySelectorAll('.tui-page-btn');
-    tuiPaginatBtn.forEach(button => {
-      console.log(button);
-      button.classList.add('btn-number');
-    });
 
-    const tuiPaginatContainer = document.querySelector('.tui-pagination');
-    tuiPaginatContainer.classList.add(
-      'dark-theme',
-      'light-theme',
-      'btn-container'
-    );
-    const tuiPaginatBtnSelected = document.querySelector('.tui-is-selected');
-    console.log(tuiPaginatBtnSelected);
-    tuiPaginatBtnSelected.classList.add('btn-current');
+    paginationStylesOfBtn();
 
     paginEl.classList.remove('is-hidden');
 
@@ -91,15 +79,8 @@ async function createPopularMoviesForWeek(e) {
     const resp = await fetchWeekTrends(currentPage);
     const moviesToRender = resp.results.slice(0, moviesNumber);
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
-    const tuiPaginatBtnSelected = document.querySelector('.tui-is-selected');
-    console.log(tuiPaginatBtnSelected);
-    tuiPaginatBtnSelected.classList.add('btn-current');
 
-    const tuiPaginatBtn = document.querySelectorAll('.tui-page-btn');
-    tuiPaginatBtn.forEach(button => {
-      console.log(button);
-      button.classList.add('btn-number');
-    });
+    paginationStylesOfBtn();
   } catch (err) {
     console.log(err);
   }
@@ -133,6 +114,8 @@ async function onCatalogSearchMovies(e) {
     inputYear.hidden = false;
     pagination.reset(resp.total_pages);
 
+    paginationStylesOfBtn();
+
     paginEl.classList.remove('is-hidden');
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
     choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
@@ -165,6 +148,7 @@ async function createPaginationByQuerry(evt) {
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
     choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
     // chooseYear.innerHTML = markUpListOfYears(resp.results);
+    paginationStylesOfBtn();
   } catch (err) {
     console.log(err);
   }
@@ -191,6 +175,8 @@ async function createPaginationBySearchQueryAndYear(evt) {
     const resp = await fetchMovieBySearchQueryAndYear(currentPage);
     console.log(resp);
     catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
+
+    // pagination btn styles //
   } catch (err) {
     console.log(err);
   }
@@ -208,6 +194,7 @@ function onClearInputFilm() {
   iconClearFilm.hidden = true;
 }
 
+// MARKUP LISTS OF MOVIES AND YEARS ///
 function markUpListOfMovies(arr) {
   return arr
     .map(({ title }) => `<option value='${title}'>${title}</option>`)
@@ -224,4 +211,14 @@ function markUpListOfYears(years) {
       `<option value='${year}'>${year}</option>`;
     })
     .join();
+}
+
+//  PAGINATION STYLES //
+
+function paginationStylesOfBtn() {
+  const tuiPaginatBtnSelected = document.querySelector('.tui-is-selected');
+  tuiPaginatBtnSelected.classList.add('btn-current');
+
+  const tuiPaginatBtn = document.querySelectorAll('.tui-page-btn');
+  tuiPaginatBtn.forEach(button => button.classList.add('btn-number'));
 }

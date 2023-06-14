@@ -92,14 +92,15 @@
   }
 
   /*- BTN- TUI-PAGINATION-*/
-  /* .tui-pagination#tui-pagination-container {
+  .tui-pagination.btn-container {
     height: 24px;
     font-weight: 400;
     font-size: 10px;
     line-height: 1;
     margin: 0;
+    color: #b7b7b7;
   }
-  .tui-pagination#tui-pagination-container > .tui-page-btn {
+  .tui-pagination.btn-container > .btn-number {
     margin-right: 8px;
     width: 24px;
     height: 24px;
@@ -112,26 +113,20 @@
     color: #b7b7b7;
     border: 1px solid #b7b7b7;
   }
-*/
 
-  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-first {
+  .btn-container > .btn-number.tui-first {
     display: none;
   }
 
-  .tui-pagination#tui-pagination-container > .tui-page-btn.tui-last {
+  .btn-container > .btn-number.tui-last {
     display: none;
   }
 
-  /* .btn-number.tui-is-selected {
-    border: none;
-    background-image: var(--primary-button-color);
-  } */
-
-  .btn-container.dark-theme .btn-number.btn-current {
+  .tui-pagination.btn-container.dark-theme .btn-number.btn-current {
     color: #ffffff;
   }
 
-  .btn-container.light-theme .btn-number.btn-current {
+  .tui-pagination.btn-container.light-theme .btn-number.btn-current {
     color: #111111;
   }
 
@@ -139,7 +134,7 @@
     margin-right: 0;
     border: none;
   }
-  .btn-container
+  .tui-pagination.btn-container
     > .btn-number.tui-prev-is-ellip.tui-first-child
     > .tui-ico-ellip {
     width: 8px;
@@ -153,7 +148,7 @@
     border: none;
   }
 
-  .btn-container
+  .tui-pagination.btn-container
     > .btn-number.tui-next-is-ellip.tui-last-child
     > .tui-ico-ellip {
     margin-top: 7px;
@@ -165,7 +160,6 @@
 
   .btn-container > .btn-number.tui-prev {
     margin-right: 4px;
-    color: #f8f8f8;
     border: none;
   }
 
@@ -173,11 +167,6 @@
     margin-left: 4px;
     margin-right: 0;
     border: none;
-  }
-
-  .tui-pagination.dark-theme#tui-pagination-container
-    .tui-page-btn.tui-is-selected
-    .dark-theme {
   }
 
   .btn-container > .btn-number.btn-current {
@@ -192,8 +181,6 @@
 
   .btn-container.light-theme > .btn-number.btn-current {
     color: #111111;
-  }
-  .target-element {
   }
 }
 
@@ -226,20 +213,20 @@
   }
 }
 /*- BTN- TUI-PAGINATION-*/
-/* .tui-pagination#tui-pagination-container {
+/* .tui-pagination.btn-container {
   height: 40px;
   font-size: 14px;
 }
 
-.tui-pagination#tui-pagination-container > .tui-page-btn {
+.tui-pagination.btn-container > .btn-number {
   margin-right: 16px;
   width: 40px;
   height: 40px;
   padding: 13px 2px;
   font-size: 14px;
-}
+} */
 
-.tui-pagination#tui-pagination-container
+/* .tui-pagination#tui-pagination-container
   > .tui-page-btn.tui-prev-is-ellip.tui-first-child
   > .tui-ico-ellip {
   width: 12px;
