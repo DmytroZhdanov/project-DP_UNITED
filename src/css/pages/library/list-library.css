@@ -35,6 +35,9 @@
   .library-ops-text-css p {
     margin-bottom: 20px;
   }
+  .light-theme .library-ops-text-css {
+    color: var(--dark-theme-background-color);
+  }
 }
 @media screen and (min-width: 768px) {
   .movie-cards-list-css {
