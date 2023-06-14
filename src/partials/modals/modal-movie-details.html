@@ -7,13 +7,17 @@
         <use href="./images/icons.svg#icon-close"></use>
       </svg>
     </button>
-    <img
-      class="movie-details-img"
-      src="/src/images/image-not-found.jpg"
-      alt="movie"
-      width="375"
-      height="478"
-    />
+    <div class="movie-details-img-wrap">
+      <picture>
+        <source srcset="/src/images/image-not-found.webp" type="image/webp" />
+        <source srcset="/src/images/image-not-found.jpg" type="image/jpeg" />
+        <img
+          class="movie-details-img"
+          src="/src/images/image-not-found.jpg"
+          alt="movie"
+        />
+      </picture>
+    </div>
     <div class="movie-details-wrapper">
       <h2 class="movie-details-headline">John Wick: Chapter 4</h2>
       <div class="movie-details-inner">
