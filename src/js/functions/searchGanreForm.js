@@ -1,16 +1,19 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
 import { getGenresIdByGenres } from './getGenresIdByGenres';
-//import { refs } from '../list-library';
+import { refs } from '../list-library';
+//console.log(refs.LibraryFromLocalStorage);
 
-LibraryFromLocalStorage = JSON.parse(localStorage.getItem('library'));
+//LibraryFromLocalStorageForGenre = JSON.parse(localStorage.getItem('library'));
 
-console.log(LibraryFromLocalStorage);
+//console.log(refs.LibraryFromLocalStorage);
 
 function libraryListAllGanre(array) {
   return array.flatMap(array => array.genre_ids);
 }
-const Ganre = getGenresByGenresId(libraryListAllGanre(LibraryFromLocalStorage));
-console.log(Ganre);
+const Ganre = getGenresByGenresId(
+  libraryListAllGanre(refs.LibraryFromLocalStorage)
+);
+//console.log(Ganre);
 
 const arrayUnicalGanres = [...new Set(Ganre)];
 
@@ -115,6 +118,47 @@ dropdownList.addEventListener('mousemove', e => {
 //=====================Получаем жанр и трансформируем его в айди==================================
 
 function ClickToSetGanre(evt) {
-  getGenresIdByGenres([`${evt}`]).then(data => console.log(data));
+  getGenresIdByGenres([`${evt}`]).then(data => {
+    makeArrayFilterOnGanre(data);
+  });
 }
-//========================нужно понять как рендерить фильмы иея айди фильтра===
+//======================получаем масив объектов по выбранному фильму====================
+function makeArrayFilterOnGanre(ganre) {
+  const filterArrayMovies = [];
+  refs.LibraryFromLocalStorage.map(element => {
+    if (element.genre_ids.includes(...ganre)) {
+      filterArrayMovies.push(element);
+    }
+  });
+  console.log(filterArrayMovies);
+  const totalFilretPageOnLibrary = getTotalLibraryPage(filterArrayMovies);
+  console.log(totalFilretPageOnLibrary);
+}
+//========================рендерим фильмы имея масио по фильтру===
+
+function getTotalLibraryPage(arr) {
+  return arr ? Math.ceil(arr.length / 9) : 0;
+}
+
+//function rendFilterPageLibrary(totalLibraryPage){
+//    if (totalLibraryPage <= 1) {
+//        refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
+//          refs.LibraryFromLocalStorage
+//        );
+//        refs.libraryMovieList.classList.add('movie-cards-list-css');
+//      } else {
+//        //==============if page > 1 - render first page and Button "load more"==============
+
+//        refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
+//          renderNumberOfCard(refs.LibraryFromLocalStorage, curentPage)
+//        );
+
+//        renderButtonLoadMore();
+//        curentPage += 1;
+
+//        refs.libraryMovieList.classList.add('movie-cards-list-css');
+//        //==================set event on Button "Load more"==================================
+//        libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
+//        libraryLoadMoreBtn.addEventListener('click', renderLoadMoreCard);
+//      }
+//}

@@ -1,7 +1,7 @@
 // Library Page - Library list section
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 
-const refs = {
+export const refs = {
   libraryMovieList: document.querySelector('[data-library-list]'),
   libraryOppsText: document.querySelector('[data-library-oops-text]'),
   LibraryFromLocalStorage: JSON.parse(localStorage.getItem('library')),
