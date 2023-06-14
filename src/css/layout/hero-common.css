@@ -49,6 +49,7 @@
   }
   .hero-info {
     padding-top: 169px;
+    max-width: 600px;
   }
   .hero-title {
     font-size: 64px;
