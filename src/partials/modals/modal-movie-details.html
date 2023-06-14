@@ -1,64 +1,50 @@
 <!-- Modal window for movie details -->
 
-<div class="backdrop is-hidden" data-modal-details>
-  <div class="container">
-    <div class="modal-details-flex">
-      <button type="button" class="btn modal-close" data-modal-details-close>
-        <svg class="icon-close" width="10.5" height="10.5">
-          <use href="./images/icons.svg#icon-close"></use>
-        </svg>
-      </button>
-  
-      <img class="modal-details-img" src="./images/image-not-found.jpg" alt="Image not found" />
-      
-      <div class="modal-details-column">
-        <h2 class="modal-details-headline">John Wick: Chapter 4</h2>
-        <div class="modal-details-wrap">
-  
-          <div class="modal-details-inner-wrap">
-            <div class="modal-details-wrapper modal-details-wrapper-gap">
-              <ul class="modal-details-list">
-                <li class="modal-details-item-vote">
-                  <p class="modal-details-subject">Vote / Votes</p>
-                </li>
-                <li class="modal-details-item-vote-num">
-                  <p class="modal-details-vote">
-                    <span class="modal-details-inner-box"><!-- динамічне значення --></span>
-                    <span class="modal-details-inner-color">/</span>
-                    <span class="modal-details-inner-box-votes"><!-- динамічне значення --></span>
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="modal-details-wrapper">
-            <ul class="modal-details-list">
-              <li class="modal-details-item-pop">
-                <p class="modal-details-subject">Popularity</p>
-              </li>
-              <li class="modal-details-item-pop-num">
-                <p class="modal-details-famous"><!-- динамічне значення --></p>
-              </li>
-            </ul>
-  
-            <ul class="modal-details-list">
-              <li class="modal-details-item-genre">
-                <p class="modal-details-subject">Genre</p>
-              </li>
-              <li class="modal-details-item-genre-num">
-                <p class="modal-details-janres"><!-- динамічне значення --></p>
-              </li>
-            </ul>
-          </div>
-  
-          <h3 class="modal-details-caption">About</h3>
-            <p class="modal-details-description"><!-- динамічне значення --></p>
-            <button class="btn btn-filled" type="button"><!-- динамічне значення --></button>
-          </div>
-  
-        </div>
+<div class="backdrop" data-modal-details>
+  <div class="modal-details">
+    <button class="modal-btn-close-details" data-modal-details-close>
+      <svg class="modal-close-icon-details">
+        <use href="./images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <img
+      class="movie-details-img"
+      src="/src/images/image-not-found.jpg"
+      alt="movie"
+      width="375"
+      height="478"
+    />
+    <div class="movie-details-wrapper">
+      <h2 class="movie-details-headline">John Wick: Chapter 4</h2>
+      <div class="movie-details-inner">
+        <ul class="movie-details-list">
+          <li class="movie-details-item">Vote / Votes</li>
+          <li class="movie-details-item">Popularity</li>
+          <li class="movie-details-item">Genre</li>
+        </ul>
+
+        <ul class="movie-details-items">
+          <li class="movie-details-content-inner-item movie-details-content">
+            <span class="movie-details-content-inner">7.3</span
+            ><span class="movie-details-content-inner-slash">/</span
+            ><span class="movie-details-content-inner-wrap">1260</span>
+          </li>
+          <li class="movie-details-content">100.2</li>
+          <li class="movie-details-content">Action Thriller Crime</li>
+        </ul>
       </div>
+
+      <h3 class="movie-details-subtitle">About</h3>
+
+      <p class="movie-details-description">
+        John Wick (Keanu Reeves) takes on his most lethal adversaries yet in the
+        upcoming fourth instalment of the series. With the price on his head
+        ever increasing, John Wick uncovers a path to defeating The High Table.
+        But before he can earn his freedom, Wick must face off against a new
+        enemy with powerful alliances across the globe and forces that turn old
+        friends into foes.
+      </p>
+      <div data-library-btn-modal>Add to my library</div>
     </div>
   </div>
 </div>
