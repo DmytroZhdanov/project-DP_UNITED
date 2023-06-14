@@ -228,6 +228,8 @@
 
   .movie-details-wrapper {
     height: 400px;
+    display: flex;
+    flex-direction: column;
   }
 
   .movie-details-headline {
@@ -257,8 +259,7 @@
     line-height: 1.7;
     width: 100%;
     max-width: 301px;
-    /* max-height: 157px; */
-    overflow-y: auto;
+    overflow: auto;
   }
 }
 
