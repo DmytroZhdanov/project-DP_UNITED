@@ -33,47 +33,40 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
         />
       </picture>`;
 
-  return `<div class="modal-details">
-            <button class="modal-btn-close-details" data-modal-details-close>
-              <svg class="modal-close-icon-details">
-                <use href="./images/icons.svg#icon-close"></use>
-              </svg>
-            </button>
-            <div class="movie-details-img-wrap">
-              ${poster}
+  return `<div class="movie-details-img-wrap">
+            ${poster}
+          </div>
+          <div class="movie-details-wrapper">
+            <h2 class="movie-details-headline">${title}</h2>
+            <div class="movie-details-inner">
+              <ul class="movie-details-list">
+                <li class="movie-details-item">Vote / Votes</li>
+                <li class="movie-details-item">Popularity</li>
+                <li class="movie-details-item">Genre</li>
+              </ul>
+
+              <ul class="movie-details-items">
+                <li class="movie-details-content-inner-item movie-details-content">
+                  <span class="movie-details-content-inner">${vote_average.toFixed(
+                    1
+                  )}</span
+                  ><span class="movie-details-content-inner-slash">/</span
+                  ><span class="movie-details-content-inner-wrap">${vote_count.toFixed(
+                    1
+                  )}</span>
+                </li>
+                <li class="movie-details-content">${popularity.toFixed(1)}</li>
+                <li class="movie-details-content">${genresString}</li>
+              </ul>
             </div>
-            <div class="movie-details-wrapper">
-              <h2 class="movie-details-headline">${title}</h2>
-              <div class="movie-details-inner">
-                <ul class="movie-details-list">
-                  <li class="movie-details-item">Vote / Votes</li>
-                  <li class="movie-details-item">Popularity</li>
-                  <li class="movie-details-item">Genre</li>
-                </ul>
 
-                <ul class="movie-details-items">
-                  <li class="movie-details-content-inner-item movie-details-content">
-                    <span class="movie-details-content-inner">${vote_average.toFixed(
-                      1
-                    )}</span
-                    ><span class="movie-details-content-inner-slash">/</span
-                    ><span class="movie-details-content-inner-wrap">${vote_count.toFixed(
-                      1
-                    )}</span>
-                  </li>
-                  <li class="movie-details-content">${popularity.toFixed(1)}</li>
-                  <li class="movie-details-content">${genresString}</li>
-                </ul>
-              </div>
+            <h3 class="movie-details-subtitle">About</h3>
 
-              <h3 class="movie-details-subtitle">About</h3>
-
-              <p class="movie-details-description">
-                ${overview}
-              </p>
-              <div class="library-btn-modal" data-library-btn-modal>
-                ${libraryBtn}
-              </div>
+            <p class="movie-details-description">
+              ${overview}
+            </p>
+            <div class="library-btn-modal" data-library-btn-modal>
+              ${libraryBtn}
             </div>
           </div>`;
 }

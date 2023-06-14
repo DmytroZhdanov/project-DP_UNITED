@@ -20,7 +20,6 @@ function onModalLibraryBtnAddClick(classes, id, movieObject) {
   const libraryBtnRemove = document.querySelector(
     '[data-remove-from-library-btn-modal]'
     );
-    console.log(libraryBtnRemove);
   libraryBtnRemove.addEventListener(
     'click',
     () => {

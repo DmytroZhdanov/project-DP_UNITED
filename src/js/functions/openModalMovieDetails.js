@@ -16,7 +16,10 @@ async function openModalMovieDetails(id) {
   
     const modalMovieDetails = document.querySelector('[data-modal-details]');
     const btnClasses = 'btn btn-empty';
-    modalMovieDetails.innerHTML = generateModalMovieDetailsMarkup(
+    const modalMovieDetailsContent = document.querySelector(
+      '[data-modal-details-content]'
+    );
+    modalMovieDetailsContent.innerHTML = generateModalMovieDetailsMarkup(
       btnClasses,
       movieObject
     );
