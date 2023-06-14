@@ -59,16 +59,14 @@
   border: none;
   background-color: transparent;
 }
-.dark-theme .modal-close-icon-details {
+.modal-close-icon-details {
+  width: 10.5px;
+  height: 10.5px;
+  /* transition: stroke var(--transition-dur-and-func); */
   stroke: var(--primary-text-color);
 }
 .light-theme .modal-close-icon-details {
   stroke: var(--secondary-black-color);
-}
-.modal-close-icon-details {
-  width: 10.5px;
-  height: 10.5px;
-  transition: stroke var(--transition-dur-and-func);
 }
 .modal-close-icon-details:hover {
   stroke: var(--primary-brand-color);
@@ -113,14 +111,22 @@
 
 .movie-details-content-inner-slash {
   margin: 0 4px;
-
   color: #f8f8f8;
 }
+
 .movie-details-content-inner-wrap {
   padding: 1px 4px;
-
   background: #ffffff;
   border-radius: 5px;
+}
+
+.light-theme .movie-details-content-inner,
+.light-theme .movie-details-content-inner-wrap {
+  background: var(--secondary-text-color);
+}
+
+.light-theme .movie-details-content-inner-slash {
+  color: var(--dark-theme-grey-color);
 }
 
 .movie-details-subtitle {
@@ -141,10 +147,15 @@
 
 .light-theme .movie-details-description {
   color: var(--secondary-black-color);
-} 
+}
+
+.library-btn-modal {
+  height: 40px;
+  margin-top: auto;
+  position: relative;
+}
 
 @media screen and (min-width: 320px) {
-
   .movie-details-headline {
     margin-bottom: 29px;
     font-size: 20px;
@@ -167,7 +178,7 @@
     margin-bottom: 16px;
     width: 100%;
     max-width: 248px;
-    height: 180px;
+    /* height: 180px; */
   }
 
   .movie-details-subtitle {
@@ -179,7 +190,7 @@
 
 @media screen and (max-width: 767px) {
   .modal-details {
-    max-height: 90%;
+    max-height: 85%;
     overflow-y: auto;
   }
 }
@@ -206,6 +217,10 @@
 
   .movie-details-img {
     margin-bottom: 0;
+  }
+
+  .movie-details-wrapper {
+    height: 400px;
   }
 
   .movie-details-headline {
@@ -235,7 +250,7 @@
     line-height: 1.7;
     width: 100%;
     max-width: 301px;
-    max-height: 157px;
+    /* max-height: 157px; */
     overflow-y: auto;
   }
 }
@@ -250,6 +265,7 @@
     top: 40px;
     right: 40px;
   }
+
   .movie-details-img-wrap {
     width: 375px;
     height: 478px;
@@ -297,6 +313,6 @@
     margin-bottom: 24px;
     width: 100%;
     max-width: 331px;
-    max-height: 221px;
+    /* max-height: 221px; */
   }
 }

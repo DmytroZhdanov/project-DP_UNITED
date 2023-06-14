@@ -14,33 +14,68 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
     genres,
   } = movieObject;
   const genresString = genre_ids
-    ? getGenresByGenresId(genre_ids)
-    : genres.map(genre => genre.name);
+    ? getGenresByGenresId(genre_ids).join(', ')
+    : genres.map(genre => genre.name).join(', ');
   const libraryBtn = generateModalLibraryBtnMarkup(classes, id);
-  const posterPath = poster_path
-    ? `https://image.tmdb.org/t/p/w500${poster_path}`
-    : './images/image-not-found.jpg';
+  const poster = poster_path
+    ? `<img
+        class="movie-details-img"
+        src="https://image.tmdb.org/t/p/w500${poster_path}"
+        alt="${title}"
+      />`
+    : `<picture>
+        <source srcset="/src/images/image-not-found.webp" type="image/webp" />
+        <source srcset="/src/images/image-not-found.jpg" type="image/jpeg" />
+        <img
+          class="movie-details-img"
+          src="/src/images/image-not-found.jpg"
+          alt="Image not found"
+        />
+      </picture>`;
 
   return `<div class="modal-details">
-          <button type="button" class="btn modal-close" data-modal-details-close>
-            <svg class="icon-close" width="10.5" height="10.5">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
-          <img src="${posterPath}" />
-          <h2>${title}</h2>
-          <h3>Vote / Votes</h3>
-          <p><span>${vote_average}</span> / <span>${vote_count}</span></p>
-          <h3>Popularity</h3>
-          <p>${popularity}</p>
-          <h3>Genre</h3>
-          <p class='modal-genre'>${genresString}</p>
-          <h3>About</h3>
-          <p>${overview}</p>
-          <div data-library-btn-modal>
-            ${libraryBtn}
-          </div>
-        </div>`;
+            <button class="modal-btn-close-details" data-modal-details-close>
+              <svg class="modal-close-icon-details">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="movie-details-img-wrap">
+              ${poster}
+            </div>
+            <div class="movie-details-wrapper">
+              <h2 class="movie-details-headline">${title}</h2>
+              <div class="movie-details-inner">
+                <ul class="movie-details-list">
+                  <li class="movie-details-item">Vote / Votes</li>
+                  <li class="movie-details-item">Popularity</li>
+                  <li class="movie-details-item">Genre</li>
+                </ul>
+
+                <ul class="movie-details-items">
+                  <li class="movie-details-content-inner-item movie-details-content">
+                    <span class="movie-details-content-inner">${vote_average.toFixed(
+                      1
+                    )}</span
+                    ><span class="movie-details-content-inner-slash">/</span
+                    ><span class="movie-details-content-inner-wrap">${vote_count.toFixed(
+                      1
+                    )}</span>
+                  </li>
+                  <li class="movie-details-content">${popularity.toFixed(1)}</li>
+                  <li class="movie-details-content">${genresString}</li>
+                </ul>
+              </div>
+
+              <h3 class="movie-details-subtitle">About</h3>
+
+              <p class="movie-details-description">
+                ${overview}
+              </p>
+              <div class="library-btn-modal" data-library-btn-modal>
+                ${libraryBtn}
+              </div>
+            </div>
+          </div>`;
 }
 
 export { generateModalMovieDetailsMarkup };
