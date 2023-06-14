@@ -1,6 +1,5 @@
 // Footer js
 import { openModalTeam } from './functions/openModalTeam';
-// import { closeModalTeam } from './functions/closeModalTeam';
 
 onFooterLoad();
 
