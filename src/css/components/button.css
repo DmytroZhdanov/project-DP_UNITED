@@ -24,7 +24,7 @@
 .btn-filled:focus {
   background: #ffffff;
   color: var(--primary-brand-color);
-  /* position: absolute; */
+  position: absolute;
   background-clip: padding-box;
   border: solid -1px transparent;
 }
@@ -32,7 +32,7 @@
 .btn-filled:hover::before,
 .btn-filled:focus::before {
   content: '';
-  /* position: absolute; */
+  position: absolute;
   inset: 0;
   z-index: -1;
   margin: -1px;

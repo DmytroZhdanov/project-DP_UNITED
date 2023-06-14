@@ -59,16 +59,13 @@
 .upcoming-date {
   font-size: 16px;
   line-height: 1.19;
-
   color: var(--primary-brand-color);
 }
 
 .upcoming-vote {
   font-size: 14px;
   line-height: 1.14;
-
   text-transform: uppercase;
-
   color: var(--dark-theme-background-color);
 }
 
@@ -125,13 +122,18 @@
 .light-theme .upcoming-title,
 .light-theme .upcoming-famous,
 .light-theme .upcoming-janres,
-.light-theme .upcoming-description {
+.light-theme .upcoming-description,
+.light-theme .upcoming-inner-color {
   color: var(--secondary-black-color);
 }
 
 .light-theme .upcoming-inner-box,
 .light-theme .upcoming-inner-box-votes {
   background: var(--secondary-text-color);
+}
+
+.library-btn-upcoming {
+  height: 40px;
 }
 
 @media screen and (min-width: 320px) {

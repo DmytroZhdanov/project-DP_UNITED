@@ -91,7 +91,7 @@ function generateUpcomingSectionMarkup({
         <p class="upcoming-description">
           ${overview}
         </p>
-        <div data-library-btn-upcoming>
+        <div class="library-btn-upcoming" data-library-btn-upcoming>
           ${generateUpcomingLibraryBtnMarkup(classes, id)}
         </div>
       </div>
