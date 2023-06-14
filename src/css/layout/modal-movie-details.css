@@ -25,6 +25,7 @@
 
 .modal-details {
   padding: 52px 16px;
+  border-radius: 16px;
 }
 
 .light-theme .modal-details {

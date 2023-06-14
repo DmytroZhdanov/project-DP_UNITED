@@ -40,23 +40,32 @@
   background-image: var(--primary-button-color);
 }
 
-.dark-theme .btn-empty {
-  background-color: inherit;
+.btn-empty {
+  position: absolute;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  background-color: var(--dark-theme-background-color);
   color: #ffffff;
 }
 
 .light-theme .btn-empty {
-  background-color: inherit;
+  background-color: var(--light-theme-background-color);
   color: #111111;
 }
 
-.btn-empty {
-  position: absolute;
-  background-clip: padding-box;
-  border: solid -1px transparent;
+.btn-empty:hover,
+.btn-empty:focus {
+  color: var(--primary-brand-color);
+  background-color: #ffffff;
 }
 
-.btn-empty::before {
+.light-theme .btn-empty:hover,
+.light-theme .btn-empty:focus {
+  background-color: #111111;
+}
+
+.btn-empty::before,
+.light-theme .btn-empty::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -66,23 +75,10 @@
   background-image: var(--primary-button-color);
 }
 
-.btn-empty:hover,
-.btn-empty:focus {
-  color: var(--primary-brand-color);
-}
-
-.dark-theme .btn-empty:hover,
-.dark-theme .btn-empty:focus {
-  background-color: #ffffff;
-}
-
-.light-theme .btn-empty:hover,
-.light-theme .btn-empty:focus {
-  background-color: #111111;
-}
-
 .btn-empty:hover::before,
-.btn-empty:focus::before {
+.btn-empty:focus::before,
+.light-theme .btn-empty:hover::before,
+.light-theme .btn-empty:focus::before {
   margin: 1px;
 }
 
