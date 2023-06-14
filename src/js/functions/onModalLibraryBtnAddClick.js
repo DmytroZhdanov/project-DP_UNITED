@@ -14,12 +14,13 @@ function onModalLibraryBtnAddClick(classes, id, movieObject) {
   const libraryBtnContainer = document.querySelector(
     '[data-library-btn-modal]'
   );
-
+  
   const changedlibraryBtn = generateModalLibraryBtnMarkup(classes, id);
   libraryBtnContainer.innerHTML = changedlibraryBtn;
   const libraryBtnRemove = document.querySelector(
     '[data-remove-from-library-btn-modal]'
-  );
+    );
+    console.log(libraryBtnRemove);
   libraryBtnRemove.addEventListener(
     'click',
     () => {

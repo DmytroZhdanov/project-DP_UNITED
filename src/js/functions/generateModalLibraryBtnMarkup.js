@@ -13,7 +13,7 @@ function generateModalLibraryBtnMarkup(classes, movieId) {
   } else {
     const parsedFilmsInLibrary = JSON.parse(filmsInLibrary);
     const isInLibrary = parsedFilmsInLibrary.find(
-      object => object.id === movieId
+      object => object.id === +movieId
     );
     return isInLibrary
       ? `<button type="button" data-remove-from-library-btn-modal class="${classes}">Remove from library</button>`
