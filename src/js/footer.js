@@ -1,17 +1,10 @@
 // Footer js
-const developersInfo = document.querySelector('[data-modal-open]');
-const modalWindow = document.querySelector('[data-window-modal]');
-const modalContent = document.querySelector('[data-modal-content]');
-const modalCloseButton = document.querySelector('[data-modal-close]');
-const svgCloseButton = document.querySelector('[data-modal-cross]');
+import { openModalTeam } from './functions/openModalTeam';
 
-developersInfo.addEventListener('click', () => {
-  modalWindow.style.display = 'block';
-});
+onFooterLoad();
 
-modalWindow.addEventListener('click', (event) => {
-  if (event.target === modalWindow || event.target === modalCloseButton || event.target === svgCloseButton) {
-    modalWindow.style.display = 'none';
-  }
-});
+function onFooterLoad() {
+  const developersInfo = document.querySelector('[data-modal-open]');
 
+  developersInfo.addEventListener('click', openModalTeam);
+}

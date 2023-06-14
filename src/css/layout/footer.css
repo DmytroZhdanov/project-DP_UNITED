@@ -1,38 +1,38 @@
 /* Footer styles */
 footer {
-    margin-left: auto;
-    margin-right: auto;
-
+  margin-left: auto;
+  margin-right: auto;
+  /* position: sticky;
+  bottom: 0; */
+  margin-top: auto;
 }
 
-
 .footer-text {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .footer-container {
-    color: rgba(183, 183, 183, 1);
+  color: rgba(183, 183, 183, 1);
 
-    padding: 0 20px 0 20px;
+  padding: 0 20px 0 20px;
 
-    margin-bottom: 28px;
+  margin-bottom: 28px;
 
-    font-family: --primary-font-family;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: center;
+  font-family: var(--primary-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .footer-svg {
-    margin-left: 10px;
-    margin-right: 10px;
-    vertical-align: middle;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .developers-info {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }
-
