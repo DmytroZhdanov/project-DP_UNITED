@@ -6,7 +6,7 @@ async function openModalTrailer(movieId) {
     const response = await fetchMovieVideosById(movieId);
     const trailerKey = response.results.find(obj => obj.type === 'Trailer').key;
 
-    trailerKey ? modalTrailerShow(trailerKey) : defaultModalTrailer();
+    trailerKey ? modalTrailerShow(trailerKey) : defaultModalTrailerShow();
   } catch (error) {
     console.error(error.message);
     defaultModalTrailerShow();
