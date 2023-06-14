@@ -17,13 +17,24 @@ function generateMovieCardsMarkup(arr) {
         const genresString = genre_ids
           ? getGenresByGenresId(genre_ids).join(', ')
           : genres.map(genre => genre.name).join(', ');
+        const poster = poster_path
+          ? `<img
+        class="movie-details-img"
+        src="https://image.tmdb.org/t/p/w500${poster_path}"
+        alt="${title}"
+      />`
+          : `<picture>
+        <source srcset="/src/images/image-not-found.webp" type="image/webp" />
+        <source srcset="/src/images/image-not-found.jpg" type="image/jpeg" />
+        <img
+          class="movie-details-img"
+          src="/src/images/image-not-found.jpg"
+          alt="Image not found"
+        />
+      </picture>`;
         return `<li class="cards-item">
                   <button type="button" class="btn cards-item-btn">
-                    <img
-                      src="${posterPath}"
-                      alt="Poster of the movie"
-                      class="movie-card-poster"
-                    />
+                    ${poster}
                     <div class="cards-content" id="${id}">
                       <div class="cards-text-content">
                         <h3 class="cards-title">${title}</h3>
