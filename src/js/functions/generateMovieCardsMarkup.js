@@ -1,5 +1,7 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 import { getGenresByGenresId } from './getGenresByGenresId';
+import imageNotFoundPic from '../../images/image-not-found.jpg';
+import imageNotFoundPicWebp from '../../images/image-not-found.webp';
 /**
  *
  * @param {Array} arr
@@ -8,11 +10,19 @@ import { getGenresByGenresId } from './getGenresByGenresId';
 function generateMovieCardsMarkup(arr) {
   const markup = arr
     .map(
-      ({ genre_ids, id, poster_path, release_date, title, vote_average, genres }) => {
+      ({
+        genre_ids,
+        id,
+        poster_path,
+        release_date,
+        title,
+        vote_average,
+        genres,
+      }) => {
         const year = release_date.slice(0, 4);
         const posterPath = poster_path
           ? `https://image.tmdb.org/t/p/w500${poster_path}`
-          : './images/image-not-found.jpg';
+          : `${imageNotFoundPic}`;
         const ratingStarsMurkup = generateRatingStarsMarkup(vote_average);
         const genresString = genre_ids
           ? getGenresByGenresId(genre_ids).join(', ')
@@ -20,15 +30,15 @@ function generateMovieCardsMarkup(arr) {
         const poster = poster_path
           ? `<img
         class="movie-details-img"
-        src="https://image.tmdb.org/t/p/w500${poster_path}"
+        src="${posterPath}"
         alt="${title}"
       />`
           : `<picture>
-        <source srcset="/src/images/image-not-found.webp" type="image/webp" />
-        <source srcset="/src/images/image-not-found.jpg" type="image/jpeg" />
+        <source srcset="${imageNotFoundPicWebp}" type="image/webp" />
+        <source srcset="${posterPath}" type="image/jpeg" />
         <img
           class="movie-details-img"
-          src="/src/images/image-not-found.jpg"
+          src="${posterPath}"
           alt="Image not found"
         />
       </picture>`;
