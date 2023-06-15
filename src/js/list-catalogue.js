@@ -3,6 +3,7 @@ import { fetchWeekTrends } from './functions/movieApiService';
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 import { fetchMovieBySearchQuery } from './functions/movieApiService';
 import { fetchMovieBySearchQueryAndYear } from './functions/movieApiService';
+import { onMovieCardClick } from './functions/onMovieCardClick';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
@@ -55,6 +56,7 @@ async function onRenderCatalogPage(page) {
     const resp = await fetchWeekTrends(page);
     const moviesToRender = resp.results.slice(0, moviesNumber);
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    catalogEl.addEventListener('click', onMovieCardClick);
     paginationStylesOfBtn();
     pagination.reset(resp.total_pages);
 

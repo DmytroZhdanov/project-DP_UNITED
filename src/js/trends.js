@@ -21,9 +21,7 @@ async function renderWeeklyTrendsItems() {
     const weeklyTrendsMarkup = generateMovieCardsMarkup(moviesToRender);
     weeklyTrendsList.innerHTML = weeklyTrendsMarkup;
 
-    weeklyTrendsList.addEventListener('click', e => {
-      onMovieCardClick(e);
-    });
+    weeklyTrendsList.addEventListener('click', onMovieCardClick);
   } catch (error) {
     console.error(error.message);
     weeklyTrendsCardsEl.classList.add('visually-hidden');
