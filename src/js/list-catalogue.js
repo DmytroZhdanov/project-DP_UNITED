@@ -30,8 +30,6 @@ chooseYear.addEventListener('change', searchMoviesByYear);
 
 const moviesNumber = window.innerWidth < 768 ? 10 : 20;
 
-console.log(window.innerWidth);
-
 let searchQuery;
 let yearsArr = [];
 const options = {
