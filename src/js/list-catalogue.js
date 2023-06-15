@@ -64,7 +64,7 @@ async function onRenderCatalogPage(page) {
 
     if (resp.total_results === 0) {
       catalogEl.innerHTML =
-        '<p class="catalog-desc"> OOPS... <br /> We are very sorry! <br /> We don’t have any results matching your search.</p>';
+        '<p class="catalog-desc"> OOPS... <br />We are very sorry! <br />We don’t have any results matching your search.</p>';
       paginEl.classList.add('is-hidden');
       return;
     }
@@ -132,6 +132,7 @@ async function onCatalogSearchMovies(e) {
     // chooseYear.innerHTML = markUpListOfYears(resp.results);
 
     if (resp.total_results === 0) {
+      choosefilm.innerHTML = '<option value="Film">Film</option>';
       catalogEl.innerHTML =
         '<p class="catalog-desc"> OOPS... <br /> We are very sorry! <br /> We don’t have any results matching your search.</p>';
       paginEl.classList.add('is-hidden');
