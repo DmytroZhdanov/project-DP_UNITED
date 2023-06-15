@@ -138,6 +138,11 @@
     border: 1px solid var(--dark-theme-grey-color);
   }
 
+  .dark-theme .tui-pagination .tui-first-child.tui-is-selected,
+  .light-theme .tui-pagination .tui-first-child.tui-is-selected {
+    border-left: none;
+}
+
   .btn-container > .btn-number.tui-first {
     display: none;
   }
