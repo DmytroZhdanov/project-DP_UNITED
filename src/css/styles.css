@@ -34,5 +34,5 @@
 @import url('./layout/upcoming-section.css');
 
 /* Pages */
-/* @import url('./pages/catalogue/list-catalogue.css'); */
+@import url('./pages/catalogue/list-catalogue.css');
 @import url('./pages/library/list-library.css');

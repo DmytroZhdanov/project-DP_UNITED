@@ -1,58 +1,75 @@
 // Catalogue Page - Section Catalogue list
 import { fetchWeekTrends } from './functions/movieApiService';
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
-// import { fetchGenresList } from './functions/movieApiService';
 import { fetchMovieBySearchQuery } from './functions/movieApiService';
+import { fetchMovieBySearchQueryAndYear } from './functions/movieApiService';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const catalogEl = document.querySelector('.catalog-movies-list');
+const catalogEl = document.querySelector('[data-catalogue-movies]');
 const paginEl = document.querySelector('#tui-pagination-container');
-const catalogFormSearch = document.querySelector('#data-catalog-search-form');
-const inputFilm = document.querySelector('[input-catalog-film]');
-const inputYear = document.querySelector('[input-catalog-year]');
+const catalogFormSearch = document.querySelector(
+  '[data-catalogue-search-form]'
+);
+const choosefilm = document.querySelector('[data-catalogue-choose-movie]');
+const chooseYear = document.querySelector('[data-catalogue-choose-year]');
+const inputFilm = document.querySelector('#input-catalogue-film');
+const inputYear = document.querySelector('#input-catalogue-year');
+const inputSearchByName = document.querySelector(
+  '#input-catalogue-search-by-name'
+);
+const iconClearFilm = document.querySelector('#btn-input-catalogue-film');
+const iconClearSearch = document.querySelector('#btn-input-catalogue-search');
 
-const iconClose = document.querySelector('[btn-input-catalog-film]');
-console.dir(catalogFormSearch);
-
+inputFilm.style.display = 'none';
+inputYear.style.display = 'none';
 catalogFormSearch.addEventListener('submit', onCatalogSearchMovies);
+iconClearSearch.addEventListener('click', onClearInputSearch);
+iconClearFilm.addEventListener('click', onClearInputFilm);
+chooseYear.addEventListener('change', searchMoviesByYear);
 
+const moviesNumber = window.innerWidth < 768 ? 10 : 20;
+
+let searchQuery;
+let yearsArr = [];
 const options = {
   totalItems: 0,
-  itemsPerPage: 10,
+  itemsPerPage: 20,
   visiblePages: 4,
   page: 1,
 };
 
 const pagination = new Pagination(paginEl, options);
-const itemCount = 10;
 
 const page = pagination.getCurrentPage();
 
 pagination.on('afterMove', createPopularMoviesForWeek);
+const tuiPaginatContainer = document.querySelector('.tui-pagination');
+tuiPaginatContainer.classList.add('btn-container');
+const btnContainer = document.querySelector('.btn-container');
+
+// TRENDING MOVIES FOR WEEK //
 
 async function onRenderCatalogPage(page) {
   try {
     const resp = await fetchWeekTrends(page);
-
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
-
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    paginationStylesOfBtn();
     pagination.reset(resp.total_pages);
-    // const btnPaginatBtn = document.querySelectorAll('.tui-page-btn');
-    // console.log(btnPaginatBtn);
-    // btnPaginatBtn.classList.add('dark-theme');
-    // pagination.setItemsPerPage(itemCount);
+
+    paginationStylesOfBtn();
 
     paginEl.classList.remove('is-hidden');
 
-    if (resp.results.length === 0) {
+    if (resp.total_results === 0) {
       catalogEl.innerHTML =
         '<p class="catalog-desc"> OOPS... <br /> We are very sorry! <br /> We don’t have any results matching your search.</p>';
       paginEl.classList.add('is-hidden');
       return;
     }
 
-    if (page <= 1) {
+    if (resp.total_results <= 20) {
       paginEl.classList.add('is-hidden');
       return;
     }
@@ -66,11 +83,10 @@ async function createPopularMoviesForWeek(e) {
 
   try {
     const resp = await fetchWeekTrends(currentPage);
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
 
-    pagination.setItemsPerPage(itemCount);
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
-
-    // pagination.setItemsPerPage(10);
+    paginationStylesOfBtn();
   } catch (err) {
     console.log(err);
   }
@@ -78,10 +94,12 @@ async function createPopularMoviesForWeek(e) {
 
 onRenderCatalogPage();
 
+// SEARCH MOVIES BY SEARCHQUERY //
+
 async function onCatalogSearchMovies(e) {
   e.preventDefault();
-  const searchQuery = e.currentTarget.elements['searchQuery'].value.trim();
-  console.log(searchQuery);
+  searchQuery = e.currentTarget.elements['searchQuery'].value.trim();
+
   if (!searchQuery) {
     console.error("Search querry can't be empty");
     return;
@@ -91,24 +109,41 @@ async function onCatalogSearchMovies(e) {
 
   try {
     const resp = await fetchMovieBySearchQuery(searchQuery, page);
-    console.log(resp);
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
-    inputFilm.hidden = false;
-    inputYear.hidden = false;
+
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    if (window.innerWidth >= 768) {
+      inputSearchByName.style.display = 'none';
+      catalogFormSearch.style.flexWrap = 'nowrap';
+    }
+    inputFilm.style.display = 'flex';
+    inputYear.style.display = 'flex';
+    iconClearSearch.hidden = false;
+    iconClearFilm.hidden = false;
+
     pagination.reset(resp.total_pages);
 
-    paginEl.classList.remove('is-hidden');
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
+    paginationStylesOfBtn();
 
-    if (resp.results.length === 0) {
+    paginEl.classList.remove('is-hidden');
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+    // chooseYear.innerHTML = markUpListOfYears(resp.results);
+
+    if (resp.total_results === 0) {
       catalogEl.innerHTML =
         '<p class="catalog-desc"> OOPS... <br /> We are very sorry! <br /> We don’t have any results matching your search.</p>';
       paginEl.classList.add('is-hidden');
       return;
     }
 
+    if (resp.total_results <= 20) {
+      paginEl.classList.add('is-hidden');
+      return;
+    }
+
     pagination.on('afterMove', createPaginationByQuerry);
-    // pagination.setItemsPerPage(10);
   } catch (err) {
     console.log(err);
   }
@@ -119,9 +154,81 @@ async function createPaginationByQuerry(evt) {
 
   try {
     const resp = await fetchMovieBySearchQuery(currentPage);
-    // pagination.setItemsPerPage(10);
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+    // chooseYear.innerHTML = markUpListOfYears(resp.results);
+    paginationStylesOfBtn();
   } catch (err) {
     console.log(err);
   }
+}
+
+// SEARCH BY NAME AND YEAR ///
+
+async function searchMoviesByYear(e) {
+  year = e.currentTarget.value;
+  console.log(year);
+
+  try {
+    const resp = await fetchMovieBySearchQueryAndYear(year, searchQuery);
+
+    console.log(resp.results.release_date);
+  } catch (err) {
+    console.log(err);
+  }
+}
+async function createPaginationBySearchQueryAndYear(evt) {
+  const currentPage = evt.page;
+
+  try {
+    const resp = await fetchMovieBySearchQueryAndYear(currentPage);
+    console.log(resp);
+    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
+
+    // pagination btn styles //
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// CLEAR INPUTS SEARCH NAME & FILMS //
+function onClearInputSearch() {
+  inputSearchByName.firstElementChild.value = '';
+  iconClearSearch.hidden = true;
+}
+
+function onClearInputFilm() {
+  inputFilm.firstElementChild.value = '';
+
+  iconClearFilm.hidden = true;
+}
+
+// MARKUP LISTS OF MOVIES AND YEARS ///
+function markUpListOfMovies(arr) {
+  return arr
+    .map(({ title }) => `<option value='${title}'>${title}</option>`)
+    .join();
+}
+
+function markUpListOfYears(years) {
+  return years
+    .map(({ year }) => {
+      years = release_date.slice(0, 4);
+      console.log(years);
+      yearsArr.push(years);
+      console.log(year);
+      `<option value='${year}'>${year}</option>`;
+    })
+    .join();
+}
+
+//  PAGINATION STYLES //
+
+function paginationStylesOfBtn() {
+  const tuiPaginatBtnSelected = document.querySelector('.tui-is-selected');
+  tuiPaginatBtnSelected.classList.add('btn-current');
+
+  const tuiPaginatBtn = document.querySelectorAll('.tui-page-btn');
+  tuiPaginatBtn.forEach(button => button.classList.add('btn-number'));
 }
