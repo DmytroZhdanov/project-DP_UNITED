@@ -4,10 +4,16 @@ import { renderLibraryOppsText } from './functions/renderLibraryOppsText';
 import { renderNumberOfCard } from './functions/renderNumberOfCard';
 import { renderLoadMoreCard } from './functions/renderLoadMoreCard';
 import { renderButtonLoadMore } from './functions/renderButtonLoadMore';
+import { renderFilterGanresBackdrop } from './functions/renderFilterGanresBackdrop';
+import { inLibraryAllGanresList } from './functions/inLibraryAllGanresList';
+import { filterLibraryBackdropGanre } from './functions/filterLibraryBackdropGanre';
 
 export const refs = {
   libraryMovieList: document.querySelector('[data-library-list]'),
   libraryOppsText: document.querySelector('[data-library-oops-text]'),
+  libraryFilterGanreBackdrop: document.querySelector(
+    '[data-library-filter-ganre]'
+  ),
   LibraryFromLocalStorage: JSON.parse(localStorage.getItem('library')),
 };
 
@@ -23,6 +29,13 @@ export let letRefs = {
 if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
   renderLibraryOppsText();
 } else {
+  //====================render HTML dropback Filter  Ganres==========================================
+  renderFilterGanresBackdrop();
+  //  Create list of Ganres All movies in Local Storage and render Backdrop with All Ganres
+  filterLibraryBackdropGanre(
+    inLibraryAllGanresList(refs.LibraryFromLocalStorage)
+  );
+  //========================================
   //==============if total page < 1 - render first page without button==================
   if (letRefs.totalLibraryPage <= 1) {
     refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
