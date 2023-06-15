@@ -38,7 +38,6 @@
 }
 
 .modal {
-  /* display: none; */
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -71,8 +70,6 @@
   background-color: rgba(17, 17, 17, 1);
   padding: 18px;
   border-radius: 16px;
-  width: 280px;
-  height: 289px;
   box-shadow: 0 2px 4px rgba(255, 107, 8, 0.42);
 }
 
@@ -120,15 +117,14 @@
   margin-right: 10px;
 }
 
-/* .team-item .img {
-  display: none;
+@media screen and (max-width: 767px) {
+  .modal-footer-content {
+    height: 90vh;
+    overflow-y: scroll;
+  }
 }
 
-.team-container .team-text {
-  display: none;
-} */
-
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   footer {
     text-align: center;
   }
