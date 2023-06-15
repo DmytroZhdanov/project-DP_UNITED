@@ -83,11 +83,19 @@
     cursor: pointer;
   }
 
+  body.light-theme .icon-close {
+    stroke: #111111;
+  }
+
   .icon-arrow {
     transform: rotate(-90deg);
     stroke: #ffffff;
   }
 
+  body.light-theme .icon-arrow {
+    stroke: #111111;
+    fill: transparent;
+  }
   .catalog-movies-list {
     margin-bottom: 20px;
     width: 100%;
@@ -99,9 +107,10 @@
 
   .catalog-desc {
     font-weight: 400;
-    margin-top: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 32px;
     width: 280px;
-    height: 120px;
     font-size: 20px;
     line-height: 1.4;
     text-align: center;
@@ -231,6 +240,14 @@
     row-gap: 28px;
     margin-bottom: 44px;
   }
+
+  .catalog-desc {
+    margin-top: 44px;
+    width: 520px;
+
+    font-size: 24px;
+    line-height: 1.33;
+  }
 }
 /*- BTN- TUI-PAGINATION-*/
 /* .tui-pagination.btn-container {
@@ -284,5 +301,13 @@
   .catalog-movies-list {
     row-gap: 32px;
     margin-bottom: 60px;
+  }
+
+  .catalog-desc {
+    margin-top: 72px;
+    width: 700px;
+
+    font-size: 32px;
+    line-height: 1.12;
   }
 }
