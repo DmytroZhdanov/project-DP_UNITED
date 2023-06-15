@@ -1,5 +1,7 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
 import { generateModalLibraryBtnMarkup } from './generateModalLibraryBtnMarkup';
+import imageNotFoundPic from '../../images/image-not-found.jpg';
+import imageNotFoundPicWebp from '../../images/image-not-found.webp';
 
 function generateModalMovieDetailsMarkup(classes, movieObject) {
   const {
@@ -24,11 +26,11 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
         alt="${title}"
       />`
     : `<picture>
-        <source srcset="/src/images/image-not-found.webp" type="image/webp" />
-        <source srcset="/src/images/image-not-found.jpg" type="image/jpeg" />
+        <source srcset="${imageNotFoundPicWebp}" type="image/webp" />
+        <source srcset="${imageNotFoundPic}" type="image/jpeg" />
         <img
           class="movie-details-img"
-          src="/src/images/image-not-found.jpg"
+          src="${imageNotFoundPic}"
           alt="Image not found"
         />
       </picture>`;

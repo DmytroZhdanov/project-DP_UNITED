@@ -1,7 +1,17 @@
 import { generateRatingStarsMarkup } from './generateRatingStarsMarkup';
 import { getGenresByGenresId } from './getGenresByGenresId';
-import imageNotFoundPic from '../../images/image-not-found.jpg';
-import imageNotFoundPicWebp from '../../images/image-not-found.webp';
+import imageNotFoundPic395 from '../../images/image-not-found-card-desc-1x-395.jpg';
+import imageNotFoundPic790 from '../../images/image-not-found-card-desc-2x-790.jpg';
+import imageNotFoundPic280 from '../../images/image-not-found-card-mob-1x-280.jpg';
+import imageNotFoundPic560 from '../../images/image-not-found-card-mob-2x-560.jpg';
+import imageNotFoundPic224 from '../../images/image-not-found-card-tab-1x-224.jpg';
+import imageNotFoundPic448 from '../../images/image-not-found-card-tab-2x-448.jpg';
+import imageNotFoundPicWebp395 from '../../images/image-not-found-card-desc-1x-395.webp';
+import imageNotFoundPicWebp790 from '../../images/image-not-found-card-desc-2x-790.webp';
+import imageNotFoundPicWebp280 from '../../images/image-not-found-card-mob-1x-280.webp';
+import imageNotFoundPicWebp560 from '../../images/image-not-found-card-mob-2x-560.webp';
+import imageNotFoundPicWebp224 from '../../images/image-not-found-card-tab-1x-224.webp';
+import imageNotFoundPicWebp448 from '../../images/image-not-found-card-tab-2x-448.webp';
 /**
  *
  * @param {Array} arr
@@ -20,9 +30,6 @@ function generateMovieCardsMarkup(arr) {
         genres,
       }) => {
         const year = release_date.slice(0, 4);
-        const posterPath = poster_path
-          ? `https://image.tmdb.org/t/p/w500${poster_path}`
-          : `${imageNotFoundPic}`;
         const ratingStarsMurkup = generateRatingStarsMarkup(vote_average);
         const genresString = genre_ids
           ? getGenresByGenresId(genre_ids).join(', ')
@@ -30,15 +37,33 @@ function generateMovieCardsMarkup(arr) {
         const poster = poster_path
           ? `<img
         class="movie-details-img"
-        src="${posterPath}"
+        src="https://image.tmdb.org/t/p/w500${poster_path}"
         alt="${title}"
       />`
           : `<picture>
-        <source srcset="${imageNotFoundPicWebp}" type="image/webp" />
-        <source srcset="${posterPath}" type="image/jpeg" />
+        <source
+          srcset="${imageNotFoundPicWebp395} 395w,
+                  ${imageNotFoundPicWebp790} 790w,
+                  ${imageNotFoundPicWebp280} 280w,
+                  ${imageNotFoundPicWebp560} 560w,
+                  ${imageNotFoundPicWebp224} 224w,
+                  ${imageNotFoundPicWebp448} 448w
+        " 
+        sizes="(min-width: 1280px) 395px, (min-width: 768px) 224px, (min-width: 280px) 280px, 100vw"
+        type="image/webp" />
+        <source
+          srcset="${imageNotFoundPic395} 395w,
+                  ${imageNotFoundPic790} 790w,
+                  ${imageNotFoundPic280} 280w,
+                  ${imageNotFoundPic560} 560w,
+                  ${imageNotFoundPic224} 224w,
+                  ${imageNotFoundPic448} 448w
+        " 
+        sizes="(min-width: 1280px) 395px, (min-width: 768px) 224px, (min-width: 280px) 280px, 100vw"
+        type="image/jpeg" />
         <img
           class="movie-details-img"
-          src="${posterPath}"
+          src="${imageNotFoundPic280}"
           alt="Image not found"
         />
       </picture>`;

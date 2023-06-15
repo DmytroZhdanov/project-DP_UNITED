@@ -1,5 +1,7 @@
 import { getGenresByGenresId } from './getGenresByGenresId';
 import { generateUpcomingLibraryBtnMarkup } from './generateUpcomingLibraryBtnMarkup';
+import imageNotFoundPic from '../../images/image-not-found.jpg';
+import imageNotFoundPicWebp from '../../images/image-not-found.webp';
 
 function generateUpcomingSectionMarkup({
   backdrop_path,
@@ -15,8 +17,9 @@ function generateUpcomingSectionMarkup({
 }) {
   const genres = getGenresByGenresId(genre_ids).join(', ');
   const classes = 'btn btn-filled';
-
-  return ` <picture>
+  const poster =
+    poster_path || backdrop_path
+      ? `<picture>
       <source
         srcset="https://image.tmdb.org/t/p/original/${backdrop_path}"
         media="(min-width:1280px)"
@@ -34,8 +37,19 @@ function generateUpcomingSectionMarkup({
         src="https://image.tmdb.org/t/p/original/${poster_path}"
         alt="${title}"
       />
-    </picture>
-    
+    </picture>`
+      : `<picture>
+        <source srcset="${imageNotFoundPicWebp}" type="image/webp" />
+        <source srcset="${imageNotFoundPic}" type="image/jpeg" />
+        <img
+          class="movie-details-img"
+          src="${imageNotFoundPic}"
+          alt="Image not found"
+        />
+      </picture>`;
+
+  return ` 
+    ${poster}
     <div class="upcoming-column">
       <h2 class="upcoming-headline">${title}</h2>
       <div class="upcoming-wrap">
