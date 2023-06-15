@@ -24,8 +24,7 @@
 .btn-filled:focus {
   background: #ffffff;
   color: var(--primary-brand-color);
-  /* position: absolute; */
-  position: static;
+  position: absolute;
   background-clip: padding-box;
   border: solid -1px transparent;
 }
