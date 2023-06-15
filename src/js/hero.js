@@ -17,7 +17,9 @@ async function onHeroLoad() {
   loader.on();
   try {
     const response = await fetchDayTrends(Math.round(Math.random() * 4 + 1));
-    refs.heroSectionEl.innerHTML = generateHeroMarkup(response.results);
+    refs.heroSectionEl.innerHTML = generateHeroMarkup(
+      response.results.slice(0, 5)
+    );
     heroSlider.enable();
 
     const modalTrailerBtn = document.querySelectorAll('[data-modal-movie-btn]');
