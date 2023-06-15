@@ -98,6 +98,7 @@ async function onCatalogSearchMovies(e) {
   searchQuery = e.currentTarget.searchQuery.value.trim();
 
   if (!searchQuery) {
+    onRenderCatalogPage();
     return;
   }
 
