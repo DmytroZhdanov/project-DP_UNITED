@@ -67,7 +67,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    position: relative;
+    /* position: static; */
     margin-left: 16px;
   }
 
@@ -210,6 +210,7 @@
     margin-bottom: 36px;
   }
   .search-film-year {
+    width: 295px;
     gap: 12px;
     margin-bottom: 0;
   }
@@ -265,6 +266,7 @@
   }
 
   .search-film-year {
+    width: 430px;
     gap: 20px;
   }
 
