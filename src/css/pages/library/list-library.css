@@ -1,4 +1,4 @@
-.btn-list-search-load-more {
+.btn-list-load-more {
   width: 106px;
   height: 38px;
 }
@@ -9,7 +9,7 @@
 }
 
 .btn-list-search,
-.btn-list-search-load-more {
+.btn-list-load-more {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -68,10 +68,11 @@
     width: 115px;
     height: 40px;
   }
-.btn-list-search {
-  /* width: 133px; */
-  height: 40px;
-}
+
+  .btn-list-search {
+    /* width: 133px; */
+    height: 40px;
+  }
 
   .btn-list-search,
   .btn-list-load-more {
@@ -101,15 +102,15 @@
     width: 134px;
     height: 52px;
   }
-.btn-list-search {
-  /* width: 158px; */
-  height: 52px;
-}
+  .btn-list-search {
+    /* width: 158px; */
+    height: 52px;
+  }
 
-.btn-list-search,
-.btn-list-load-more {
+  .btn-list-search,
+  .btn-list-load-more {
     margin-bottom: 96px;
-}
+  }
   .library-ops-text-css {
     font-size: 32px;
     line-height: 1.125;
