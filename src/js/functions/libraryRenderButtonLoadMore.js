@@ -1,5 +1,5 @@
 import { refs } from '../list-library';
-function renderButtonLoadMore() {
+function libraryRenderButtonLoadMore() {
   refs.libraryMovieList.insertAdjacentHTML(
     'afterend',
     `
@@ -11,4 +11,4 @@ function renderButtonLoadMore() {
   );
 }
 
-export { renderButtonLoadMore };
+export { libraryRenderButtonLoadMore, loadButton };

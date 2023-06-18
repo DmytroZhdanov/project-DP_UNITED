@@ -1,6 +1,6 @@
 import { refs } from '../list-library';
 
-function renderFilterGanresBackdrop() {
+function libraryRendHtmlGanresBackdrop() {
   refs.libraryFilterGanreBackdrop.innerHTML = `
   <button class="dropdown-button main-button">
   <span class="dropdown-title-icon">
@@ -37,4 +37,4 @@ function renderFilterGanresBackdrop() {
   //  refs.libraryFilterGanreBackdrop.classList.add('library-ops-text-css');
 }
 
-export { renderFilterGanresBackdrop };
+export { libraryRendHtmlGanresBackdrop };

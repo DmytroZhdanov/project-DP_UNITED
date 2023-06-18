@@ -1,6 +1,14 @@
-import { ClickToSetGanre } from './ClickToSetGanre';
+import { libraryClickToSetGanre } from './libraryClickToSetGanre';
+//const root = document.documentElement;
+//const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');
+//const dropdownTitle = document.querySelector('.dropdown-title');
+//const dropdownList = document.querySelector('.dropdown-list');
+//const mainButton = document.querySelector('.main-button');
+//const floatingIcon = document.querySelector('.floating-icon');
+//const icons = {};
 
-function filterLibraryBackdropGanre(arrayUnicalGanres) {
+function libraryRendListAllGanres(arrayUnicalGanres) {
+  console.log('arrayUnicalGanres:', arrayUnicalGanres);
   const root = document.documentElement;
   const dropdownTitleIcon = document.querySelector('.dropdown-title-icon');
   const dropdownTitle = document.querySelector('.dropdown-title');
@@ -18,36 +26,37 @@ function filterLibraryBackdropGanre(arrayUnicalGanres) {
   ////console.log(listItems);
   ////console.log(icons);
 
-  const iconTemplate = path => {
-    return `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ganre-svg">
-        <path d="${path}" />
-      </svg>
-    `;
-  };
+  //  const iconTemplate = path => {
+  //    return `
+  //      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ganre-svg">
+  //        <path d="${path}" />
+  //      </svg>
+  //    `;
+  //  };
 
   ////console.log(iconTemplate);
 
-  const listItemTemplate = (text, translateValue) => {
-    return `
-      <li class="dropdown-list-item">
-        <button class="dropdown-button list-button"  data-translate-value="${translateValue}%">
-          <span class="text-truncate text-btn">${text}</span>
-        </button>
-      </li>
-    `;
-  };
+  //  const listItemTemplate = (text, translateValue) => {
+  //    return `
+  //      <li class="dropdown-list-item">
+  //        <button class="dropdown-button list-button"  data-translate-value="${translateValue}%">
+  //          <span class="text-truncate text-btn">${text}</span>
+  //        </button>
+  //      </li>
+  //    `;
+  //  };
+  //  listItemTemplate(text, translateValue);
 
-  const renderListItems = () => {
-    dropdownList.innerHTML += listItems
-      .map((item, index) => {
-        return listItemTemplate(item, 100 * index);
-      })
-      .join('');
-  };
+  //  function renderListItems() {
+  //    dropdownList.innerHTML += listItems
+  //      .map((item, index) => {
+  //        return listItemTemplate(item, 100 * index);
+  //      })
+  //      .join('');
+  //  }
 
   window.addEventListener('load', () => {
-    renderListItems();
+    renderListItems(listItems, dropdownList);
   });
 
   const setDropdownProps = (deg, ht, opacity) => {
@@ -75,7 +84,7 @@ function filterLibraryBackdropGanre(arrayUnicalGanres) {
   dropdownList.addEventListener('click', e => {
     const clickedItemText = e.target.innerText.trim();
     console.log(clickedItemText);
-    ClickToSetGanre(clickedItemText);
+    libraryClickToSetGanre(clickedItemText);
     const clickedItemIcon = icons[clickedItemText];
 
     dropdownTitleIcon.innerHTML = iconTemplate(clickedItemIcon);
@@ -96,4 +105,30 @@ function filterLibraryBackdropGanre(arrayUnicalGanres) {
   });
 }
 
-export { filterLibraryBackdropGanre };
+function renderListItems(listItems, dropdownList) {
+  dropdownList.innerHTML += listItems
+    .map((item, index) => {
+      return listItemTemplate(item, 100 * index);
+    })
+    .join('');
+}
+
+function listItemTemplate(text, translateValue) {
+  return `
+      <li class="dropdown-list-item">
+        <button class="dropdown-button list-button"  data-translate-value="${translateValue}%">
+          <span class="text-truncate text-btn">${text}</span>
+        </button>
+      </li>
+    `;
+}
+
+function iconTemplate(path) {
+  return `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="ganre-svg">
+            <path d="${path}" />
+          </svg>
+        `;
+}
+
+export { libraryRendListAllGanres };
