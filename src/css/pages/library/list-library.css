@@ -1,41 +1,230 @@
-.btn-list-load-more {
-  width: 106px;
-  height: 38px;
-}
-
-.btn-list-search {
-  width: 122px;
-  height: 38px;
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
+:root {
+  /*--bg-color: #222429;*/
+  /*--primary-bg-color: #333740;*/
+  /*--primary-color: #2c62f6;*/
+  /*--text-color: #b1b8ca;*/
+  /*--text-active: #ffffff;*/
+  /*--button-hover-bg-color: #2b2e34;*/
+  /*--border-color: #494d59;*/
+  --dropdown-height: 0;
+  --rotate-arrow: 0;
+  --translate-value: 0;
+  --list-opacity: 0;
+  --transition-time: 0.4s;
+  --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 1.4rem;
+  --list-button-height: 4.6rem;
+  --floating-icon-size: 26;
+  --floating-icon-top: 0;
+  --floating-icon-left: 0;
 }
 
 .btn-list-search,
-.btn-list-load-more {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.btn-load-more {
+  display: inline-block;
+}
+.cards-item-btn {
+  padding: 0;
 }
 
 @media screen and (min-width: 320px) {
+  /* ==================================FILTER GANRES=========================================== */
+  .ganre-svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  .text-truncate {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .dropdown-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 173px;
+    margin-top: 40px;
+  }
+
+  .dropdown-title-icon,
+  .dropdown-arrow {
+    display: inline-flex;
+  }
+
+  .text-mein-btn {
+    font-size: 14px;
+    line-height: 1.14;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #b7b7b7;
+  }
+
+  .dropdown-title {
+    margin: 0 auto 0 8px;
+    text-transform: capitalize;
+  }
+
+  .dropdown-button {
+    display: flex;
+    align-items: center;
+
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .dropdown-button .ganre-svg {
+    transition: all var(--transition-time) var(--transition-timing);
+    fill: #b1b8ca;
+  }
+
+  .dropdown-button .ganre-svg,
+  .dropdown-button span {
+    pointer-events: none;
+  }
+
+  .main-button {
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 1);
+    background-color: initial;
+    transition: all var(--transition-time) var(--transition-timing);
+    padding: 12px 8px;
+  }
+  .main-button .dropdown-arrow {
+    transition: transform var(--transition-time) var(--transition-timing);
+    transform: rotate(var(--rotate-arrow));
+  }
+
+  .text-btn {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  .list-button {
+    color: #f8f8f8;
+    height: 44px;
+    transition: color var(--transition-time) var(--transition-timing);
+    background-color: rgba(28, 28, 28, 1);
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: none;
+  }
+
+  .dropdown-button:hover,
+  .dropdown-button:focus {
+    color: #f87719;
+  }
+
+  .dropdown-list-container {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    overflow: hidden;
+    max-height: var(--dropdown-height);
+    transition: max-height var(--transition-time) var(--transition-timing);
+  }
+
+  .dropdown-list-wrapper {
+    margin-top: 1rem;
+    /*padding: 1rem;*/
+    background-color: #333740;
+    border-radius: var(--border-radius);
+    border: 0.1rem solid #494d59;
+    position: relative;
+  }
+
+  ul.dropdown-list {
+    position: relative;
+    list-style-type: none;
+  }
+
+  ul.dropdown-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0;
+    height: var(--list-button-height);
+    background-color: #2b2e34;
+    transition: all var(--transition-time) linear;
+    transform: translateY(var(--translate-value));
+    border-radius: var(--border-radius);
+    pointer-events: none;
+  }
+  ul.dropdown-list:hover::before,
+  ul.dropdown-list:hover ~ .floating-icon {
+    opacity: 1;
+  }
+
+  li.dropdown-list-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    opacity: var(--list-opacity);
+    transition: opacity 0.8s var(--transition-timing);
+  }
+
+  .floating-icon {
+    height: calc(var(--floating-icon-size) * 1px);
+    width: calc(var(--floating-icon-size) * 1px);
+    position: absolute;
+    top: var(--floating-icon-top);
+    left: var(--floating-icon-left);
+    background-color: #494d59;
+    border-radius: 1rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-time) var(--transition-timing);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .floating-icon .ganre-svg {
+    fill: #ffffff;
+  }
+  /* =======================================END================================================= */
   .library-section {
     text-align: center;
   }
   .movie-cards-list-css {
-    margin-top: 96px;
+    margin-top: 16px;
     margin-bottom: 24px;
-    justify-content: center;
+    /*justify-content: center;*/
   }
   .movie-cards-list-css-no-btn {
-    margin-top: 96px;
+    margin-top: 16px;
     margin-bottom: 42px;
   }
 
-  .btn-list-search,
-  .btn-list-load-more {
+  .btn-load-more {
     /*margin-top: 24px;*/
     margin-bottom: 40px;
   }
 
-  .library-ops-text-css {
+  .library-ops {
     text-align: center;
     font-family: 'Roboto';
     font-style: normal;
@@ -43,39 +232,38 @@
     font-size: 20px;
     line-height: 1.16;
     color: #ffffff;
+  }
+  .library-ops-text-css {
     margin-top: 44px;
     margin-bottom: 42px;
   }
   .library-ops-text-css p {
     margin-bottom: 20px;
   }
-  .light-theme .library-ops-text-css {
-    color: var(--dark-theme-background-color);
-  }
 }
 @media screen and (min-width: 768px) {
+  /* ==================================FILTER GANRES=========================================== */
+  .dropdown-container {
+    max-width: 144px;
+    margin-top: 60px;
+  }
+  .main-button {
+    height: 44px;
+    padding: 14px 12px;
+  }
+  /* =======================================END================================================= */
   .movie-cards-list-css {
     margin-top: 140px;
     margin-bottom: 40px;
   }
 
   .movie-cards-list-css-no-btn {
-    margin-top: 140px;
+    margin-top: 36px;
     margin-bottom: 60px;
   }
 
-  .btn-list-load-more {
-    width: 115px;
-    height: 40px;
-  }
-
-  .btn-list-search {
-    /* width: 133px; */
-    height: 40px;
-  }
-
-  .btn-list-search,
-  .btn-list-load-more {
+  .btn-load-more {
+    /*margin-top: 40px;*/
     margin-bottom: 60px;
   }
   .library-ops-text-css {
@@ -89,28 +277,37 @@
   }
 }
 @media screen and (min-width: 1280px) {
+  /* ==================================FILTER GANRES=========================================== */
+  .dropdown-container {
+    max-width: 260px;
+    margin-top: 80px;
+  }
+
+  .text-truncate {
+    line-height: 1.18;
+  }
+
+  .main-button {
+    height: 48px;
+  }
+  .list-button {
+    height: 47px;
+  }
+  /* =======================================END================================================= */
   .movie-cards-list-css {
     margin-top: 176px;
     margin-bottom: 40px;
   }
   .movie-cards-list-css-no-btn {
-    margin-top: 176px;
+    margin-top: 48px;
     margin-bottom: 96px;
   }
 
-  .btn-list-load-more {
-    width: 134px;
-    height: 52px;
-  }
-  .btn-list-search {
-    /* width: 158px; */
-    height: 52px;
-  }
-
-  .btn-list-search,
-  .btn-list-load-more {
+  .btn-load-more {
+    /*margin-top: 40px;*/
     margin-bottom: 96px;
   }
+
   .library-ops-text-css {
     font-size: 32px;
     line-height: 1.125;

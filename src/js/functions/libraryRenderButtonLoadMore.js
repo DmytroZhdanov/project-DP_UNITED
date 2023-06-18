@@ -1,9 +1,9 @@
 import { refs } from '../list-library';
-function renderButtonLoadMore() {
+function libraryRenderButtonLoadMore() {
   refs.libraryMovieList.insertAdjacentHTML(
     'afterend',
     `
-                        <div class="btn-list-load-more" data-div-load-more-btn>
+                        <div class="btn-load-more" data-div-load-more-btn>
                             <button type="button" class="btn btn-filled" data-load-more-btn>
                             Load more
                             </button>
@@ -11,4 +11,4 @@ function renderButtonLoadMore() {
   );
 }
 
-export { renderButtonLoadMore };
+export { libraryRenderButtonLoadMore, loadButton };
