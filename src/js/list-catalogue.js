@@ -12,7 +12,9 @@ const catalogFormSearch = document.querySelector(
   '[data-catalogue-search-form]'
 );
 const choosefilm = document.querySelector('[data-catalogue-choose-movie]');
+
 const chooseYear = document.querySelector('[data-catalogue-choose-year]');
+
 const inputFilm = document.querySelector('#input-catalogue-film');
 const inputYear = document.querySelector('#input-catalogue-year');
 const inputSearchByName = document.querySelector(
@@ -23,15 +25,17 @@ const iconClearSearch = document.querySelector('#btn-input-catalogue-search');
 
 inputFilm.style.display = 'none';
 inputYear.style.display = 'none';
-catalogFormSearch.addEventListener('submit', onCatalogSearchMovies);
+
+// catalogFormSearch.addEventListener('submit', onCatalogSearchMovies);
 iconClearSearch.addEventListener('click', onClearInputSearch);
 iconClearFilm.addEventListener('click', onClearInputFilm);
-chooseYear.addEventListener('change', searchMoviesByYear);
+// chooseYear.addEventListener('change', onCatalogSearchMovies);
+catalogFormSearch.addEventListener('submit', searchMoviesBySearchQueryAndYear);
 
 const moviesNumber = window.innerWidth < 768 ? 10 : 20;
 
 let searchQuery;
-let yearsArr = [];
+let year;
 const options = {
   totalItems: 0,
   itemsPerPage: 20,
@@ -96,23 +100,95 @@ onRenderCatalogPage();
 
 // SEARCH MOVIES BY SEARCHQUERY //
 
-async function onCatalogSearchMovies(e) {
-  e.preventDefault();
-  searchQuery = e.currentTarget.elements['searchQuery'].value.trim();
+// async function onCatalogSearchMovies(e) {
+//   e.preventDefault();
+//   searchQuery = e.currentTarget.elements['searchQuery'].value.trim();
 
-  if (!searchQuery) {
-    console.error("Search querry can't be empty");
-    return;
-  }
+//   if (!searchQuery) {
+//     console.error("Search querry can't be empty");
+//     return;
+//   }
 
-  pagination.off('afterMove', createPopularMoviesForWeek);
+//   pagination.off('afterMove', createPopularMoviesForWeek);
+
+//   try {
+//     const resp = await fetchMovieBySearchQuery(searchQuery, page);
+
+//     const moviesToRender = resp.results.slice(0, moviesNumber);
+//     console.log(moviesToRender);
+//     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+//     choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+//     chooseYear.innerHTML = markUpListOfYears(moviesToRender);
+
+//     if (window.innerWidth >= 768) {
+//       inputSearchByName.style.display = 'none';
+//       catalogFormSearch.style.flexWrap = 'nowrap';
+//     }
+//     inputFilm.style.display = 'flex';
+//     inputYear.style.display = 'flex';
+//     iconClearSearch.hidden = false;
+//     iconClearFilm.hidden = false;
+
+//     pagination.reset(resp.total_pages);
+
+//     paginationStylesOfBtn();
+
+//     paginEl.classList.remove('is-hidden');
+//     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+
+//     if (resp.total_results === 0) {
+//       choosefilm.innerHTML = '<option value="Film">Film</option>';
+//       catalogEl.innerHTML =
+//         '<p class="catalog-desc"> OOPS... <br /> We are very sorry! <br /> We don’t have any results matching your search.</p>';
+//       paginEl.classList.add('is-hidden');
+//       return;
+//     }
+
+//     if (resp.total_results <= 20) {
+//       paginEl.classList.add('is-hidden');
+//       return;
+//     }
+
+//     pagination.on('afterMove', createPaginationByQuerry);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+async function createPaginationByQuerry(evt) {
+  const currentPage = evt.page;
 
   try {
-    const resp = await fetchMovieBySearchQuery(searchQuery, page);
-
+    const resp = await fetchMovieBySearchQuery(currentPage);
     const moviesToRender = resp.results.slice(0, moviesNumber);
 
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+    chooseYear.innerHTML = markUpListOfYears2(moviesToRender);
+
+    paginationStylesOfBtn();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// SEARCH BY NAME AND YEAR ///
+
+async function searchMoviesBySearchQueryAndYear(e) {
+  e.preventDefault();
+  searchQuery = e.currentTarget.elements['searchQuery'].value.trim();
+  year = e.currentTarget.elements.queryFilmYear.value;
+
+  pagination.off('afterMove', createPaginationByQuerry);
+
+  try {
+    const resp = await fetchMovieBySearchQueryAndYear(searchQuery, year, page);
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+    chooseYear.innerHTML = markUpListOfYears2(yearsArr);
+
     if (window.innerWidth >= 768) {
       inputSearchByName.style.display = 'none';
       catalogFormSearch.style.flexWrap = 'nowrap';
@@ -122,15 +198,13 @@ async function onCatalogSearchMovies(e) {
     iconClearSearch.hidden = false;
     iconClearFilm.hidden = false;
 
-    pagination.reset(resp.total_pages);
+    pagination.reset(resp.total_results);
 
     paginationStylesOfBtn();
 
     paginEl.classList.remove('is-hidden');
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
-    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
-    // chooseYear.innerHTML = markUpListOfYears(resp.results);
-
+    chooseYear.innerHTML = markUpListOfYears2(yearsArr);
     if (resp.total_results === 0) {
       choosefilm.innerHTML = '<option value="Film">Film</option>';
       catalogEl.innerHTML =
@@ -144,37 +218,7 @@ async function onCatalogSearchMovies(e) {
       return;
     }
 
-    pagination.on('afterMove', createPaginationByQuerry);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-async function createPaginationByQuerry(evt) {
-  const currentPage = evt.page;
-
-  try {
-    const resp = await fetchMovieBySearchQuery(currentPage);
-    const moviesToRender = resp.results.slice(0, moviesNumber);
-    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
-    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
-    // chooseYear.innerHTML = markUpListOfYears(resp.results);
-    paginationStylesOfBtn();
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-// SEARCH BY NAME AND YEAR ///
-
-async function searchMoviesByYear(e) {
-  year = e.currentTarget.value;
-  console.log(year);
-
-  try {
-    const resp = await fetchMovieBySearchQueryAndYear(year, searchQuery);
-
-    console.log(resp.results.release_date);
+    pagination.on('afterMove', createPaginationBySearchQueryAndYear);
   } catch (err) {
     console.log(err);
   }
@@ -183,11 +227,15 @@ async function createPaginationBySearchQueryAndYear(evt) {
   const currentPage = evt.page;
 
   try {
-    const resp = await fetchMovieBySearchQueryAndYear(currentPage);
+    const resp = await fetchMovieBySearchQueryAndYear(currentPage, year);
     console.log(resp);
-    catalogEl.innerHTML = generateMovieCardsMarkup(resp.results);
+    const moviesToRender = resp.results.slice(0, moviesNumber);
+    catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    choosefilm.innerHTML = markUpListOfMovies(moviesToRender);
+    chooseYear.innerHTML = markUpListOfYears2(yearsArr);
 
     // pagination btn styles //
+    paginationStylesOfBtn();
   } catch (err) {
     console.log(err);
   }
@@ -208,21 +256,67 @@ function onClearInputFilm() {
 // MARKUP LISTS OF MOVIES AND YEARS ///
 function markUpListOfMovies(arr) {
   return arr
-    .map(({ title }) => `<option value='${title}'>${title}</option>`)
-    .join();
-}
-
-function markUpListOfYears(years) {
-  return years
-    .map(({ year }) => {
-      years = release_date.slice(0, 4);
-      console.log(years);
-      yearsArr.push(years);
-      console.log(year);
-      `<option value='${year}'>${year}</option>`;
+    .map(({ title }) => {
+      return `<option class='catalog-list-movies' value="${title}">${title}</option>`;
     })
     .join();
 }
+
+let yearsArr = [];
+const date = new Date();
+
+year = date.getFullYear();
+const lastYear = year - 20;
+
+for (let i = year; i >= lastYear; i -= 1) {
+  const year = { year: i };
+  yearsArr.push(year);
+}
+
+function markUpListOfYears2(yearsArr) {
+  return yearsArr
+    .map(({ year }) => {
+      return `<option class='catalog-list-movies' value="${year}">${year}</option>`;
+    })
+    .join();
+}
+
+// -----FUNCTION OF SORT OF YEARS IN COOSED MOVIES----//
+
+// function markUpListOfSortedYears(years) {
+//   let yearsArr = [];
+//   let newArrOfYears = [];
+
+//   years.forEach(({ release_date }) => {
+//     const year = parseInt(release_date.slice(0, 4));
+
+//     const items = { year: year };
+
+//     yearsArr.push(year);
+//   });
+
+//   // console.log(yearsArr);
+
+//   const num = yearsArr.reduce((prev, current) => {
+//     return { ...prev, [current]: [...(prev[current] || []), current] };
+//   }, {});
+
+//   const groupedYearsToArr = Object.values(num);
+//   // console.log(groupedYearsToArr);
+
+//   groupedYearsToArr.map(values => {
+//     return newArrOfYears.push(values[0]);
+//   });
+//   // console.log(newArrOfYears);
+//   const sortedArr = newArrOfYears.sort((a, b) => b - a);
+//   // console.log(sortedArr);
+
+//   return sortedArr
+//     .map(year => {
+//       return `<option class='catalog-list-years' value='${year}'>${year}</option>`;
+//     })
+//     .join();
+// }
 
 //  PAGINATION STYLES //
 
