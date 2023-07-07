@@ -23,12 +23,12 @@ const inputSearchByName = document.querySelector(
 const iconClearFilm = document.querySelector('#btn-input-catalogue-film');
 const iconClearSearch = document.querySelector('#btn-input-catalogue-search');
 
-inputFilm.style.display = 'none';
-inputYear.style.display = 'none';
+// inputFilm.style.display = 'none';
+// inputYear.style.display = 'none';
 
 // catalogFormSearch.addEventListener('submit', onCatalogSearchMovies);
 iconClearSearch.addEventListener('click', onClearInputSearch);
-iconClearFilm.addEventListener('click', onClearInputFilm);
+// iconClearFilm.addEventListener('click', onClearInputFilm);
 // chooseYear.addEventListener('change', onCatalogSearchMovies);
 catalogFormSearch.addEventListener('submit', searchMoviesBySearchQueryAndYear);
 
@@ -247,11 +247,11 @@ function onClearInputSearch() {
   iconClearSearch.hidden = true;
 }
 
-function onClearInputFilm() {
-  inputFilm.firstElementChild.value = '';
+// function onClearInputFilm() {
+//   inputFilm.firstElementChild.value = '';
 
-  iconClearFilm.hidden = true;
-}
+//   iconClearFilm.hidden = true;
+// }
 
 // MARKUP LISTS OF MOVIES AND YEARS ///
 function markUpListOfMovies(arr) {
