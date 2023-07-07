@@ -4,6 +4,7 @@ import { renderLibraryOppsText } from './functions/renderLibraryOppsText';
 import { renderNumberOfCard } from './functions/renderNumberOfCard';
 import { renderLoadMoreCard } from './functions/renderLoadMoreCard';
 import { renderButtonLoadMore } from './functions/renderButtonLoadMore';
+import { onMovieCardClick } from './functions/onMovieCardClick';
 
 export const refs = {
   libraryMovieList: document.querySelector('[data-library-list]'),
@@ -29,6 +30,7 @@ if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
       refs.LibraryFromLocalStorage
     );
     refs.libraryMovieList.classList.add('movie-cards-list-css-no-btn');
+    refs.libraryMovieList.addEventListener('click', onMovieCardClick);
   } else {
     //==============if page > 1 - render first page and Button "load more"==============
 

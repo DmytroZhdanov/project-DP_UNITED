@@ -281,6 +281,11 @@
     height: 478px;
     margin-right: 20px;
   }
+
+  .movie-details-wrapper {
+    height: 478px;
+  }
+
   .movie-details-headline {
     font-size: 24px;
     line-height: 1.33;

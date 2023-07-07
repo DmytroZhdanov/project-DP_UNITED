@@ -74,7 +74,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    position: relative;
+    /* position: static; */
     margin-left: 16px;
   }
 
@@ -138,6 +138,11 @@
     color: var(--dark-theme-grey-color);
     border: 1px solid var(--dark-theme-grey-color);
   }
+
+  .dark-theme .tui-pagination .tui-first-child.tui-is-selected,
+  .light-theme .tui-pagination .tui-first-child.tui-is-selected {
+    border-left: none;
+}
 
   .btn-container > .btn-number.tui-first {
     display: none;
@@ -240,6 +245,7 @@
     margin-bottom: 36px;
   }
   .search-film-year {
+    width: 295px;
     gap: 12px;
     margin-bottom: 0;
   }
@@ -306,6 +312,7 @@
   }
 
   .search-film-year {
+    width: 430px;
     gap: 20px;
   }
 
