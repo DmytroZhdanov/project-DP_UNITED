@@ -81,9 +81,7 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
                     1
                   )}</span
                   ><span class="movie-details-content-inner-slash">/</span
-                  ><span class="movie-details-content-inner-wrap">${vote_count.toFixed(
-                    1
-                  )}</span>
+                  ><span class="movie-details-content-inner-wrap">${vote_count}</span>
                 </li>
                 <li class="movie-details-content">${popularity.toFixed(1)}</li>
                 <li class="movie-details-content">${genresString}</li>

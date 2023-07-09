@@ -101,7 +101,7 @@ function generateUpcomingSectionMarkup({
               </li>
               <li class="upcoming-item-vote-num">
                 <p class="upcoming-vote">
-                  <span class="upcoming-inner-box">${vote_average}</span>
+                  <span class="upcoming-inner-box">${vote_average.toFixed(1)}</span>
                   <span class="upcoming-inner-color">/</span>
                   <span class="upcoming-inner-box-votes">${vote_count}</span>
                 </p>
