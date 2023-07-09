@@ -5,6 +5,7 @@ import { fetchMovieBySearchQuery } from './functions/movieApiService';
 import { fetchMovieBySearchQueryAndYear } from './functions/movieApiService';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import { onMovieCardClick } from './functions/onMovieCardClick';
 
 const catalogEl = document.querySelector('[data-catalogue-movies]');
 const paginEl = document.querySelector('#tui-pagination-container');
@@ -50,7 +51,7 @@ const page = pagination.getCurrentPage();
 pagination.on('afterMove', createPopularMoviesForWeek);
 const tuiPaginatContainer = document.querySelector('.tui-pagination');
 tuiPaginatContainer.classList.add('btn-container');
-const btnContainer = document.querySelector('.btn-container');
+// const btnContainer = document.querySelector('.btn-container');
 
 // TRENDING MOVIES FOR WEEK //
 
@@ -59,6 +60,7 @@ async function onRenderCatalogPage(page) {
     const resp = await fetchWeekTrends(page);
     const moviesToRender = resp.results.slice(0, moviesNumber);
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
+    catalogEl.addEventListener('click', onMovieCardClick);
     paginationStylesOfBtn();
     pagination.reset(resp.total_pages);
 
