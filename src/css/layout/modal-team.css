@@ -2,6 +2,7 @@
 
 .modal-btn-close {
   display: flex;
+  z-index: 999;
   justify-content: center;
   align-items: center;
   position: absolute;
