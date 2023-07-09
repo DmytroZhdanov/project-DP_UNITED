@@ -100,7 +100,7 @@
 }
 
 .team-name {
-  color: var(--dark-theme-grey-color);
+  color: var(--primary-text-color);
   font-family: var(--primary-font-family);
   font-size: 12px;
   font-weight: 400;
