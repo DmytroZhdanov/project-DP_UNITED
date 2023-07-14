@@ -27,16 +27,13 @@ export let letRefs = {
 
 //================Check LocalStorage====================================================
 if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
-  //  renderLibraryOppsText();
   libraryRenderOppsText();
 } else {
   //====================render HTML dropback Filter  Ganres==========================================
-  //  renderFilterGanresBackdrop();
   libraryRendHtmlGanresBackdrop();
   //  Create list of Ganres All movies in Local Storage and render Backdrop with All Ganres
   libraryRendListAllGanres(libraryAllGanresList(refs.LibraryFromLocalStorage));
 
-  //========================================
   //==============if total page < 1 - render first page without button==================
   if (letRefs.totalLibraryPage <= 1) {
     refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
