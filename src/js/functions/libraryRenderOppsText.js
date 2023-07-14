@@ -1,5 +1,5 @@
 import { refs } from '../list-library';
-function renderLibraryOppsText() {
+function libraryRenderOppsText() {
   refs.libraryOppsText.innerHTML = `
         <p>OOPS...<br>
         We are very sorry!<br>
@@ -13,4 +13,4 @@ function renderLibraryOppsText() {
   refs.libraryOppsText.classList.add('library-ops-text-css');
 }
 
-export { renderLibraryOppsText };
+export { libraryRenderOppsText };
