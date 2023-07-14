@@ -43,7 +43,6 @@ function libraryRendListAllGanres(arrayUnicalGanres) {
 
   dropdownList.addEventListener('click', e => {
     const clickedItemText = e.target.innerText.trim();
-    console.log(clickedItemText);
     libraryClickToSetGanre(clickedItemText);
     const clickedItemIcon = icons[clickedItemText];
 
