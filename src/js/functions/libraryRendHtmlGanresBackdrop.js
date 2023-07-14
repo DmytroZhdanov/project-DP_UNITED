@@ -34,7 +34,6 @@ function libraryRendHtmlGanresBackdrop() {
   </div>
 </div>
         `;
-  //  refs.libraryFilterGanreBackdrop.classList.add('library-ops-text-css');
 }
 
 export { libraryRendHtmlGanresBackdrop };
