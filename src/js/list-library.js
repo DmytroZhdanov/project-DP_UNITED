@@ -7,6 +7,7 @@ import { libraryRenderButtonLoadMore } from './functions/libraryRenderButtonLoad
 import { libraryRendHtmlGanresBackdrop } from './functions/libraryRendHtmlGanresBackdrop';
 import { libraryAllGanresList } from './functions/libraryAllGanresList';
 import { libraryRendListAllGanres } from './functions/libraryRendListAllGanres';
+import { onMovieCardClick } from './functions/onMovieCardClick';
 
 export const refs = {
   libraryMovieList: document.querySelector('[data-library-list]'),
@@ -59,4 +60,6 @@ if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
     libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
     libraryLoadMoreBtn.addEventListener('click', libraryRenderLoadMoreCard);
   }
+
+  refs.libraryMovieList.addEventListener('click', onMovieCardClick);
 }
