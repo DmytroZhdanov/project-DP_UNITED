@@ -86,6 +86,10 @@
   margin-bottom: 20px;
 }
 
+.movie-details-item {
+  width: 78px;
+}
+
 .movie-details-item:not(:last-child),
 .movie-details-content:not(:last-child) {
   margin-bottom: 12px;
@@ -297,6 +301,10 @@
     font-size: 16px;
     line-height: 1.19;
   }
+
+  .movie-details-item {
+  width: 89px;
+}
 
   .movie-details-items {
     font-weight: 500;
