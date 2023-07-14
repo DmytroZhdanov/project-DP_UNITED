@@ -5,6 +5,7 @@ import { fetchMovieBySearchQuery } from './functions/movieApiService';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { onMovieCardClick } from './functions/onMovieCardClick';
+import { loader } from './functions/loader';
 
 const catalogEl = document.querySelector('[data-catalogue-movies]');
 const paginEl = document.querySelector('#tui-pagination-container');
@@ -40,6 +41,7 @@ onRenderCatalogPage();
 
 // TRENDING MOVIES FOR WEEK //
 async function onRenderCatalogPage(page) {
+  loader.on()
   try {
     const resp = await fetchWeekTrends(page);
     const moviesToRender = resp.results.slice(0, moviesNumber);
@@ -64,10 +66,13 @@ async function onRenderCatalogPage(page) {
     }
   } catch (error) {
     console.error(error.message);
+  } finally {
+    loader.off()
   }
 }
 
 async function createPopularMoviesForWeek(e) {
+  loader.on()
   const currentPage = e.page;
 
   try {
@@ -78,6 +83,8 @@ async function createPopularMoviesForWeek(e) {
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
   } catch (error) {
     console.error(error.message);
+  } finally {
+    loader.off()
   }
 }
 
@@ -90,6 +97,7 @@ async function onCatalogSearchMovies(e) {
     console.error("Search querry can't be empty");
     return;
   }
+  loader.on()
 
   pagination.off('afterMove', createPopularMoviesForWeek);
 
@@ -119,10 +127,13 @@ async function onCatalogSearchMovies(e) {
     pagination.on('afterMove', createPaginationByQuerry);
   } catch (error) {
     console.error(error);
+  } finally {
+    loader.off()
   }
 }
 
 async function createPaginationByQuerry(evt) {
+  loader.on()
   const currentPage = evt.page;
 
   try {
@@ -133,6 +144,8 @@ async function createPaginationByQuerry(evt) {
     catalogEl.innerHTML = generateMovieCardsMarkup(moviesToRender);
   } catch (error) {
     console.error(error.message);
+  } finally {
+    loader.off()
   }
 }
 
