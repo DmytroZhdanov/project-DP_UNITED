@@ -26,40 +26,46 @@ export let letRefs = {
   curentPage: 0,
 };
 
-//================Check LocalStorage====================================================
-if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
-  libraryRenderOppsText();
-} else {
-  //====================render HTML dropback Filter  Ganres==========================================
-  libraryRendHtmlGanresBackdrop();
-  //  Create list of Ganres All movies in Local Storage and render Backdrop with All Ganres
-  libraryRendListAllGanres(libraryAllGanresList(refs.LibraryFromLocalStorage));
+onLibraryLoad();
 
-  //==============if total page < 1 - render first page without button==================
-  if (letRefs.totalLibraryPage <= 1) {
-    refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
-      refs.LibraryFromLocalStorage
-    );
-    refs.libraryMovieList.classList.add('movie-cards-list-css-no-btn');
+function onLibraryLoad() {
+  //================Check LocalStorage====================================================
+  if (!refs.LibraryFromLocalStorage || !refs.LibraryFromLocalStorage.length) {
+    libraryRenderOppsText();
   } else {
-    //==============if page > 1 - render first page and Button "load more"==============
-
-    refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
-      libraryRenderNumberOfCard(
-        refs.LibraryFromLocalStorage,
-        letRefs.curentPage
-      )
+    //====================render HTML dropback Filter  Ganres==========================================
+    libraryRendHtmlGanresBackdrop();
+    //  Create list of Ganres All movies in Local Storage and render Backdrop with All Ganres
+    libraryRendListAllGanres(
+      libraryAllGanresList(refs.LibraryFromLocalStorage)
     );
 
-    libraryRenderButtonLoadMore();
-    letRefs.curentPage += 1;
+    //==============if total page < 1 - render first page without button==================
+    if (letRefs.totalLibraryPage <= 1) {
+      refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
+        refs.LibraryFromLocalStorage
+      );
+      refs.libraryMovieList.classList.add('movie-cards-list-css-no-btn');
+    } else {
+      //==============if page > 1 - render first page and Button "load more"==============
 
-    refs.libraryMovieList.classList.add('movie-cards-list-css');
+      refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
+        libraryRenderNumberOfCard(
+          refs.LibraryFromLocalStorage,
+          letRefs.curentPage
+        )
+      );
 
-    //==================set event on Button "Load more"==================================
-    libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
-    libraryLoadMoreBtn.addEventListener('click', libraryRenderLoadMoreCard);
+      libraryRenderButtonLoadMore();
+      letRefs.curentPage += 1;
+
+      refs.libraryMovieList.classList.add('movie-cards-list-css');
+
+      //==================set event on Button "Load more"==================================
+      libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
+      libraryLoadMoreBtn.addEventListener('click', libraryRenderLoadMoreCard);
+    }
+
+    refs.libraryMovieList.addEventListener('click', onMovieCardClick);
   }
-
-  refs.libraryMovieList.addEventListener('click', onMovieCardClick);
 }
