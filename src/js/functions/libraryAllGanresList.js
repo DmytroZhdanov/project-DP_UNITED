@@ -12,7 +12,6 @@ function libraryAllGanresList(arr) {
   const arrayUnicalGanres = [...new Set(markup.flat())].sort();
 
   arrayUnicalGanres.splice(0, 0, 'All');
-  console.log('arrayUnicalGanres:', arrayUnicalGanres);
   return arrayUnicalGanres;
 }
 
