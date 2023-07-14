@@ -6,7 +6,6 @@ import { libraryRenderNumberOfCard } from './libraryRenderNumberOfCard';
 function libraryRenderLoadMoreCard() {
   //==================read div of button to delete div if no btn for css================================
   libraryDivLoadMoreBtn = document.querySelector('[data-div-load-more-btn]');
-  console.log(libraryDivLoadMoreBtn);
   // =================if the last page is left - render and hide the button============
   if (letRefs.totalLibraryPage === letRefs.curentPage + 1) {
     refs.libraryMovieList.insertAdjacentHTML(
