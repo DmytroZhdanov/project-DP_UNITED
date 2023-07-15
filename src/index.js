@@ -11,4 +11,3 @@ setGenresToSS();
 
 const headerCurrent = document.querySelectorAll('[data-header-home]');
 headerCurrent.forEach(i => i.classList.add('js-current'));
-
