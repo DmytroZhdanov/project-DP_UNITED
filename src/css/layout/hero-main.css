@@ -1,5 +1,4 @@
 /* Стилі дефолтного Main Hero */
-
 .backdrop-hero-main-img-container:after {
   content: '';
   display: block;
@@ -15,19 +14,23 @@
     rgba(17, 17, 17, 0) 65.61%
   );
 }
+
 .hero-main-info {
   max-width: 199px;
 }
+
 .hero-main-text {
   width: 166px;
   margin-bottom: 20px;
 }
+
 @media screen and (max-width: 767px) {
   .hero-main-text {
     max-height: 80px;
     overflow: hidden;
   }
 }
+
 .get-started-link {
   display: inline-block;
   font-weight: 500;
@@ -36,6 +39,7 @@
   line-height: 1.17;
   color: #111111;
 }
+
 @media screen and (min-width: 768px) {
   .backdrop-hero-main-img-container:after {
     background-image: linear-gradient(
@@ -44,18 +48,22 @@
       rgba(17, 17, 17, 0) 72.95%
     );
   }
+
   .hero-main-info {
     max-width: 360px;
   }
+
   .hero-main-text {
     width: 360px;
     margin-bottom: 32px;
   }
+
   .get-started-link {
     font-size: 14px;
     line-height: 1.43;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .backdrop-hero-main-img-container:after {
     background-image: linear-gradient(
@@ -64,12 +72,15 @@
       rgba(17, 17, 17, 0) 60.05%
     );
   }
+
   .hero-main-info {
     max-width: 500px;
   }
+
   .hero-main-text {
     width: 464px;
   }
+
   .get-started-link {
     font-size: 16px;
     line-height: 1.5;

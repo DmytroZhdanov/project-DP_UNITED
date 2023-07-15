@@ -4,8 +4,6 @@ import './js/mobile-menu';
 import './js/hero';
 import './js/list-catalogue';
 import './js/footer';
-import './js/modal-trailer';
-import './js/modal-movie-details';
 import { setGenresToSS } from './js/functions/setGenresToSS';
 
 setGenresToSS();

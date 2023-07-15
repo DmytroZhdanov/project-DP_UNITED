@@ -1,5 +1,4 @@
 /* Стилі дефолтного Library Hero */
-
 .backdrop-hero-library-img-container:after {
   content: '';
   display: block;
@@ -15,9 +14,11 @@
     rgba(17, 17, 17, 0) 64.67%
   );
 }
+
 .hero-library-info {
   max-width: 249px;
 }
+
 @media screen and (min-width: 768px) {
   .backdrop-hero-library-img-container:after {
     background-image: linear-gradient(
@@ -27,10 +28,12 @@
     );
   }
 }
+
 @media screen and (min-width: 1280px) {
   .hero-library-container {
     padding-left: 117px;
   }
+
   .backdrop-hero-library-img-container:after {
     background-image: linear-gradient(
       80.53deg,
@@ -38,6 +41,7 @@
       rgba(17, 17, 17, 0) 72.35%
     );
   }
+
   .hero-library-info {
     max-width: 464px;
   }

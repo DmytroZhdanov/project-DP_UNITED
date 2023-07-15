@@ -1,9 +1,6 @@
-//import { generateMovieCardsMarkup } from './generateMovieCardsMarkup';
-
 import { getGenresIdByGenres } from './getGenresIdByGenres';
 import { libraryArrayFilterOnGanre } from './libraryArrayFilterOnGanre';
 import { libraryPageRendToGanre } from './libraryPageRendToGanre';
-import { listLibrary } from '../list-library';
 
 function libraryClickToSetGanre(evt) {
   if (evt == 'All') {

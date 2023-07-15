@@ -1,5 +1,4 @@
 /* Styles for Modal window with info about team members*/
-
 .modal-btn-close {
   display: flex;
   z-index: 999;
@@ -131,10 +130,6 @@
   color: var(--dark-theme-grey-color);
 }
 
-/* .team-item:not(:nth-child(2n)) {
-  margin-right: 10px;
-} */
-
 @media screen and (max-width: 767px) {
   .modal-footer-content {
     height: 90vh;
@@ -151,7 +146,6 @@
     display: inline-block;
     padding: 0 32px;
     width: 768px;
-
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0em;
@@ -176,10 +170,6 @@
     top: 24px;
     right: 24px;
   }
-
-  /* .team-item:not(:nth-child(2n)) {
-    margin-right: 0px;
-  } */
 
   .team-item:not(:nth-child(5)):not(:nth-child(6)):not(:nth-child(7)):not(
       :nth-child(8)

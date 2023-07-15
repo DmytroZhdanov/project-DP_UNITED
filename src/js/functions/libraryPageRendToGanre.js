@@ -1,7 +1,6 @@
 import { generateMovieCardsMarkup } from './generateMovieCardsMarkup';
 import { libraryRenderNumberOfCard } from './libraryRenderNumberOfCard';
 import { libraryRenderButtonLoadMore } from './libraryRenderButtonLoadMore';
-
 import { refs } from '../list-library';
 
 function libraryPageRendToGanre(

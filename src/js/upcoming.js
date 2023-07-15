@@ -3,6 +3,7 @@ import { fetchUpcomingThisMonth } from './functions/movieApiService';
 import { generateUpcomingSectionMarkup } from './functions/generateUpcomingSectionMarkup';
 import { addAppropriateListenerUpcoming } from './functions/addAppropriateListenerUpcoming';
 import { weeklyTrendsDefaultEl } from './trends';
+import { loader } from './functions/loader';
 
 const upcommingTrendsCardsEl = document.querySelector('.js-upcomming-cards');
 const upcommingTrendsDefaultEl = document.querySelector(
@@ -11,6 +12,7 @@ const upcommingTrendsDefaultEl = document.querySelector(
 
 gettingMovie();
 async function gettingMovie() {
+  loader.on();
   try {
     const data = await fetchUpcomingThisMonth();
     const uncomingArray = data.results;
@@ -32,6 +34,8 @@ async function gettingMovie() {
       return;
     }
     upcommingTrendsDefaultEl.classList.remove('visually-hidden');
+  } finally {
+    loader.off();
   }
 }
 

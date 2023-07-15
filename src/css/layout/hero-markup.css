@@ -1,8 +1,8 @@
 /* Стилі для рендерного Hero */
-
 .backdrop-hero-film-img-container {
   position: relative;
 }
+
 .backdrop-hero-film-img-container::after {
   content: '';
   display: block;
@@ -23,6 +23,7 @@
   object-fit: cover;
   height: 380px;
 }
+
 .hero-film-title {
   max-width: 280px;
   font-weight: 700;
@@ -32,9 +33,11 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .hero-film-rating {
   margin-bottom: 16px;
 }
+
 .hero-film-overview {
   max-width: 180px;
   display: -webkit-box;
@@ -43,9 +46,11 @@
   overflow: hidden;
   margin-bottom: 20px;
 }
+
 .hero-buttons-list {
   display: flex;
 }
+
 .hero-btn-item {
   display: block;
   width: 117px;
@@ -65,22 +70,28 @@
       rgba(17, 17, 17, 0) 72.65%
     );
   }
+
   .backdrop-hero-film-img {
     height: 432px;
   }
+
   .hero-film-info {
     padding-top: 36px;
   }
+
   .hero-film-title {
     max-width: 300px;
   }
+
   .hero-film-rating {
     margin-bottom: 20px;
   }
+
   .hero-film-overview {
     max-width: 300px;
     margin-bottom: 28px;
   }
+
   .hero-btn-item {
     width: 128px;
   }
@@ -94,25 +105,32 @@
       rgba(17, 17, 17, 0) 73.11%
     );
   }
+
   .hero-film-container {
     padding-left: 117px;
   }
+
   .backdrop-hero-film-img {
     height: 720px;
   }
+
   .hero-film-info {
     padding-top: 118px;
   }
+
   .hero-film-title {
     max-width: 600px;
   }
+
   .hero-film-rating {
     margin-bottom: 28px;
   }
+
   .hero-film-overview {
     max-width: 370px;
     margin-bottom: 36px;
   }
+
   .hero-btn-item {
     width: 128px;
   }
@@ -155,6 +173,7 @@
     right: calc(50% - 370px);
   }
 }
+
 @media screen and (min-width: 1280px) {
   .hero-slick-prev,
   .hero-slick-next {
@@ -162,6 +181,7 @@
     height: 36px;
     bottom: 6px;
   }
+
   .hero-slick-prev {
     right: calc(50% - 450px);
   }

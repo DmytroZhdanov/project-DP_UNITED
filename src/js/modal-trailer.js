@@ -1,1 +1,0 @@
-// Modal window for trailer js

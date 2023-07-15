@@ -40,7 +40,6 @@
     font-family: var(--primary-font-family);
     font-style: normal;
     font-weight: 500;
-
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -50,8 +49,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    /* width: 100%;
-    max-width: 173px; */
     margin-top: 40px;
   }
 
@@ -66,7 +63,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    /* color: #b7b7b7; */
   }
 
   .dropdown-title {
@@ -107,7 +103,6 @@
     height: 40px;
     border: 1px solid #ffffff;
     border-radius: 8px;
-    /* color: rgba(255, 255, 255, 1); */
     background-color: initial;
     transition: all var(--transition-time) var(--transition-timing);
     padding: 12px 8px;
@@ -131,7 +126,6 @@
   }
 
   .list-button {
-    /* font-family: var(--primary-font-family); */
     color: #f8f8f8;
     height: 44px;
     transition: color var(--transition-time) var(--transition-timing);
@@ -165,11 +159,9 @@
   }
 
   .dropdown-list-wrapper {
-    /* margin-top: 1rem; */
     margin-top: 4px;
     background-color: #333740;
     border-radius: var(--border-radius);
-    /* border: 0.1rem solid #494d59; */
     position: relative;
   }
 
@@ -193,6 +185,7 @@
     border-radius: var(--border-radius);
     pointer-events: none;
   }
+
   ul.dropdown-list:hover::before,
   ul.dropdown-list:hover ~ .floating-icon {
     opacity: 1;
@@ -227,14 +220,17 @@
   .floating-icon .ganre-svg {
     fill: #ffffff;
   }
+
   /* =======================================END================================================= */
   .library-section {
     text-align: center;
   }
+
   .movie-cards-list-css {
     margin-top: 16px;
     margin-bottom: 24px;
   }
+
   .movie-cards-list-css-no-btn {
     margin-top: 16px;
     margin-bottom: 42px;
@@ -254,13 +250,16 @@
     line-height: 1.16;
     color: #ffffff;
   }
+
   .library-ops-text-css {
     margin-top: 44px;
     margin-bottom: 42px;
   }
+
   .library-ops-text-css p {
     margin-bottom: 20px;
   }
+
   .light-theme .library-ops-text-css {
     color: var(--dark-theme-background-color);
   }
@@ -279,6 +278,7 @@
     width: 144px;
     margin-top: 60px;
   }
+
   .main-button {
     height: 44px;
     padding: 14px 12px;
@@ -307,16 +307,19 @@
   .btn-list-load-more {
     margin-bottom: 60px;
   }
+
   .library-ops-text-css {
     font-size: 24px;
     line-height: 1.33;
     margin-top: 80px;
     margin-bottom: 60px;
   }
+
   .library-ops-text-css p {
     margin-bottom: 24px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   /* ==================================FILTER GANRES=========================================== */
   .dropdown-container {
@@ -331,14 +334,17 @@
   .main-button {
     height: 48px;
   }
+
   .list-button {
     height: 47px;
   }
+
   /* =======================================END================================================= */
   .movie-cards-list-css {
     margin-top: 48px;
     margin-bottom: 40px;
   }
+
   .movie-cards-list-css-no-btn {
     margin-top: 48px;
     margin-bottom: 96px;
@@ -348,6 +354,7 @@
     width: 134px;
     height: 52px;
   }
+
   .btn-list-search {
     height: 52px;
   }
@@ -363,6 +370,7 @@
     margin-top: 160px;
     margin-bottom: 108px;
   }
+
   .library-ops-text-css p {
     margin-bottom: 28px;
   }

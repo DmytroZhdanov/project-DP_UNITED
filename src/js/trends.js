@@ -3,6 +3,7 @@ import { fetchWeekTrends } from './functions/movieApiService';
 import { generateMovieCardsMarkup } from './functions/generateMovieCardsMarkup';
 import { onMovieCardClick } from './functions/onMovieCardClick';
 import { upcommingTrendsDefaultEl } from './upcoming';
+import { loader } from './functions/loader';
 
 const weeklyTrendsList = document.querySelector('[data-weekly-trends-list]');
 const weeklyTrendsCardsEl = document.querySelector('.js-weekly-trends-cards');
@@ -15,6 +16,7 @@ const moviesNumber = window.innerWidth < 768 ? 1 : 3;
 renderWeeklyTrendsItems();
 
 async function renderWeeklyTrendsItems() {
+  loader.on()
   try {
     const response = await fetchWeekTrends();
     const moviesToRender = response.results.slice(0, moviesNumber);
@@ -33,6 +35,8 @@ async function renderWeeklyTrendsItems() {
       return;
     }
     weeklyTrendsDefaultEl.classList.remove('visually-hidden');
+  } finally {
+    loader.off()
   }
 }
 

@@ -92,15 +92,17 @@
   border: none;
   background-color: transparent;
 }
+
 .modal-close-icon-details {
   width: 10.5px;
   height: 10.5px;
-  /* transition: stroke var(--transition-dur-and-func); */
   stroke: var(--primary-text-color);
 }
+
 .light-theme .modal-close-icon-details {
   stroke: var(--secondary-black-color);
 }
+
 .modal-close-icon-details:hover {
   stroke: var(--primary-brand-color);
 }
@@ -215,7 +217,6 @@
     margin-bottom: 16px;
     width: 100%;
     max-width: 248px;
-    /* height: 180px; */
   }
 
   .movie-details-subtitle {
@@ -270,6 +271,7 @@
     line-height: 1.67;
     margin-bottom: 24px;
   }
+
   .movie-details-list {
     font-size: 14px;
     line-height: 1.14;
@@ -279,14 +281,17 @@
     font-size: 14px;
     line-height: 1.14;
   }
+
   .movie-details-content-inner-item {
     font-size: 12px;
     line-height: 1.17;
   }
+
   .movie-details-subtitle {
     font-size: 14px;
     line-height: 1.14;
   }
+
   .movie-details-description {
     font-size: 12px;
     line-height: 1.7;
@@ -301,9 +306,11 @@
     width: 846px;
     height: 598px;
   }
+
   .modal-details {
     padding: 60px;
   }
+
   .modal-btn-close-details {
     top: 40px;
     right: 40px;
@@ -365,6 +372,5 @@
     margin-bottom: 24px;
     width: 100%;
     max-width: 331px;
-    /* max-height: 221px; */
   }
 }

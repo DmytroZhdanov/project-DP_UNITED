@@ -1,5 +1,4 @@
 /* Header styles */
-
 .header-container {
   display: flex;
   align-items: center;
@@ -163,7 +162,6 @@ body.light-theme .btn-menu {
 }
 
 /* Up-Button Styles */
-
 .up-button {
   position: fixed;
   z-index: 100;
@@ -179,10 +177,12 @@ body.light-theme .btn-menu {
   transition: opacity var(--transition-dur-and-func);
   animation: bounce 2s ease infinite;
 }
+
 .up-button.is-shown {
   pointer-events: all;
   opacity: 1;
 }
+
 .up-button-link {
   display: flex;
   align-items: center;

@@ -15,12 +15,14 @@
     align-items: center;
     text-align: center;
   }
+  
   .search-film-year {
     display: flex;
     width: 100%;
     gap: 12px;
     margin-bottom: 12px;
   }
+
   .catalog-input {
     padding: 11px 40px 11px 20px;
     border: 1px solid #ffffff;
@@ -54,6 +56,7 @@
   .catalog-search-film {
     width: 173px;
   }
+
   .catalog-search-year {
     width: 95px;
   }
@@ -61,10 +64,12 @@
   .catalog-search-name {
     width: 224px;
   }
+
   .catalog-span {
     position: relative;
     color: var(--secondary-text-color);
   }
+
   .icon-close {
     stroke: #ffffff;
     cursor: pointer;
@@ -74,7 +79,6 @@
     display: block;
     width: 40px;
     height: 40px;
-    /* position: static; */
     margin-left: 16px;
   }
 
@@ -103,10 +107,10 @@
     stroke: #111111;
     fill: transparent;
   }
+
   .catalog-movies-list {
     margin-bottom: 20px;
     width: 100%;
-
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -122,6 +126,7 @@
     line-height: 1.4;
     text-align: center;
   }
+
   body.light-theme .catalog-desc {
     color: #111111;
   }
@@ -130,6 +135,7 @@
   .tui-pagination.btn-container {
     margin: 0;
   }
+
   .tui-pagination.btn-container > .btn-number {
     background-color: transparent;
     border-radius: 50%;
@@ -151,19 +157,12 @@
   .btn-container > .btn-number.tui-last {
     display: none;
   }
-  /* 
-  body.dark-theme .tui-pagination.btn-container .btn-number.btn-current {
-    color: #ffffff;
-  }
-
-  body.light-theme .tui-pagination.btn-container .btn-number.btn-current {
-    color: #111111;
-  } */
 
   .btn-container > .btn-number.tui-prev-is-ellip.tui-first-child {
     margin-right: 0;
     border: none;
   }
+
   .tui-pagination.btn-container
     > .btn-number.tui-prev-is-ellip.tui-first-child
     > .tui-ico-ellip {
@@ -218,6 +217,7 @@
   .tui-pagination.btn-container {
     height: 40px;
   }
+
   .tui-pagination.btn-container > .btn-number {
     margin-right: 8px;
     width: 24px;
@@ -244,6 +244,7 @@
     width: 355px;
     margin-bottom: 36px;
   }
+
   .search-film-year {
     width: 295px;
     gap: 12px;
@@ -262,6 +263,7 @@
     width: 44px;
     height: 44px;
   }
+
   .catalog-movies-list {
     column-gap: 16px;
     row-gap: 28px;
@@ -271,7 +273,6 @@
   .catalog-desc {
     margin-top: 44px;
     width: 520px;
-
     font-size: 24px;
     line-height: 1.33;
   }
@@ -337,105 +338,7 @@
   .catalog-desc {
     margin-top: 72px;
     width: 700px;
-
     font-size: 32px;
     line-height: 1.12;
   }
 }
-
-/*- BTN- TUI-PAGINATION-*/
-
-/* @media screen and (min-width: 1280px) {
-  .btn-container {
-    /* display: flex;
-    padding: 16px; */
-
-/* }  */
-/* .btn-container > .btn-number {
-    margin-right: 16px;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    padding: 12px 11px;
-    border-radius: 50%;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1;
-    color: var(--dark-theme-grey-color);
-    border: 1px solid var(--dark-theme-grey-color);
-  }
-
-  .btn-container > .btn-number.tui-first {
-    display: none;
-  }
-
-  .btn-container > .btn-number.tui-last {
-    display: none;
-  }
-
-  .btn-container > .btn-number.tui-prev-is-ellip.tui-first-child {
-    margin-right: 0;
-    border: none;
-  }
-  .tui-pagination.btn-container
-    > .btn-number.tui-prev-is-ellip.tui-first-child
-    > .tui-ico-ellip {
-    width: 12px;
-    font-size: 14px;
-    margin-top: 1px;
-    background: none;
-  }
-
-  .btn-container > .btn-number.tui-next-is-ellip.tui-last-child {
-    margin-right: 0;
-    border: none;
-  }
-
-  .tui-pagination.btn-container
-    > .btn-number.tui-next-is-ellip.tui-last-child
-    > .tui-ico-ellip {
-    margin-top: 7px;
-    width: 12px;
-    font-size: 14px;
-    margin-top: 1px;
-    background: none;
-  }
-
-  .btn-container > .btn-number.tui-prev {
-    margin-right: 12px;
-    border: none;
-  }
-
-  .btn-container > .btn-number.tui-next {
-    margin-left: 12px;
-    margin-right: 0;
-    border: none;
-  }
-
-  .btn-container > .btn-number.btn-current {
-    border: none;
-    background-image: var(--primary-button-color);
-    color: var(--primary-text-color);
-  }
-
-  body.dark-theme .btn-container > .btn-number.btn-current {
-    color: var(--primary-text-color);
-  }
-
-  body.light-theme .btn-container > .btn-number.btn-current {
-    color: #111111;
-  }
-} */
-
-/* @media screen and (min-width: 320px) and (max-width: 768px) {
-  .tui-pagination.btn-container {
-    height: 24px;
-  }
-  .tui-pagination.btn-container > .btn-number {
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
-    padding: 7px 2px;
-    font-size: 10px;
-  }
-} */
