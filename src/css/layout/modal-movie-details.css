@@ -60,7 +60,14 @@
   background-color: rgba(46, 47, 66, 0.9);
   border-radius: 0;
   animation: watchTrailerBtn 1000ms;
+  transition: color var(--transition-dur-and-func)
 }
+
+.trailer-btn:hover,
+.trailer-btn:focus {
+  color: var(--primary-brand-color)
+}
+
 
 @keyframes watchTrailerBtn {
   0% {
