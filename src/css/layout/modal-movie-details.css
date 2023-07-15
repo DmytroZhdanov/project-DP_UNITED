@@ -38,15 +38,37 @@
 }
 
 .movie-details-img-wrap {
+  position: relative;
   width: 248px;
   height: 315px;
   margin-bottom: 22px;
+  overflow: hidden;
 }
 
 .movie-details-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.trailer-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: inherit;
+  color: var(--primary-text-color);
+  background-color: rgba(46, 47, 66, 0.9);
+  border-radius: 0;
+  animation: watchTrailerBtn 1000ms;
+}
+
+@keyframes watchTrailerBtn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .modal-btn-close-details {
@@ -303,8 +325,8 @@
   }
 
   .movie-details-item {
-  width: 89px;
-}
+    width: 89px;
+  }
 
   .movie-details-items {
     font-weight: 500;

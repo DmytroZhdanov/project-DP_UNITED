@@ -34,7 +34,8 @@ function generateModalMovieDetailsMarkup(classes, movieObject) {
         class="movie-details-img"
         src="https://image.tmdb.org/t/p/w500${poster_path}"
         alt="${title}"
-      />`
+      />
+      <button class="btn trailer-btn" data-modal-trailer-btn>Watch trailer</button>`
     : `<picture>
         <source
           srcset="${imageNotFoundPicWebp395} 395w,
