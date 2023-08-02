@@ -62,7 +62,7 @@ function onLibraryLoad() {
       refs.libraryMovieList.classList.add('movie-cards-list-css');
 
       //==================set event on Button "Load more"==================================
-      libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
+      const libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
       libraryLoadMoreBtn.addEventListener('click', libraryRenderLoadMoreCard);
     }
 
