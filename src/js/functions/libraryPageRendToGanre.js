@@ -8,7 +8,7 @@ function libraryPageRendToGanre(
   FilterGanreCurentPage,
   arrayFilteredMoviesToRender
 ) {
-  libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
+  const libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
   if (totalFiltretPageOnLibrary <= 1) {
     refs.libraryMovieList.innerHTML = generateMovieCardsMarkup(
       arrayFilteredMoviesToRender
@@ -31,7 +31,7 @@ function libraryPageRendToGanre(
 
       refs.libraryMovieList.classList.add('movie-cards-list-css');
       //==================set event on Button "Load more"==================================
-      libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
+      const libraryLoadMoreBtn = document.querySelector('[data-load-more-btn]');
       libraryLoadMoreBtn.addEventListener(
         'click',
         libraryRenderLoadMoreCardToFilterGanres
@@ -40,7 +40,7 @@ function libraryPageRendToGanre(
   }
   function libraryRenderLoadMoreCardToFilterGanres() {
     //==================read div of button to delete div if no btn for css================================
-    libraryDivLoadMoreBtn = document.querySelector('[data-div-load-more-btn]');
+    const libraryDivLoadMoreBtn = document.querySelector('[data-div-load-more-btn]');
     // =================if the last page is left - render and hide the button============
     if (totalFiltretPageOnLibrary === FilterGanreCurentPage + 1) {
       refs.libraryMovieList.insertAdjacentHTML(
